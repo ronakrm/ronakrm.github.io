@@ -1,0 +1,15 @@
+- title: "Testing Title"
+  authors: [Ronak Mehta, Collab A, Collab B]
+  venue: International Conference on Learning Representations 2023
+  links:
+    arxiv: https://arxiv.org/
+    code: https://github.com/ronakrm/demd
+
+- title: "Testing Title 2"
+  authors: [Ronak Mehta, Collab C, Collab B]
+  venue: Shorter Venue 2022
+  links:
+    arxiv: https://arxiv.org/
+    webpage: /research/covtraj/
+    proceeding: https://iclr.cc
+    video: https://vimeo.com/
