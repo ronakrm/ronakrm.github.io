@@ -24,21 +24,24 @@ html.dark {
 }
 
 #color-mode-switch {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  &:hover {
+    text-decoration: none;
+  }
+    // display: inline-flexbox;
+    // align-items: center;
+    // justify-content: flex-end;
   }
   
-  #color-mode-switch > span {
-    // font-size: 30px;
-    display: inline-block;
-    // margin-right: 8px;
-  }
+  // #color-mode-switch > span {
+  //   font-size: 30px;
+  //   display: inline-block;
+  //   margin-right: 8px;
+  // }
   
   #color-mode-switch svg {
     width: 24px;
     height: 24px;
-    margin: 0 4px;
+    // margin: 0 4px;
   }
   
   #color-mode-switch input[type=checkbox] {
@@ -48,15 +51,16 @@ html.dark {
   }
   
   #color-mode-switch label {
-    cursor: pointer;
-    text-indent: -9999px;
+    text-align: left; //because parent is align right, indent doesnt work otherwise
+    text-indent: -9999em;
     width: 42px;
     height: 21px;
     border-radius: 30px;
     background: var(--color-toggle-accent);
-    display: block;
+    display: inline-block;
     position: relative;
     margin: 0;
+    padding: 0;
   }
   
   #color-mode-switch label:after {
