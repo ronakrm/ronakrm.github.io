@@ -1,15 +1,71 @@
-- title: "Testing Title"
-  authors: [Ronak Mehta, Collab A, Collab B]
-  venue: International Conference on Learning Representations 2023
+- title: Efficient Discrete Multi Marginal Optimal Transport Regularization
+  authors: [Ronak Mehta, Jeffery Kline, Vishnu Suresh Lokhande, Glenn Fung, Vikas Singh]
+  venue: (top 25%) International Conference on Learning Representations, ICLR 2023
   links:
-    arxiv: https://arxiv.org/
-    code: https://github.com/ronakrm/demd
+    proceeding: https://openreview.net/forum?id=R98ZfMt-jE
+    code: https://github.com/ronakrm/demd/
 
-- title: "Testing Title 2"
-  authors: [Ronak Mehta, Collab C, Collab B]
-  venue: Shorter Venue 2022
+- title: Deep Unlearning via Randomized Conditionally Independent Hessians
+  authors: [Ronak Mehta, Sourav Pal, Vikas Singh, Sathya Ravi]
+  venue: Computer Vision and Pattern Recognition, CVPR 2022
   links:
-    arxiv: https://arxiv.org/
-    webpage: /research/covtraj/
-    proceeding: https://iclr.cc
-    video: https://vimeo.com/
+    proceeding: https://openaccess.thecvf.com/content/CVPR2022/html/Mehta_Deep_Unlearning_via_Randomized_Conditionally_Independent_Hessians_CVPR_2022_paper.html
+    website: /research/deep-unlearning/
+    code: https://github.com/vsingh-group/LCODEC-deep-unlearning/
+
+- title: Investigating Functional Brain Network Abnormalities via Differential Covariance Trajectory Analysis and Scan Statistics
+  authors: [Anita Sinha, Ronak Mehta, Veena Nair, Rasmus Birn, Vikas Singh, Vivek Prabhakaran]
+  venue: International Symposium on Biomedical Imaging, ISBI 2022
+  links:
+    proceeding: https://ieeexplore.ieee.org/document/9761442
+
+- title: Graph Reparameterizations for Enabling 1000+ Monte Carlo Iterations in Bayesian Deep Neural Networks
+  authors: [Yuri Nazarov, Ronak Mehta, Vishnu Lokhande, Vikas Singh]
+  venue: Uncertainty in Artificial Intelligence, UAI 2021
+  links:
+    proceeding: https://proceedings.mlr.press/v161/nazarovs21b.html
+
+- title: Scaling Recurrent Models via Orthogonal Approximations in Tensor Trains
+  authors: [Ronak Mehta, Rudrasis Chakraborty, Yunyang Xiong, Vikas Singh]
+  venue: International Conference on Computer Vision, ICCV 2019
+  links:
+    website: /research/ott/
+    proceeding: https://openaccess.thecvf.com/content_ICCV_2019/html/Mehta_Scaling_Recurrent_Models_via_Orthogonal_Approximations_in_Tensor_Trains_ICCV_2019_paper.html
+
+- title: "Resource Constrained Neural Network Architecture Search: Will a Submodularity Assumption Help?"
+  authors: [Yunyang Xiong, Ronak Mehta, Vikas Singh]
+  venue: International Conference on Computer Vision, ICCV 2019
+  links:
+    website: /research/rcas/
+    proceeding: https://openaccess.thecvf.com/content_ICCV_2019/html/Xiong_Resource_Constrained_Neural_Network_Architecture_Search_Will_a_Submodularity_Assumption_ICCV_2019_paper.html
+
+- title: "DUAL-GLOW: Conditional Flow-Based Generative Model for Modality Transfer"
+  authors: [Haoliang Sun, Ronak Mehta, Hao H. Zhou, Zhichun Huang, Sterling C. Johnson, Vivek Prabhakaran, Vikas Singh]
+  venue: International Conference on Computer Vision, ICCV 2019
+  links:
+    proceeding: https://openaccess.thecvf.com/content_ICCV_2019/html/Sun_DUAL-GLOW_Conditional_Flow-Based_Generative_Model_for_Modality_Transfer_ICCV_2019_paper.html
+
+- title: Sampling-free Uncertainty Estimation in Gated Recurrent Units with Applications to Normative Modeling in Neuroimaging
+  authors: [Seong Jae Hwang, Ronak Mehta, Hyunwoo J. Kim, Sterling C. Johnson, Vikas Singh]
+  venue: Uncertainty in Artificial Intelligence, UAI 2019
+  links:
+    website: /research/spgru/
+
+- title: On Training Deep 3D CNN Models with Dependent Samples in Neuroimaging
+  authors: [Yunyang Xiong, Hyunwoo J. Kim, Bhargav Tangirala, Ronak Mehta, Sterling C. Johnson, Vikas Singh]
+  venue: Information Processing in Medical Imaging, IPMI 2019
+  proceeding: https://link.springer.com/chapter/10.1007/978-3-030-20351-1_8
+
+- title: "Finding Differentially Covarying Needles in a Temporally Evolving Haystack: A Scan Statistics Perspective"
+  authors: [Ronak Mehta, Hyunwoo Kim, Shulei Wang, Sterling Johnson, Ming Yuan, Vikas Singh]
+  venue: Quart. Appl. Math. 77 (2018), 357-398
+  links:
+    arxiv: https://arxiv.org/abs/1711.07575
+    website: /research/covtraj/
+
+- title: Robust Blind Deconvolution via Mirror Descent
+  authors: [Sathya Ravi, Ronak Mehta, Vikas Singh]
+  venue: International Conference on Acoustics, Speech, and Signal Processing, ICASSP 2023
+  links:
+    proceeding: TBD
+    website: /research/prida/

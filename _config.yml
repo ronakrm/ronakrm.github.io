@@ -47,7 +47,7 @@ minima:
 # order as they should show up.
 #
 header_pages:
-  - research.html
+  - research.md
   - blog.md
   - about.md
 
