@@ -48,7 +48,7 @@ minima:
 #
 header_pages:
 #   - about.md
-  - research.md
+  - research
   - blog
 
 # Set to `true` to show excerpts on the homepage.
