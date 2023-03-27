@@ -1,3 +1,5 @@
+Feel free to use any of this in any way subject to the license for Minima below.
+
 The MIT License (MIT)
 
 Copyright (c) 2016-present Parker Moore and the minima contributors
