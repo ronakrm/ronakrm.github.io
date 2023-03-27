@@ -1,4 +1,4 @@
-title: Ronak Mehta
+title: ronakrm
 author:
   name: Ronak Mehta
   email: ronakrm@cs.wisc.edu
@@ -35,7 +35,7 @@ minima:
     - { platform: google_scholar, user_url: "https://scholar.google.com/citations?user=7hv6xqkAAAAJ" }
   #   - { platform: instagram,      user_url: "https://www.instagram.com/jekyll" }
   #   - { platform: keybase,        user_url: "https://keybase.io/jekyll" }
-  #   - { platform: linkedin,       user_url: "https://www.linkedin.com/in/jekyll" }
+    - { platform: linkedin,       user_url: "https://www.linkedin.com/in/ronak-mehta-64627491/" }
   #   - { platform: microdotblog,   user_url: "https://micro.blog/jekyll" }
   #   - { platform: pinterest,      user_url: "https://www.pinterest.com/jekyll" }
   #   - { platform: stackoverflow,  user_url: "https://stackoverflow.com/users/1234567/jekyll" }
@@ -46,10 +46,10 @@ minima:
 # If you want to link only specific pages in your header, uncomment this and add the path to the pages in
 # order as they should show up.
 #
-#header_pages:
-#  - about.md
-#  - research.html
-#  - blog.md
+header_pages:
+  - research.html
+  - blog.md
+  - about.md
 
 # Set to `true` to show excerpts on the homepage.
 #
