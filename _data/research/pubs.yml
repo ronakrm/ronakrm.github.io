@@ -6,7 +6,7 @@
     code: https://github.com/ronakrm/demd/
 
 - title: Deep Unlearning via Randomized Conditionally Independent Hessians
-  authors: [Ronak Mehta, Sourav Pal, Vikas Singh, Sathya Ravi]
+  authors: [Ronak Mehta*, Sourav Pal*, Vikas Singh, Sathya Ravi]
   venue: Computer Vision and Pattern Recognition, CVPR 2022
   links:
     proceeding: https://openaccess.thecvf.com/content/CVPR2022/html/Mehta_Deep_Unlearning_via_Randomized_Conditionally_Independent_Hessians_CVPR_2022_paper.html
