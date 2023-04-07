@@ -16,11 +16,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# For LaTeX, through Khan Academy's KaTeX
-# markdown: kramdown
-# kramdown:
-  # math_engine: katex
-
 # Theme-specific settings
 
 minima:
