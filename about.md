@@ -32,3 +32,4 @@ This webpage was primarily built using
 [minima](https://github.com/jekyll/minima),
 and was generally inspired by [https://varunagrawal.github.io/](https://varunagrawal.github.io/).
 Source here: [https://github.com/ronakrm/ronakrm.github.io](https://github.com/ronakrm/ronakrm.github.io).
+LaTeX provided by [KaTeX](https://katex.org/).
