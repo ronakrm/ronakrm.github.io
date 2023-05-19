@@ -1,7 +1,9 @@
 #- Migrating to Github Pages site with Jekyll + Bootstrap! Largely taken from https://varunagrawal.github.io/
 #- Testing news/updates
+- I'll be traveling to Rhodes for ICASSP 2023 to present our work on <a href="https://ieeexplore.ieee.org/abstract/document/10096350">Robust Blind Deconvolution via Mirror Descent</a>.
+- I presented our work on <a href="https://openreview.net/forum?id=R98ZfMt-jE">Discrete Optimal Transport</a> (top 25%!) in Kigali, Rwanda at ICLR 2023.
 - I defended my thesis! Finishing up odds and ends and looking for jobs Alignment-adjacent.
-- My paper on <a href="https://openreview.net/forum?id=R98ZfMt-jE">Discrete Optimal Transport</a> was accepted (top 25%!) to ICLR 2023.
+#- My paper on <a href="https://openreview.net/forum?id=R98ZfMt-jE">Discrete Optimal Transport</a> was accepted (top 25%!) to ICLR 2023.
 - I participated in a one-month Interpretability Experiment at Redwood Research.
 - I traveled to and presented my recent work on <a href="https://openaccess.thecvf.com/content/CVPR2022/html/Mehta_Deep_Unlearning_via_Randomized_Conditionally_Independent_Hessians_CVPR_2022_paper.html">Efficient Unlearning</a> at CVPR 2022 in New Orleans, USA.
 #- I presented (virtually) recent joint follow-up work on covariance trajectories at ISBI 2022 at Kolkata, India. 
