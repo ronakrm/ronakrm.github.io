@@ -38,7 +38,7 @@ with people in positions to do so.
 I'm going to brain dump more. I need to not
 care as much if I use correct or incorrect lingo,
 if my style matches or does not match existing norms 
-in certain places, if a random person in my life
+in certain places, if someone I know or don't know
 will agree or not with what I am saying.
 It just needs to get out, because there
 isn't much time left to get things out. (Perhaps an eventual
