@@ -1,0 +1,456 @@
+\documentclass[]{article}
+
+\usepackage{nopageno}
+\usepackage[letterpaper,
+			margin=0.75in,
+			]{geometry}
+\usepackage{array}
+%\usepackage[T1]{fontenc}
+\usepackage{charter} % or helvet
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{hyperref}
+
+\setlist{noitemsep}
+
+%opening
+\title{}
+\author{}
+\date{}
+
+\begin{document}
+\begin{center}
+	{\Huge\bf Ronak R. Mehta} \\
+	\vspace{5pt}
+	{\large% 5770 Medical Sciences Center \\
+%	1300 University Ave., Madison, WI 53706 \\
+	203-969-5613 \\
+	ronakrm@cs.wisc.edu \\
+	\url{ronakrm.github.io} }
+\end{center}
+
+%\maketitle
+%\rule{\linewidth}{2mm}
+
+%\hrule\hrule\hrule\hrule\hrule 
+%\begin{longtable}{  p{0.1\linewidth}  p{0.8\linewidth}  }
+%	{\large Research \newline Interests} &  {\color{red}My research lies at the intersection of computer science, statistics, and optimization. Particularly, I am focused on statistical machine learning and its applications to biomedicine. My current research interest is in developing and deploying state of the art directed and undirected graphical model methods and schemes to better understand causal and independence relationships among large numbers of features and measurements.} \\
+%	& \\ %space because we set itemskip to 0 globally
+%	& Working in collaboration with the Wisconsin Alzheimer's Disease Research Center, I am actively working on improving statistical power to detect early indicators of dementia in preclinical populations at risk to develop Alzheimer's Disease. \\
+%\end{longtable}
+%\hrule
+%\vspace{5pt}
+
+\vspace{10pt}
+{\LARGE Education}
+\vspace{3pt}
+\hrule
+\vspace{10pt}
+
+\noindent	{{\bf\large University of Wisconsin-Madison} \hfill \textit{Madison, WI}}
+
+	{Computer Sciences, PhD \hfill \textit{2016 - 2022}} 
+	
+	\qquad Minor in Statistics
+		
+	{Computer Sciences, MS \hfill \textit{2014 - 2016}}
+	
+	\vspace{-5pt}
+	\begin{itemize}[label={$\bullet$}]
+		\item Advisors: Vikas Singh and Michael Newton
+		\item Research in Machine Learning and Computer Vision
+%	\end{itemize}
+% {{\bf\large University of Wisconsin-Madison} \hfill \textit{Madison, WI \ Class of 2016} }
+%	\vspace{-5pt}
+%	\begin{itemize}[label={$\circ$}]
+%		\item Computer Sciences M.S. 
+%		\item Artificial Intelligence and Machine Learning 
+		\item Thesis Topic: Identifying Feature, Parameter, and Sample Subsets in Machine Learning and Image Analysis
+		\item Relevant Coursework: Artificial Intelligence,  Machine Learning, Computer Vision, Statistical Inference, Linear and Nonlinear Optimization, Graphical Models, Stochastic Processes, Computational Statistics
+	\end{itemize}
+ {{\bf\large University of Michigan-Ann Arbor} \hfill \textit{Ann Arbor, MI} }
+ 
+	{ Computer Engineering, B.S.E. \hfill \textit{2010 - 2014} }
+	
+	\vspace{-5pt}
+	\begin{itemize}[label={$\bullet$}]
+		\item Selected Coursework: Autonomous Robotics, Design of Microprocessor-based Systems, Embedded Control Systems, Design and Manufacturing, Control Systems Analysis and Design
+	\end{itemize}
+
+\vspace{15pt}
+{\LARGE Experience}
+%\vspace{3pt}
+\hrule
+\vspace{10pt}
+
+\noindent{{\bf Redwood Research} \hfill \textit{Berkeley, CA}} \newline
+{\bf \ REMIX Research Resident} \hfill \textit{January 2023}
+\begin{itemize}[label={$\bullet$}]
+	\item Participated in a month-long coordinated research program on mechanistic interpretability of transformers towards understanding large-language models.
+	\item Worked on grounding topical mechanistic interpretability methods in theoretical foundations common in mainstream machine learning research, connecting ideas in interpretability hypothesis testing to classical probabilistic measures of conditional independence.
+\end{itemize} 
+
+\noindent{{\bf Computer Sciences Department, UW-Madison} \hfill \textit{Madison, WI}} \newline
+{\bf \ Graduate Research Assistant} \hfill \textit{2015-2022}
+\begin{itemize}[label={$\bullet$}]
+%	\item 20-40 hours per week including and depending on courseload and research deadlines.
+	\item Collaborated on machine learning and computer vision research projects, with applications in modeling preclinical development of Alzheimer's disease with the Wisconsin Alzheimer's Disease Research Center.
+	\item Research focuses on problems of Selection in Machine Learning: Which features, samples, or models are minimally sufficient or important based on a specified measure of interest (accuracy, fairness, model size, etc.)?
+\end{itemize} 
+
+\noindent{{\bf American Family Insurance} \hfill \textit{Madison, WI} } \newline
+{\bf \ Enterprise: Machine Learning Intern} \hfill \textit{2021 - 2022}
+\begin{itemize}[label={$\bullet$}]
+%	\item 40 hours per week during Summer of 2021, 10 Hours per Week through 2021-2022 Academic Year.
+	\item Created a fairness toolbox for understanding and accounting for unfairness and bias in large datasets and machine learning models.
+	\item Developed new methods for fairness regularization via high-dimensional Earth Mover's Distance formulations, concluding in ICLR conference publication.
+\end{itemize}
+
+\iffalse
+\noindent{{\bf Biostatistics and Medical Informatics Department, UW-Madison} \hfill \textit{2016 - 2019} } \newline
+{\bf \ Research Fellow}
+\begin{itemize}[label={$\bullet$}]
+%	\item Hours overlapping with Graduate Research Assistantship.
+	\item Collaborated with Michael Newton and Sterling Johnson, specifically on developing and applying methods for the analysis of medical imaging data in collaboration with the Wisconsin Alzheimer's Disease Research Center.
+\end{itemize} 
+
+\noindent{{\bf Computer Sciences Department, UW-Madison} \hfill \textit{January - May 2015} } \newline
+{\bf \ CS 760: Machine Learning Teaching Assistant}
+\begin{itemize}[label={$\bullet$}]
+%	\item 10 hours per week.
+	\item Developed and assigned written and programming homework assignments.
+	\item Held office hours and provided general teaching support.
+\end{itemize} 
+
+\noindent{{\bf EECS Department, UM-Ann Arbor} \hfill \textit{January - May 2014} } \newline
+{\bf \ EECS 373: Embedded Systems Teaching Assistant}
+\begin{itemize}[label={$\bullet$}]
+%	\item 5-10 hours per week.
+	\item Led laboratory sections and held lab office hours.
+	\item Assisted students with lab assignments and course projects.
+\end{itemize}
+\fi
+
+\noindent{{\bf Continental Automotive Systems} \hfill \textit{Deer Park, IL}} \newline
+{\bf \ Business Unit Transmission: Embedded Software Engineering Intern} \hfill \textit{2013}
+\begin{itemize}[label={$\bullet$}]
+%	\item 40 hours per week.
+	\item Developed an application to systematically test multiple features of a transmission control module in parallel asynchronously using NI LabView and NI bench-testing hardware.
+	\item Identified known bugs from previous software releases through extended test runs.
+	\item Gained extensive knowledge of automated testing and embedded software systems.
+\end{itemize}
+
+\iffalse
+\noindent{{\bf STEM Society, UM-Ann Arbor} \hfill \textit{January 2013 - May 2014} } \newline
+{\bf \ Engineering Outreach Coordinator}
+\begin{itemize}[label={$\bullet$}]
+%	\item 5 hours per week.
+	\item Organized ``Science Saturdays" for high school students in the Greater Detroit Area.
+	\item Designed and presented engaging and interactive lessons revolving around intermediate core chemistry, physics, and engineering concepts and applications.
+\end{itemize}
+
+\noindent{{\bf PANDAX Collaboration, U-M Physics Department} \hfill \textit{Ann Arbor, MI \ June to Dec. 2012} } \newline
+{\bf \ Research Assistant}
+\begin{itemize}[label={$\bullet$}]
+%	\item 40 hours per week.
+	\item Designed, modeled, and simulated filter circuitry for front-end electronics. 
+	\item Fabricated test circuits and transmission lines for R\&D setup in laboratory. 
+	\item Gained hands-on experience working with high-vacuum and high-purity gas systems.
+\end{itemize}
+	
+\noindent{{\bf ChalkTalkSPORTS} \hfill \textit{Norwalk, CT \ May - August 2011} } \newline
+{\bf \ Website Maintenance/Design Intern}
+\begin{itemize}[label={$\bullet$}]
+%	\item 40 hours per week.
+	\item Kept website updated with new products: maintain and manage and product information through Adobe Photoshop and Microsoft Excel databases. 
+	\item Maintained website, working with HTML and JavaScript to keep website up to date. 
+	\item Worked with Excel VBA and Adobe ExtendScript to streamline and automate the process of uploading new products. 
+\end{itemize}
+\fi
+
+\vspace{15pt}
+{\LARGE Publications}
+\vspace{3pt}
+\hrule
+\vspace{10pt}
+
+\noindent
+{\bf Efficient Discrete Multi Marginal Optimal Transport Regularization.}
+\newline
+Accepted for Oral (top 25\%)  to \href{https://openreview.net/forum?id=R98ZfMt-jE}{ICLR 2023.}
+\newline
+\textit{Ronak Mehta, Jeffery Kline, Vishnu Suresh Lokhande, Glenn Fung, Vikas Singh.}
+\newline\newline
+{\bf Deep Unlearning via Randomized Conditionally Independent Hessians.}
+\newline
+\href{https://openaccess.thecvf.com/content/CVPR2022/html/Mehta_Deep_Unlearning_via_Randomized_Conditionally_Independent_Hessians_CVPR_2022_paper.html}{CVPR 2022.}
+\textit{Ronak Mehta, Sourav Pal, Vikas Singh, Sathya Ravi.}
+\newline\newline
+{\bf Investigating Functional Brain Network Abnormalities via Differential Covariance Trajectory Analysis and Scan Statistics.}
+\newline
+\href{https://ieeexplore.ieee.org/document/9761442}{ISBI 2022.}
+\textit{Anita Sinha, Ronak Mehta, Veena Nair, Rasmus Birn, Vikas Singh, Vivek Prabhakaran.}
+\newline\newline
+{\bf Graph Reparameterizations for Enabling 1000+ Monte Carlo Iterations in Bayesian Deep Neural Networks.}
+\newline
+\href{https://proceedings.mlr.press/v161/nazarovs21b.html}{UAI 2021.}
+\textit{Yuri Nazarov, Ronak Mehta, Vishnu Lokhande, Vikas Singh.}
+\newline\newline
+{\bf Scaling Recurrent Models via Orthogonal Approximations in Tensor Trains}
+\newline
+\href{http://openaccess.thecvf.com/content_ICCV_2019/html/Mehta_Scaling_Recurrent_Models_via_Orthogonal_Approximations_in_Tensor_Trains_ICCV_2019_paper.html}{ICCV 2019.}
+\textit{Ronak Mehta, Rudrasis Chakraborty, Yunyang Xiong, Vikas Singh.}
+\newline\newline
+{\bf Resource Constrained Neural Network Architecture Search: Will a Submodularity Assumption Help?}
+\newline
+\href{http://openaccess.thecvf.com/content_ICCV_2019/html/Xiong_Resource_Constrained_Neural_Network_Architecture_Search_Will_a_Submodularity_Assumption_ICCV_2019_paper.html}{ICCV 2019.}
+\textit{Yunyang Xiong, Ronak Mehta, Vikas Singh.}
+\newline\newline
+{\bf  DUAL-GLOW: Conditional Flow-Based Generative Model for Modality Transfer.}
+\newline
+\href{http://openaccess.thecvf.com/content_ICCV_2019/html/Sun_DUAL-GLOW_Conditional_Flow-Based_Generative_Model_for_Modality_Transfer_ICCV_2019_paper.html}{ICCV 2019.}
+\textit{Haoliang Sun, Ronak Mehta, Hao H. Zhou, Zhichun Huang, Sterling C. Johnson, Vivek Prabhakaran, Vikas Singh}
+\newline\newline
+{\bf Sampling-free Uncertainty Estimation in Gated Recurrent Units with Applications to Normative Modeling in Neuroimaging }
+\newline
+\href{http://auai.org/uai2019/proceedings/papers/296.pdf}{UAI 2019.}
+\textit{Seong Jae Hwang, Ronak R. Mehta, Hyunwoo J. Kim, Sterling C. Johnson, Vikas Singh.}
+\newline\newline
+{\bf On Training Deep 3D CNN Models with Dependent Samples in Neuroimaging}
+\newline
+\href{https://link.springer.com/chapter/10.1007/978-3-030-20351-1_8}{IPMI 2019.}
+\textit{Yunyang Xiong, Hyunwoo J. Kim, Bhargav Tangirala, Ronak Mehta, Sterling C. Johnson, Vikas Singh.}
+\newline\newline
+{\bf   Finding Differentially Covarying Needles in a Temporally Evolving Haystack: A Scan Statistics Perspective }
+\newline
+\href{https://www.ams.org/journals/qam/2019-77-02/S0033-569X-2018-01522-9/}{Quart. Appl. Math. 2019.}
+\textit{Ronak Mehta, Hyunwoo J. Kim, Shulei Wang, Sterling C. Johnson, Vikas Singh.}
+\newline\newline
+{\bf Provably Robust Image Deconvolution via Mirror Descent}
+\newline
+\href{https://arxiv.org/abs/1803.08137}{arXiv Preprint.}
+\textit{Sathya Ravi, Ronak Mehta, Vikas Singh.}
+
+
+%
+%Scaling Recurrent Models via Orthogonal Approximations in Tensor Trains
+%Ronak Mehta, Rudrasis Chakraborty, Yunyang Xiong, Vikas Singh.
+%ICCV 2019.
+%http://openaccess.thecvf.com/content_ICCV_2019/html/Mehta_Scaling_Recurrent_Models_via_Orthogonal_Approximations_in_Tensor_Trains_ICCV_2019_paper.html
+%
+%Resource Constrained Neural Network Architecture Search: Will a Submodularity Assumption Help?
+%Yunyang Xiong, Ronak Mehta, Vikas Singh.
+%ICCV 2019. 
+%http://openaccess.thecvf.com/content_ICCV_2019/html/Xiong_Resource_Constrained_Neural_Network_Architecture_Search_Will_a_Submodularity_Assumption_ICCV_2019_paper.html
+%
+%DUAL-GLOW: Conditional Flow-Based Generative Model for Modality Transfer.
+%Haoliang Sun, Ronak Mehta, Hao H. Zhou, Zhichun Huang, Sterling C. Johnson, Vivek Prabhakaran, Vikas Singh
+%ICCV 2019. 
+%http://openaccess.thecvf.com/content_ICCV_2019/html/Sun_DUAL-GLOW_Conditional_Flow-Based_Generative_Model_for_Modality_Transfer_ICCV_2019_paper.html
+%
+%Sampling-free Uncertainty Estimation in Gated Recurrent Units with Applications to Normative Modeling in Neuroimaging
+%Seong Jae Hwang, Ronak R. Mehta, Hyunwoo J. Kim, Sterling C. Johnson, Vikas Singh.
+%UAI 2019.
+%http://auai.org/uai2019/proceedings/papers/296.pdf
+%
+%On Training Deep 3D CNN Models with Dependent Samples in Neuroimaging
+%Yunyang Xiong, Hyunwoo J. Kim, Bhargav Tangirala, Ronak Mehta, Sterling C. Johnson, Vikas Singh.
+%IPMI 2019. https://link.springer.com/chapter/10.1007/978-3-030-20351-1_8
+%
+%Finding Differentially Covarying Needles in a Temporally Evolving Haystack: A Scan Statistics Perspective
+%Ronak Mehta, Hyunwoo J. Kim, Shulei Wang, Sterling C. Johnson, Vikas Singh.
+%Quart. Appl. Math. 77 (2019), 357-398
+%https://www.ams.org/journals/qam/2019-77-02/S0033-569X-2018-01522-9/
+%
+%Provably Robust Image Deconvolution via Mirror Descent
+%Sathya Ravi, Ronak Mehta, Vikas Singh.
+%https://arxiv.org/abs/1803.08137
+
+
+
+\iffalse\
+\vspace{20pt}
+{\LARGE Talks and Presentations}
+\vspace{3pt}
+\hrule
+\vspace{10pt}
+
+\noindent {\bf CIBM Annual Retreat, 2018.} Presented a short talk on Differentially Evolving Temporal Covariances at \textit{Computation and Informatics in Biology and Medicine 2018 Annual Retreat}.
+
+\noindent {\bf Diff-CVML, CVPR 2018.} Presented a short talk and poster on Differentially Evolving Temporal Covariances at \textit{Computer Vision and Pattern Recognition 2018}, at the \textit{4th International Workshop on Differential Geometry in Computer Vision and Machine Learning.}
+
+\noindent {\bf MCVW 2018}. Presented a poster on Provably Robust Image Deconvolution via Mirror Descent at the \textit{Midwest Computer Vision Workshop 2018.}
+
+\noindent \textbf{BMI Training Presentations Fall 2017}. Presented work on measuring uncertainty in recurrent neural networks, with applications to neuroimaging for the Biostatistics and Medical Informatics Training Seminar.
+
+\noindent \textbf{AIRG Fall 2017}. Presented and lead a discussion on variational inference for the AI Reading Group.
+
+\noindent \textbf{AIRG/EA Madison Fall 2017}. Presented and lead a discussion on existential risk and AI Safety for AIRG and Effective Altruism Madison.
+
+\noindent \textbf{BMI Training Presentations Spring 2016}. Presented final work on identifying second-order trends in high-dimensional temporal data for the BMI Training seminar.
+
+\noindent \textbf{AIRG Fall 2016}. Presented and lead a discussion on stability and generalization.
+
+\noindent \textbf{BMI Training Presentations Fall 2016}. Presented preliminary work on identifying second-order trends in high-dimensional temporal data for the BMI Training seminar.
+
+\noindent \textbf{AIRG Fall 2015}. Presented and lead a discussion on the graphical lasso, and inverse covariance estimation.
+
+\noindent \textbf{AIRG Spring 2015}. Presented and lead a discussion on Recurrent Neural Networks.
+
+\fi
+
+\vspace{20pt}
+{\LARGE Reviewing Service}
+\vspace{3pt}
+\hrule
+\vspace{10pt}
+
+\noindent International Conference on Learning Representations (ICLR) \hfill 2023
+
+\noindent Neural Information Processing Systems (NeurIPS) \hfill 2022
+
+\noindent Association for the Advancement of Artificial Intelligence (AAAI) \hfill 2022
+
+\noindent Computer Vision and Pattern Recognition (CVPR) \hfill 2021
+
+\noindent Neural Information Processing Systems (NeurIPS) \hfill 2020
+
+\noindent Computer Vision and Pattern Recognition (CVPR) \hfill 2020
+
+\noindent Medical Image Computing and Computer Assisted Intervention (MICCAI) \hfill 2019
+
+\iffalse
+\noindent Medical Image Computing and Computer Assisted Intervention (MICCAI) \hfill 2018
+
+\noindent (ad-hoc reviewer) International Conference in Machine Learning (ICML) \hfill 2018
+
+\noindent (ad-hoc reviewer) Neural Information Processing Systems (NIPS) \hfill 2017
+\fi
+
+\vspace{20pt}
+{\LARGE Skills}
+\vspace{5pt}
+\hrule
+\vspace{10pt}
+
+\noindent \textbf{Programming Languages:} Python, R, C++, MATLAB, Julia, HTML/JavaScript
+
+\noindent \textbf{Tools:} Scikit-Learn, Tensorflow, PyTorch, Lme4, GGPlot, Pandas/NumPy/SciPy
+
+\noindent \textbf{Document Generation:} \LaTeX, Keynote, MS Office Suite
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%\hrule
+\iffalse
+\vspace{5pt}
+{\LARGE Teaching Experience}
+\vspace{3pt}
+\hrule
+\vspace{5pt}
+
+\noindent{{\bf Computer Sciences Department, UW-Madison} \hfill \textit{Spring 2015} } \newline
+	{\bf \ CS 760: Machine Learning Teaching Assistant}
+	\begin{itemize}[label={$\bullet$}]
+		\item Developed and assigned written and programming homework assignments
+		\item Held office hours and provided general teaching support.
+	\end{itemize} 
+
+\noindent{{\bf EECS Department, UM-Ann Arbor} \hfill \textit{Spring 2014} } \newline
+	{\bf \ EECS 373: Embedded Systems Teaching Assistant}
+	\begin{itemize}[label={$\bullet$}]
+		\item Led laboratory sections and held lab office hours.
+		\item Assisted students with lab assignments and course projects.
+	\end{itemize}
+
+\noindent{{\bf STEM Society, UM-Ann Arbor} \hfill \textit{2013-2014} } \newline
+	{\bf \ Engineering Outreach Coordinator}
+	\begin{itemize}[label={$\bullet$}]
+		\item Organized ``Science Saturdays" for high school students in the Greater Detroit Area.
+		\item Designed and presented engaging and interactive lessons revolving around intermediate core chemistry, physics, and engineering concepts and applications.
+	\end{itemize}
+\fi
+
+
+%\vspace{5pt}
+%{\LARGE Conferences, Workshops, Posters, and Presentations}
+%\vspace{3pt}
+%\hrule
+%\vspace{5pt}
+
+%\noindent
+%{\bf MCVW 2018}. \textit{Midwest Computer Vision Workshop 2018.} Presented a poster on Provably Robust Image Deconvolution via Mirror Descent.
+
+%\noindent
+%{\bf CVPR 2017}. \textit{Computer Vision and Pattern Recognition 2017.} Attended.
+
+%\noindent
+%{\bf MMLS 2017}. \textit{Midwest Machine Learning Symposium 2017.} Attended.
+
+%\noindent
+%{\bf ICML 2016}. \textit{International Conference on Machine Learning 2016.} Attended.
+
+%\hrule
+
+%\begin{longtable}{  p{0.1\linewidth}  p{0.8\linewidth}  }
+%	{\large Awards and \newline Honors}
+%	& {{\bf Predoctoral Training Program Fellowship} \hfill \textit{Fall 2016} }
+%	\begin{itemize}[label={$\circ$}]
+%		\item NIH T32 Predoctoral Training Program in Bio-Data Science through the Biostatistics and Medical Informatics Department at UW-Madison.
+%	\end{itemize}
+
+%\end{longtable}
+
+%\hrule
+
+%\begin{longtable}{  p{0.1\linewidth}  p{0.8\linewidth}  }
+%	{\large Activities}
+%	& {{\bf Student Space Systems Fabrication Laboratory, UM-Ann Arbor} \hfill \textit{2012-2013} }
+%	\begin{itemize}[label={$\circ$}]
+%		\item Member of Power and Communications subsystems for Miniature Tether Electrodynamics Experiment.
+%		\item Worked on power distribution, communications hardware, and control systems with related analog circuitry and chip layout/design.
+%	\end{itemize} \\
+%	& {IEEE Student Projects Coordinator \hfill \textit{Ann Arbor, MI \ Spring 2014} } \\
+%	& {Habitat for Humanity Collegiate Challenge \hfill \textit{Ft. Lauderdale, FL \ Spring 2014} } \\
+%	& {Undergraduate Research Opportunity Program: Android App Development \hfill \textit{2011-2012} } \\
+%\end{longtable}
+
+%\hrule
+
+%\begin{longtable}{  p{0.1\linewidth}  p{0.8\linewidth}  }
+%	{\large Technical \newline Skills}
+%	& \begin{itemize}[label={$\circ$},topsep=0pt]
+%		\item Programming Languages: C++, Julia, MATLAB, Python, HTML/CSS/JavaScript
+%		\item CAD Software: Multisim, Quartus, SolidWorks, MATLAB Simulink
+%		\item Office Software: MS Office Suite, \LaTeX, Adobe PhotoShop
+%	\end{itemize} \\
+%\end{longtable}
+
+
+%
+%%\begin{center}
+%\begin{longtable}{  p{0.1\linewidth}  p{0.8\linewidth}  }
+%	\midrule
+%	{\large Research \newline Interests} & \input{interest.tex} \\
+%	\midrule
+%	{\large Education} & \input{educ.tex} \\
+%%	\midrule
+%%	\subsection*{\normalfont{Work \newline Experience}} & \input{work.tex} \\
+%%	\midrule
+%%	\subsection*{\normalfont{Teaching \newline Experience}} & \input{teach.tex} \\
+%%	\midrule
+%%	\subsection*{\normalfont{Activities}} & \input{activity.tex} \\
+%\end{longtable}
+%%\end{center}
+%
+
+
+\end{document}
