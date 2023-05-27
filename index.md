@@ -23,7 +23,7 @@ permalink: /
 
 <br/>
 
-My dissertation research has focused on methods for efficiently identifying important subsets of features, parameters, and samples
+My dissertation research focused on methods for efficiently identifying important subsets of features, parameters, and samples
 in modern ML settings. Current and future interests for me revolve around
 applying some of these ideas to interpretability, and more broadly
 exploring issues around alignment.

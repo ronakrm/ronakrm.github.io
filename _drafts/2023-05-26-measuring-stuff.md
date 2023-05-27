@@ -2,7 +2,7 @@
 layout: post
 title: "How To Measure Stuff Sometimes"
 categories: interpretability
-date: 2023-04-01
+date: 2023-05-26
 katex: True
 ---
 
@@ -141,6 +141,24 @@ H_0 &: \bar{x}_1 \neq \bar{x}_2  \\
 H_A &: \bar{x}_1 = \bar{x}_2,
 \end{aligned}$$
 we assume something about the distribution of this test statistic under the null, and see if what we measure is significantly different from that distribution.
+
+```latex {cmd=true hide=true}
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\begin{document}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+  {
+     F & B \\
+      & A \\};
+  \path[-stealth]
+    (m-1-1) edge node [above] {$\beta$} (m-1-2)
+    (m-1-2) edge node [right] {$\rho$} (m-2-2)
+    (m-1-1) edge node [left] {$\alpha$} (m-2-2);
+\end{tikzpicture}
+\end{document}
+```
 
 The issues with the above and its instantations in sciences have been enumerated, and issues with selecting the rejection level, multiple hypothesis testing, p-hacking, etc. are all real problems. But we can use these ideas as a way to inform how we approach interpretability,
 and take advantage of our distinct and unique model setting, as well as more topical Bayesian approaches, to get around these.
