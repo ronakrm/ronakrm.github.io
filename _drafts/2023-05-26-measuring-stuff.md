@@ -16,25 +16,36 @@ or discussing how to evaluate a specific idea or intervention,
 and I'll see or hear a specific measure being used or proposed.
 And it will make me hesitate, and originally it was just
 an inkling that something was wrong.
-But I've figured out the issue!
+But I think I've identified the disconnect.
+
+<script type="text/tikz">
+  \begin{tikzpicture}
+    \draw (0,0) circle (1in);
+    \node (0,0) (0.5in) {$H$};
+  \end{tikzpicture}
+</script>
 
 ### Quick Notation
 
 $$
-\def\EE{\mathbb{E}}
-\def\cD{\mathcal{D}}
-\def\cL{\mathcal{L}}
-\def\tf{\tilde{f}}
-\def\hf{\hat{f}}
+\newcommand{\cL}{\mathcal{L}}
+\gdef\EE{\mathbb{E}}
+\gdef\cD{\mathcal{D}}
+\global\def\cL{\mathcal{L}}
+\global\def\tf{\tilde{f}}
+\global\def\hf{\hat{f}}
 $$
 
 Let's say we have a model $f$ that takes input $x$ and outputs estimate $\hat{y}$,
 and we compute the correctness of the model against a true $y$ via some loss:
-$$ l := \left(y - f(x)\right)^2 $$
+
+$$\newcommand{\RR}{\mathbb{R}} \RR: l := \left(y - f(x)\right)^2 $$
+
 or some other distance $d(y, f(x))$ (cross entropy, etc.).
 If we have some dataset $\cD:= \{x_i,y_i\}_{i=1}^n$,
-then let 
-$$\cL(f,\cD) := \sum_{\cD} l_i := \sum_{(x_i,y_i)\in \cD} \left(y_i-f(x_i)\right)^2$$
+then let
+
+$$ \RR\cL(f,\cD) := \sum_{\cD} l_i := \sum_{(x_i,y_i)\in \cD} \left(y_i-f(x_i)\right)^2 $$
 
 ## What's the Question
 
@@ -45,7 +56,9 @@ unpack there.
 
 A thing we might compute to see if there's a change could be 
 the difference of the (expected) loss:
+
 $$ \cL(f,\cD) - \cL(\tf,\cD) $$
+
 After all, we want to know if our change or operation
 results in a _different_ output, right?
 
@@ -53,29 +66,37 @@ results in a _different_ output, right?
 
 Let's say we have 2 "samples" in our "dataset",
 and for our original model $f$ they result in losses
-$$l(f,1) = 0.4,\ l(f,2) = -0.2,$$
-and using a typical summation for aggregating the losses, $\cL(f,\cD)  = 0.2$. 
+
+$$ l(f,1) = 0.4,\ l(f,2) = -0.2, $$
+
+and using a typical summation for aggregating the losses, $$\cL(f,\cD)  = 0.2$$. 
 
 Now we take some perturbed model $\tf$, and it results in losses
-$$l(\tf,1) = -4,\ l(\tf,2) = 4.2.$$
+
+$$ l(\tf,1) = -4,\ l(\tf,2) = 4.2. $$
+
 Using the aggregate above we'll clearly get the same value, and conclude that the change in model did nothing!
 
 Okay, obviously combining losses in this way is not the right thing to do. In classical statistics, this is related to Simpson's Paradox, where we have _correlated samples_. We need to account for the fact that each computed loss corresponds to the function taking a specific input: the samples are not interchangeable when comparing measures (stats: random effects). 
 
 Great, so the next thing we do is break up the $\cL$ differences by sample and instead look at the aggregate _differences_:
+
 $$ \sum_{i} \left(l(f,i) - l(\tf,i) \right) $$
 
 With this simple difference we still kind of have the same problem! The difference has simply been distributed, and the above example results in the same conclusion. Ok, but we never look at the simple difference right? We should use the absolute difference, or sometimes equivalently, the squared difference.
+
 $$ \sum_{i} \left(l(f,i) - l(\tf,i) \right)^2 $$
 
 This solves all of the above problems! With only positive measures of "difference", the aggregation can't lead to cancellation, and any differences for each sample will be effectively accounted for in this final measure.
 
 #### Can we write this as a function of the aggregate losses?
 Let's try this using linearity of expectations. The expectation and sum are roughly interchangeable in this case, where our distribution is over our entire dataset $i\in \cD$.
+
 $$\begin{aligned}
 \EE_i\left[ \left(l(f,i) - l(\tf,i) \right)^2\right] &= \EE_i \left[l(f,i)^2 - 2l(f,i)l(\tf,i) + l(\tf,i)^2 \right] \\
 &= \EE_i \left[l(f,i)^2\right] - 2\EE_i \left[l(f,i)l(\tf,i)\right] + \EE_i \left[l(\tf,i)^2 \right]
 \end{aligned}$$
+
 The expectation (or sum) in the middle term cannot be distributed because the sample $i$ is not independent for both losses. These are exactly those _correlated samples_ that we had to worry about when moving to squared difference!
 
 ## One Value is Not Enough
@@ -116,10 +137,13 @@ My perspective is that much of interpretability and XAI research is circling aro
 In traditional sciences a question like those above is only the first step in the scientific method, and what typically follows is a __hypothesis test__. The defining of this test is critical in ensuring we have something that we can actually make conclusions from. The questions above as framed are not good hypotheses: they don't have definite outcomes, and they don't define a clear hypothesis space. If we only ask if $\tf$ is similar to $f$, and we only look at a real number, then how do we decide what defines a range of values that we would use to conclude explainability?
 
 Using the classical hypothesis testing framework, we could define a __null__ and __alternative__ hypothesis:
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 H_0 &: f \quad \text{is equal to} &\tf \\
 H_A &: f \quad \text{is different from} &\tf \\
-\end{aligned}$$
+\end{aligned}
+$$
 
 Importantly, the null hypothesis is __rejected__ and we __accept__ the alternative if for whatever measure we choose, the measurement lies in the __rejection region__ of the space it's in. The classical constructions define this region by an $\alpha$-level hypothesis test, where the region defined by some level-set is determined based on our desire for a certain level of certainty in the conclusion.
 
@@ -128,18 +152,26 @@ The measures and rejection regions are importantly constructed so that, whenever
 ### Silly Example
 
 I have some magic number $z$ and I want to know if it is closer to 4 or 8. Let's define our measurement as observing $z$. A good hypothesis test might define our null and alternatives like so:
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 H_0 &: z > 6  \\
 H_A &: z \leq 6 \\
-\end{aligned}$$
+\end{aligned}
+$$
+
 When we observe $z$, we can clearly determine which region of the hypothesis space it corresponds to and thus conclude where it is cloer to 4 or 8.
 
 ### Typical Testing
 This type of construction works when you have very clearly defined measures and assumptions about what corresponds to different regions of your hypothesis space. In the real world, when we measure sample data from a population and want to determine if it similar or different to another group, i.e.,
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 H_0 &: \bar{x}_1 \neq \bar{x}_2  \\
 H_A &: \bar{x}_1 = \bar{x}_2,
-\end{aligned}$$
+\end{aligned}
+$$
+
 we assume something about the distribution of this test statistic under the null, and see if what we measure is significantly different from that distribution.
 
 ```latex {cmd=true hide=true}
@@ -166,10 +198,14 @@ and take advantage of our distinct and unique model setting, as well as more top
 ## something here
 Let's say we believe that a part of $f$ is doing some operation $g$. Our hypothesis is that if it is doing that function, we can replace that part with $g$ and the output of the model will not change.
 Call the model with the replaced module $\tf$. Then we want to test:
-$$\begin{aligned}
+
+$$
+\begin{aligned}
 H_0 &: \cL(f) \neq \cL(\tf)  \\
 H_A &: \cL(f) = \cL(\tf)
-\end{aligned}$$
+\end{aligned}
+$$
+
 As written this will run into the same issue above. We want our rejection region to be larger than exact equality, but we don't have any idea of how large it should be! Taking a classical statistics approach we might make (strong) assumptions about the distribution of these losses, but these might be extremely strict and may not even be reasonable given true unknown distributions of these measures.
 
 ## Null Permutation Testing
