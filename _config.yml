@@ -19,7 +19,7 @@ plugins:
 markdown: kramdown
 
 kramdown:
-  math_engine: katex
+  math_engine: null
 
 # Theme-specific settings
 

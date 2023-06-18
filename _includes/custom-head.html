@@ -8,19 +8,12 @@
 <link rel="shortcut icon" type="image/png" href="/favicon-32x32.png">
 {% if page.katex %}
   <!--KaTeX-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/script/katex/katex.min.css">
+  <script defer src="/script/katex/katex.min.js"></script>
   <!-- To automatically render math in text elements, include the auto-render extension: -->
-  <!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
-      onload="renderMathInElement(document.body, {macros: {'\\cL': '\\mathcal{L}'}});"></script> -->
-  <!-- <div style="display: none">
-    \(
-    {% include latex-defs.sty %}
-    \)
-  </div> -->
+  <script defer src="/script/katex/contrib/auto-render.min.js"></script>
+  
   <script>
-      const macros = {"\\RR": "\\mathbb{R}"};
       document.addEventListener("DOMContentLoaded", function() {
           renderMathInElement(document.body, {
               // ...options...
@@ -36,10 +29,15 @@
               {left: "\\begin{CD}", right: "\\end{CD}", display: true},
               {left: "\\[", right: "\\]", display: true}
               ],
-              macros: macros,
               globalGroup: true,
-              trust: true
+              trust: true,
+              throwOnError: true
           });
       });
   </script>
+  <div style="display: none">
+    \(
+    {% include latex-defs.sty %}
+    \)
+  </div>
 {% endif %}
