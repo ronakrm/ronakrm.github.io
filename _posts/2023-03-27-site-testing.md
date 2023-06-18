@@ -12,13 +12,15 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ### LaTeX
 
-Here's a LaTeX Test: $$ \phi $$
+Here's a LaTeX Test: $$ \phi $$. In the line below, the expectation symbol is a macro defined in a separate latex sty file.
 
-$$ \mathbb{E}_{x}[p(x)] \text{some words} \frac{2}{4} $$
+$$ \EE_{x}[p(x)] \text{some words} \frac{2}{4} $$
 
-Unfortunately I was not able to easily load LaTeX/KaTeX via local files
+~~Unfortunately I was not able to easily load LaTeX/KaTeX via local files
 and GitHub Pages, so posts with LaTeX require/get the KaTeX css/js
-from jsdeliver/cloudfare.
+from jsdeliver/cloudfare.~~
+
+__EDIT:__ Got it to work! Definitely make sure you're only trying to make it work ONE way at a time. I had attempted loading the katex kramdown gem alongside loading the CDN files, and/or loading local and CDN at the same time. Obviously there will be issues if you do this...
 
 ## Go!
 
