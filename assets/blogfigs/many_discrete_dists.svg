@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="150mm"
+   height="40.5mm"
+   viewBox="0 0 150 40.5"
+   version="1.1"
+   id="svg7948"
+   sodipodi:docname="many_discrete_dists.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7950"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.77593294"
+     inkscape:cx="171.40656"
+     inkscape:cy="59.927859"
+     inkscape:window-width="1499"
+     inkscape:window-height="900"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g23561" />
+  <defs
+     id="defs7945">
+    <clipPath
+       id="clipPath5725-3-5">
+      <rect
+         style="fill:#aa8800;stroke-width:0.264583"
+         width="92.8582"
+         height="45.889229"
+         x="59.656002"
+         y="32.392399"
+         id="rect5524-6-6" />
+    </clipPath>
+    <clipPath
+       id="clipPath5725-3">
+      <rect
+         style="fill:#aa8800;stroke-width:0.264583"
+         width="92.8582"
+         height="45.889229"
+         x="59.656002"
+         y="32.392399"
+         id="rect5524-6" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Chart-Layer: A:1,B:2,C:3,D:5,E:6,F:5,G:4,H:3,I:2,J:2,K:4,L:3,M:3,N:5,O:2,P:1"
+     id="g8870" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Chart-Layer: A:1,B:2,C:3,D:5,E:6,F:5,G:4,H:3,I:2,J:2,K:4,L:3,M:3,N:5,O:2,P:1"
+     id="g9043" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Chart-Layer: A:1,B:2,C:3,D:5,E:6,F:5,G:4,H:3,I:2,J:2,K:4,L:3,M:3,N:5,O:2,P:1"
+     id="g9154" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Chart-Layer: :1,B:2,C:3,D:5,E:6,F:5,G:4,H:3,I:2,J:2,K:4,L:3,M:3,N:5,O:2,P:1"
+     id="g9662">
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="83.33333333333333"
+       id="text9600" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Chart-Layer: :1,:2,:3,:5,:6,:5,:4,:3,:2,:2,:4,:3,:3,:5,:2,:1"
+     id="g10505">
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="83.33333333333333"
+       id="text10443" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="93.33333333333333"
+       id="text10447" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="103.33333333333333"
+       id="text10451" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="113.33333333333333"
+       id="text10455" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="123.33333333333333"
+       id="text10459" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="133.33333333333334"
+       id="text10463" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="143.33333333333334"
+       id="text10467" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="153.33333333333334"
+       id="text10471" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="163.33333333333334"
+       id="text10475" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="173.33333333333334"
+       id="text10479" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="183.33333333333334"
+       id="text10483" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="193.33333333333334"
+       id="text10487" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="203.33333333333334"
+       id="text10491" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="213.33333333333334"
+       id="text10495" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="223.33333333333334"
+       id="text10499" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="233.33333333333334"
+       id="text10503" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Chart-Layer: :1,:2,:3,:5,:6,:5,:4,:3,:2,:2,:4,:3,:3,:5,:2,:1"
+     id="g19470">
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="83.33333333333333"
+       id="text19408" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="93.33333333333333"
+       id="text19412" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="103.33333333333333"
+       id="text19416" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="113.33333333333333"
+       id="text19420" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="123.33333333333333"
+       id="text19424" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="133.33333333333334"
+       id="text19428" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="143.33333333333334"
+       id="text19432" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="153.33333333333334"
+       id="text19436" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="163.33333333333334"
+       id="text19440" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="173.33333333333334"
+       id="text19444" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="183.33333333333334"
+       id="text19448" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="193.33333333333334"
+       id="text19452" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="203.33333333333334"
+       id="text19456" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="213.33333333333334"
+       id="text19460" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="223.33333333333334"
+       id="text19464" />
+    <path
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 0,40.25 H 149.99999 Z"
+       id="path2621" />
+    <g
+       id="g27672"
+       style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1;opacity:1"
+       transform="translate(12.333445,-54.945487)">
+      <rect
+         x="-12.283445"
+         y="89.995491"
+         width="9.375"
+         height="5"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19406" />
+      <rect
+         x="-2.9084454"
+         y="83.995491"
+         width="9.375"
+         height="11"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19410" />
+      <rect
+         x="6.4665556"
+         y="77.995491"
+         width="9.375"
+         height="17"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19414" />
+      <rect
+         x="15.841556"
+         y="65.995491"
+         width="9.375"
+         height="29"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19418" />
+      <rect
+         x="25.216555"
+         y="59.995487"
+         width="9.375"
+         height="35"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19422" />
+      <rect
+         x="34.591553"
+         y="65.995491"
+         width="9.375"
+         height="29"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19426" />
+      <rect
+         x="43.966553"
+         y="71.995491"
+         width="9.375"
+         height="23"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19430" />
+      <rect
+         x="53.341557"
+         y="77.995491"
+         width="9.375"
+         height="17"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19434" />
+      <rect
+         x="62.716557"
+         y="83.995491"
+         width="9.375"
+         height="11"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19438" />
+      <rect
+         x="72.09156"
+         y="83.995491"
+         width="9.375"
+         height="11"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19442" />
+      <rect
+         x="81.46656"
+         y="71.995491"
+         width="9.375"
+         height="23"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19446" />
+      <rect
+         x="90.84156"
+         y="77.995491"
+         width="9.375"
+         height="17"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19450" />
+      <rect
+         x="100.21656"
+         y="77.995491"
+         width="9.375"
+         height="17"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19454" />
+      <rect
+         x="109.59156"
+         y="65.995491"
+         width="9.375"
+         height="29"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19458" />
+      <rect
+         x="118.96656"
+         y="83.995491"
+         width="9.375"
+         height="11"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19462" />
+      <rect
+         x="128.34155"
+         y="89.995491"
+         width="9.375"
+         height="5"
+         style="fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect19466" />
+    </g>
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="233.33333333333334"
+       id="text19468" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Chart-Layer: :0,:0,:0,:1,:1,:1,:2,:2,:3,:3,:4,:5,:7,:5,:2,:1"
+     id="g20415">
+    <rect
+       x="75.0"
+       y="20.249999999999996"
+       width="10"
+       height="0"
+       style="fill:#000442"
+       id="rect20351" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="83.33333333333333"
+       id="text20353" />
+    <rect
+       x="85.0"
+       y="20.249999999999996"
+       width="10"
+       height="0"
+       style="fill:#0F1781"
+       id="rect20355" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="93.33333333333333"
+       id="text20357" />
+    <rect
+       x="95.0"
+       y="20.249999999999996"
+       width="10"
+       height="0"
+       style="fill:#252FB7"
+       id="rect20359" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="103.33333333333333"
+       id="text20361" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="113.33333333333333"
+       id="text20365" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="123.33333333333333"
+       id="text20369" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="133.33333333333334"
+       id="text20373" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="143.33333333333334"
+       id="text20377" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="153.33333333333334"
+       id="text20381" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="163.33333333333334"
+       id="text20385" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="173.33333333333334"
+       id="text20389" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="183.33333333333334"
+       id="text20393" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="193.33333333333334"
+       id="text20397" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="203.33333333333334"
+       id="text20401" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="213.33333333333334"
+       id="text20405" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="223.33333333333334"
+       id="text20409" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="233.33333333333334"
+       id="text20413" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Chart-Layer: :2,:2,:3,:3,:4,:5,:7,:5,:2,:1,:0,:0,:0,:1,:1,:1"
+     id="g23561">
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="83.33333333333333"
+       id="text23499" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="93.33333333333333"
+       id="text23503" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="103.33333333333333"
+       id="text23507" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="113.33333333333333"
+       id="text23511" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="123.33333333333333"
+       id="text23515" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="133.33333333333334"
+       id="text23519" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="143.33333333333334"
+       id="text23523" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="153.33333333333334"
+       id="text23527" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="163.33333333333334"
+       id="text23531" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="173.33333333333334"
+       id="text23535" />
+    <rect
+       x="175.0"
+       y="20.249999999999996"
+       width="10"
+       height="0"
+       style="fill:#656DDE"
+       id="rect23537" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="183.33333333333334"
+       id="text23539" />
+    <rect
+       x="185.0"
+       y="20.249999999999996"
+       width="10"
+       height="0"
+       style="fill:#8A91EC"
+       id="rect23541" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="193.33333333333334"
+       id="text23543" />
+    <rect
+       x="195.0"
+       y="20.249999999999996"
+       width="10"
+       height="0"
+       style="fill:#000442"
+       id="rect23545" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="203.33333333333334"
+       id="text23547" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="213.33333333333334"
+       id="text23551" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="223.33333333333334"
+       id="text23555" />
+    <g
+       id="g23973"
+       transform="matrix(0.93689501,0,0,1.0000915,-70.220281,19.801354)"
+       style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1;opacity:1">
+      <rect
+         x="75"
+         y="10.25"
+         width="10"
+         height="10"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23497" />
+      <rect
+         x="85"
+         y="10.25"
+         width="10"
+         height="10"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23501" />
+      <rect
+         x="95"
+         y="5.25"
+         width="10"
+         height="15"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23505" />
+      <rect
+         x="105"
+         y="5.25"
+         width="10"
+         height="15"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23509" />
+      <rect
+         x="115"
+         y="0.25"
+         width="10"
+         height="20"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23513" />
+      <rect
+         x="125"
+         y="-4.75"
+         width="10"
+         height="25"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23517" />
+      <rect
+         x="135"
+         y="-14.75"
+         width="10"
+         height="35"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23521" />
+      <rect
+         x="145"
+         y="-4.75"
+         width="10"
+         height="25"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23525" />
+      <rect
+         x="155"
+         y="10.25"
+         width="10"
+         height="10"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23529" />
+      <rect
+         x="165"
+         y="15.25"
+         width="10"
+         height="5"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23533" />
+      <rect
+         x="205"
+         y="15.25"
+         width="10"
+         height="5"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23549" />
+      <rect
+         x="215"
+         y="15.25"
+         width="10"
+         height="5"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23553" />
+      <rect
+         x="225"
+         y="15.25"
+         width="10"
+         height="5"
+         style="fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect23557" />
+    </g>
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="233.33333333333334"
+       id="text23559" />
+    <path
+       style="display:inline;fill:#ed00d4;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+       d="m 121.12854,-62.144647 68.32771,0.0337 c 0,0 -6.4308,0.15289 -13.66554,-9.6165 -1.86786,-2.52225 -5.49514,3.77718 -8.63797,3.77912 -4.00161,0.002 -7.00356,-4.71238 -11.00424,-4.79818 -3.4936,-0.0749 -6.97215,7.43372 -9.78023,3.77415 -3.36884,-4.39035 -6.13783,-18.62026 -10.52818,-15.25142 -3.83426,2.94213 -4.0623,14.51884 -7.80165,20.34838 -1.32885,2.07164 -6.9099,1.7307 -6.9099,1.7307 z"
+       id="path2025-9"
+       sodipodi:nodetypes="ccsaasssc" />
+    <path
+       style="display:inline;fill:#005baa;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+       d="m -42.545403,-77.148097 68.327711,0.0337 c 0,0 -6.430804,0.15289 -13.66554,-9.6165 -1.867859,-2.52225 -5.4951443,3.77718 -8.6379713,3.77912 -4.00160904,0.002 -7.003555,-4.71238 -11.004244,-4.79818 -3.4935897,-0.0749 -6.9721427,7.43372 -9.7802287,3.77415 -3.368835,-4.39035 -6.137828,-18.620263 -10.52818,-15.25142 -3.834253,2.94213 -4.062291,14.51884 -7.801644,20.34838 -1.328852,2.07164 -6.909903,1.7307 -6.909903,1.7307 z"
+       id="path2025"
+       sodipodi:nodetypes="ccsaasssc" />
+    <path
+       style="display:inline;fill:#25a000;fill-opacity:1;stroke:#000000;stroke-width:0.0959734;stroke-dasharray:none;stroke-opacity:1"
+       d="m 59.656,78.2816 h 92.8582 m -92.8582,0 v -0.0045 c 4.4218,-0.0078 8.8436,0.0871 13.2655,-0.3665 4.4218,-0.4536 8.8436,-1.4928 13.2654,-6.6393 4.4218,-5.1464 3.799014,4.424539 8.220811,-3.042461 4.4216,-7.4669 8.335449,-8.073407 11.240359,-4.951418 5.46681,5.875326 -0.32565,2.674288 11.87374,2.627898 9.14975,0.134247 17.35649,7.195608 19.78227,5.175015 2.35573,-1.96224 7.25692,5.129529 9.95219,5.406919 4.422,0.4551 0.83573,1.782047 5.25773,1.789847 v 0.0045"
+       title="(1/sqrt(2*pi))*exp(-1*(pow(x,2)))"
+       clip-path="url(#clipPath5725-3-5)"
+       id="path5583-7-2"
+       transform="matrix(1.2455138,0,0,0.87166479,-64.693829,-171.56688)"
+       sodipodi:nodetypes="ccccsccscsscc" />
+    <path
+       style="display:inline;fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.0959734;stroke-dasharray:none;stroke-opacity:1"
+       d="m 59.656,78.2816 h 92.8582 m -92.8582,0 v -0.0045 c 4.4218,-0.0078 8.8436,0.0871 13.2655,-0.3665 4.4218,-0.4536 8.8436,-1.4928 13.2654,-6.6393 4.4218,-5.1464 10.734283,3.495501 15.15608,-3.971499 4.4216,-7.4669 5.30127,-14.421835 8.20618,-11.299846 5.46681,5.875326 2.81689,19.861496 15.01628,19.815106 9.14975,0.134247 13.4554,-35.849832 15.88118,-37.870425 2.35573,-1.96224 4.11438,38.265227 6.80965,38.542617 4.422,0.4551 0.83573,1.782047 5.25773,1.789847 v 0.0045"
+       title="(1/sqrt(2*pi))*exp(-1*(pow(x,2)))"
+       clip-path="url(#clipPath5725-3)"
+       id="path5583-7"
+       transform="matrix(1.2455138,0,0,0.87166479,-69.076477,-79.949107)"
+       sodipodi:nodetypes="ccccsccscsscc" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Chart-Layer: :1,:0,:0,:1,:1,:1,:2,:2,:3,:3,:4,:5,:7,:5,:2,:1"
+     id="g27224">
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="83.33333333333333"
+       id="text27162" />
+    <rect
+       x="85.0"
+       y="20.249999999999996"
+       width="10"
+       height="0"
+       style="fill:#0F1781"
+       id="rect27164" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="93.33333333333333"
+       id="text27166" />
+    <rect
+       x="95.0"
+       y="20.249999999999996"
+       width="10"
+       height="0"
+       style="fill:#252FB7"
+       id="rect27168" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="103.33333333333333"
+       id="text27170" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="113.33333333333333"
+       id="text27174" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="123.33333333333333"
+       id="text27178" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="133.33333333333334"
+       id="text27182" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="143.33333333333334"
+       id="text27186" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="153.33333333333334"
+       id="text27190" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="163.33333333333334"
+       id="text27194" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="173.33333333333334"
+       id="text27198" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="183.33333333333334"
+       id="text27202" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="193.33333333333334"
+       id="text27206" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="203.33333333333334"
+       id="text27210" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="213.33333333333334"
+       id="text27214" />
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="223.33333333333334"
+       id="text27218" />
+    <g
+       id="g27637"
+       style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1;opacity:1"
+       transform="matrix(0.93689501,0,0,1.0000915,-70.220281,19.801354)">
+      <rect
+         x="75"
+         y="15.25"
+         width="10"
+         height="5"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27160" />
+      <rect
+         x="105"
+         y="15.25"
+         width="10"
+         height="5"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27172" />
+      <rect
+         x="115"
+         y="15.25"
+         width="10"
+         height="5"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27176" />
+      <rect
+         x="125"
+         y="15.25"
+         width="10"
+         height="5"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27180" />
+      <rect
+         x="135"
+         y="10.25"
+         width="10"
+         height="10"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27184" />
+      <rect
+         x="145"
+         y="10.25"
+         width="10"
+         height="10"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27188" />
+      <rect
+         x="155"
+         y="5.25"
+         width="10"
+         height="15"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27192" />
+      <rect
+         x="165"
+         y="5.25"
+         width="10"
+         height="15"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27196" />
+      <rect
+         x="175"
+         y="0.25"
+         width="10"
+         height="20"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27200" />
+      <rect
+         x="185"
+         y="-4.75"
+         width="10"
+         height="25"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27204" />
+      <rect
+         x="195"
+         y="-14.75"
+         width="10"
+         height="35"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27208" />
+      <rect
+         x="205"
+         y="-4.75"
+         width="10"
+         height="25"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27212" />
+      <rect
+         x="215"
+         y="10.25"
+         width="10"
+         height="10"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27216" />
+      <rect
+         x="225"
+         y="15.25"
+         width="10"
+         height="5"
+         style="fill:#ff2a2a;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-dasharray:none;stroke-opacity:1"
+         id="rect27220" />
+    </g>
+    <text
+       style="-inkscape-font-specification:Bitstream Charter;fill:#000000;font-family:sans-serif;font-size:10px;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:normal;text-align:end;text-anchor:end"
+       transform="rotate(-90)"
+       x="-25.249999999999996"
+       y="233.33333333333334"
+       id="text27222" />
+  </g>
+</svg>
