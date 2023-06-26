@@ -27,25 +27,16 @@ But I think I've identified the disconnect.
 
 ### Quick Notation
 
-$$
-\newcommand{\cL}{\mathcal{L}}
-\gdef\EE{\mathbb{E}}
-\gdef\cD{\mathcal{D}}
-\global\def\cL{\mathcal{L}}
-\global\def\tf{\tilde{f}}
-\global\def\hf{\hat{f}}
-$$
-
 Let's say we have a model $f$ that takes input $x$ and outputs estimate $\hat{y}$,
 and we compute the correctness of the model against a true $y$ via some loss:
 
-$$\newcommand{\RR}{\mathbb{R}} \RR: l := \left(y - f(x)\right)^2 $$
+$$l := \left(y - f(x)\right)^2 $$
 
 or some other distance $d(y, f(x))$ (cross entropy, etc.).
 If we have some dataset $\cD:= \{x_i,y_i\}_{i=1}^n$,
 then let
 
-$$ \RR\cL(f,\cD) := \sum_{\cD} l_i := \sum_{(x_i,y_i)\in \cD} \left(y_i-f(x_i)\right)^2 $$
+$$\cL(f,\cD) := \sum_{\cD} l_i := \sum_{(x_i,y_i)\in \cD} \left(y_i-f(x_i)\right)^2 $$
 
 ## What's the Question
 
@@ -209,12 +200,17 @@ $$
 As written this will run into the same issue above. We want our rejection region to be larger than exact equality, but we don't have any idea of how large it should be! Taking a classical statistics approach we might make (strong) assumptions about the distribution of these losses, but these might be extremely strict and may not even be reasonable given true unknown distributions of these measures.
 
 ## Null Permutation Testing
-A common strategy when the distribution is unknown is to estimate it via permuation testing. This involves drawing additional samples via shuffling, and the idea can be applied here.
+A common strategy when the distribution is unknown is to estimate it via permuation testing. This involves drawing additional samples under other in the class, and the idea can be applied here.
 
-What is the class of hypotheses we want to compare to? Let's say we want to know if this part of $f$ is doing $g$, or $g+\epsilon$, or any other function. Then we could 
+What is the class of hypotheses we want to compare to? Let's say we want to know if this part of $f$ is doing $g$, or $g+\epsilon$, or any other function. At a first glance,
+we might first consider other possible functions as alternative hypotheses. If it's not doing $g$, then it must be doing $\not g$, or maybe $\sin{\cdot}$, or $g^2$, or $rand(\cdot)$, or anything else. So we could choose a class of functions, check if it is performing any of those, and perhaps using some measure of "performing" decide if it is more likely to be $g$ or something other than $g$. We might observe this measure distributed as some univariate distribution:
+
+
+And see that the measure at $g$ is significantly larger than others.
+
+_However_, it is possible that not just this part of $f$ is performing this function, and even that other parts of $f$ are performing it better! 
 
 ### __Our Situation is Even Better__
-In the real world we can never hope to draw enough samples to estimate complex, multidimensional distributions. Cost of sample collection and computation can become exhorbitant, e.g., computing summary statistics over functional MRI sequences. But in our machine learning, deep model case we are only limited by what our compute, and our compute only consists of forward passes through the model!
+In the real world we can never hope to draw enough samples to estimate complex, multidimensional distributions. Cost of sample collection and computation can become exhorbitant, e.g., computing summary statistics over functional MRI sequences. But in our machine learning, deep model case we are only limited by our compute, and our compute only consists of possible paths through the model!
 
-In fact, if we wanted, we could __enumerate all possible hypotheses__. Of course in practice we would never do this, but it does suggest that we do not have to worry about permutation costs in the same way that classical science does. We are not limited by ethical concerns of additional animal testing, or prohibitive costs associated with high-fidelity data collection or expert time. Our limits are purely defined by how we define our hypothesis space and the full number of hypotheses can be directly computed when this space is set.
-
+In fact, _if we wanted_, we could __enumerate all possible hypotheses__. Of course in practice we would never do this, but it does suggest that we do not have to worry about permutation costs in the same way that classical science does. We are not limited by ethical concerns of additional animal testing, or prohibitive costs associated with high-fidelity data collection or expert time. Our limits are purely defined by how we define our hypothesis space, and the full number of hypotheses can be directly computed when this space is set.
