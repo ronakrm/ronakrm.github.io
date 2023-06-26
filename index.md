@@ -2,13 +2,15 @@
 layout: home
 permalink: /
 ---
-<div class="row" style="display: flex">
-    <div class="col-md-4 mr-auto" style="padding: 0px 25px; max-width: 400px">
-        <img style="margin: 0 0px 0px 0px; max-height: 200px; max-width: 200px"
-             src="RonakMehtaProfile.jpeg" />
+<div class="row" style="display: flex; flex-wrap: wrap">
+    <!-- <div class="d-flex align-items-center" style="justify-content: center; display: flex; align-items-center; width: 40%"> -->
+    <div class="one-half" style="justify-content: center; display:flex">
+        <img style="margin: 0 0px 0 0px; max-height: 200px; max-width: 200px"
+             src="RonakMehtaProfile_small.jpeg" />
     </div>
-    <div class="col-md-4 ml-auto d-flex align-items-center">
-        <div align="left">
+    <div class="one-half" style="justify-content: center; display:flex">
+    <!-- <div class="d-flex align-items-center" style="max-width: 50%"> -->
+        <div style="padding: 10px 0 0 0">
             <ul class="contact-list">
                 <li class="p-name">{{ site.author.name | escape }}</li>
                 <li class="p-name">Machine Learning PhD</li>
@@ -21,7 +23,6 @@ permalink: /
                 <li class="p-name"><a class="social" href="https://scholar.google.com/citations?user=7hv6xqkAAAAJ/">Google Scholar</a></li>
                 <li class="p-name"><a class="social" href="https://www.github.com/ronakrm/">GitHub</a></li>
             </ul>
-            <!-- {% include social.html %} -->
         </div>
     </div>
 </div>
