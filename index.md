@@ -38,7 +38,7 @@ For a take-away, check out my [R&eacute;sum&eacute;/CV](/resume/Ronak_Mehta_CV.p
 
 <div class="row">
     <div class="col col-md-8 ml-md-auto mr-md-auto">
-        <h3>Recent News</h3>
+        <h2>Recent News</h2>
         <div>
             <ul>
                 {% for update in site.data.news %}
