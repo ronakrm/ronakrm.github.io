@@ -3,13 +3,11 @@ layout: home
 permalink: /
 ---
 <div class="row" style="justify-content: center; display: flex; flex-wrap: wrap">
-    <!-- <div class="d-flex align-items-center" style="justify-content: center; display: flex; align-items-center; width: 40%"> -->
     <div class="one-half" style="justify-content: center; display:flex">
         <img style="margin: 0 0px 0 0px; max-height: 200px; max-width: 200px"
              src="RonakMehtaProfile_small.jpeg" />
     </div>
     <div class="one-half" style="justify-content: center; display:flex">
-    <!-- <div class="d-flex align-items-center" style="max-width: 50%"> -->
         <div style="padding: 10px 0 0 0">
             <ul class="contact-list">
                 <li class="p-name">{{ site.author.name | escape }}</li>
