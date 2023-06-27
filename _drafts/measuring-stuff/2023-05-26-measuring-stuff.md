@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How To Measure Stuff Sometimes"
-categories: interpretability
+tags: interpretability
 date: 2023-05-26
 katex: True
 ---
