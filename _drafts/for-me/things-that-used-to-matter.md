@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Priorities Change"
-categories: misc, naivete
+tags: misc naivete
 date: 2023-05-01
 ---
 
