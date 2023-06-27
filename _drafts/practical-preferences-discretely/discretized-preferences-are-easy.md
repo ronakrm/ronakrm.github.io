@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Incorporating Preferences is Easy if you Discretize"
-categories: fairness, emd, safety
+tags: fairness emd safety
 date: 2023-05-26
 katex: True
 ---
@@ -52,13 +52,15 @@ Ok, so what can we do? Well turns out if we discretize, we can make some cool pr
 
 ![Discretized distributions to the rescue!](/assets/blogfigs/many_discrete_dists.svg){:.centered}
 
-In some settings this might even be more valuable. 
-It could be hard for me to express a preference in a continuous space,
-but I could say "I think this is probably negative with probability "<50%".
+In some settings this might even be more valuable than working in the continuous space. 
+It could be hard for me to express a preference or measure continuously,
+but I could say "I think this is probably negative with probability "<50%",
+corresponding to some discrete uniform mass over a discrete area of input space.
 
 # With Two Distributions
 
 
+![asdf](/assets/blogfigs/animtest_5.gif){:.centered}
 
 
 # With More Distributions
