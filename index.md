@@ -18,7 +18,7 @@ permalink: /
             I've completed my dissertation and am on the job market! Find me at at the typical monoliths:
             <ul class="social-media-list">
                 <li class="p-name"><a class="social" href="https://www.linkedin.com/in/ronak-mehta-64627491/">LinkedIn</a></li>
-                <li class="p-name"><a class="social" href="https://scholar.google.com/citations?user=7hv6xqkAAAAJ/">Google Scholar</a></li>
+                <li class="p-name"><a class="social" href="https://scholar.google.com/citations?user=7hv6xqkAAAAJ">Google Scholar</a></li>
                 <li class="p-name"><a class="social" href="https://www.github.com/ronakrm/">GitHub</a></li>
             </ul>
         </div>
