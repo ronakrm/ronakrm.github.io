@@ -73,3 +73,10 @@ The above procedure basically is simply modified to find the index of the distri
 ## New preferences?
 
 ## Changing preferences?
+
+
+
+## Theoretical Properties
+
+### Convergence to barycenters
+### convergence to continuous
