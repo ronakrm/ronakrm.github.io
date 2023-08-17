@@ -1,3 +1,10 @@
+- title: Identifying Feature, Parameter, and Sample Subsets in Machine Learning and Image Analysis
+  authors: [Ronak Mehta]
+  venue: Final Dissertation, University of Wisconsin-Madison.
+  links:
+    ProQuest: https://www.proquest.com/openview/22fa212e22fca17d9bd104432132d1ab/1?pq-origsite=gscholar&cbl=18750&diss=y
+    PDF: /assets/RonakMehta_FinalDissertation.pdf
+
 - title: Efficient Discrete Multi Marginal Optimal Transport Regularization
   authors: [Ronak Mehta, Jeffery Kline, Vishnu Suresh Lokhande, Glenn Fung, Vikas Singh]
   venue: (top 25%) International Conference on Learning Representations, ICLR 2023
