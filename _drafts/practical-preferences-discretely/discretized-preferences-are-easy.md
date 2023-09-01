@@ -26,16 +26,18 @@ Sometimes we'll have some other preference, or distribution, along with our own:
 
 ![Two Continuous Normal Distributions](/assets/blogfigs/two_cont_dist.svg){:.centered}
 
-If they are different, we might want to figure out HOW different, and even more so find some "middle ground" or some way to reconcile the difference, "pushing" the distributions to be similar.
+If they are different, we might want to figure out HOW different, and even more so find some "middle ground" or some way to reconcile the difference, "pushing" the distributions to be similar. (mouseover/tap)
 
-{%- include_relative two_cont_dists_anim.svg -%}{:.centered}
 
-![What's the distance between two distributions?](/assets/blogfigs/two_cont_dist_div.svg){:.centered}
+{%- include_relative two_cont_dists_anim_copy.svg -%}{:.centered}
+<br/>
 
-If the distributions are nice like these, then we can easily compute continuous measures of "distance", such as KL divergence and others.
+We could try to measure this difference with some _distance_ measure, $d(A,B)$
+If the distributions are nice like these, then we can easily compute continuous measures of distance, such as KL divergence and others.
 If it's possible to write out the distributions as functions of the domain,
 we might try things like integrating over the difference of the functions.
 
+<!-- ![What's the distance between two distributions?](/assets/blogfigs/two_cont_dist_div.svg){:.centered} -->
 
 ## Down to Earth
 
@@ -54,11 +56,40 @@ Ok, so what can we do? Well turns out if we discretize, we can make some cool pr
 
 In some settings this might even be more valuable than working in the continuous space. 
 It could be hard for me to express a preference or measure continuously,
-but I could say "I think this is probably negative with probability "<50%",
+but I could say "I think this outcome or set of outcomes is possible with probability "50%",
 corresponding to some discrete uniform mass over a discrete area of input space.
+
+An important part of this is that it's not really _discrete_, it's _discretized_.
+The difference here is that we are assuming a different type of topology over the input space.
+If it were fully discrete, the cost to move from one end to another would be the same as moving
+just one "bin" over.
 
 # With Two Distributions
 
+One way to talk about this mathematically is using the Monge cost definition. 
+Without too much detail, moving further away should entail a higher "cost".
+If we want to move one distribution to match another,
+the cost should naturally be higher if it is "further away".
+
+Let's take a simple cost, like just counting the number of "bins" away something is.
+If one distribution was all in the first bin, and we wanted to "move" or "match"
+it to another that was all in the last bin,
+we would have to move all of the "mass" over by the number of bins.
+This gives rise to classical Earth Mover's Distance.
+
+![Delta functions at the end, shifting over](){:.centered}
+
+A cool mathematical result that comes out of this
+is that we can make a single pass over any arbitrary distribution
+to figure out the cost to make it match another!
+This ends up being something like a difference match with a carry:
+at each bin we figure out how much stays and how much moves,
+and we keep track of how much we have left over.
+This local operation ends up giving us a global solution.
+
+Another byproduct of this is that the solution we get
+ends up being a joint distribution, with the _marginal distributions_
+equal to the two original distributions!
 
 ![asdf](/assets/blogfigs/animtest_5.gif){:.centered}
 
