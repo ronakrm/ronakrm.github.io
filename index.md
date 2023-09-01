@@ -13,9 +13,10 @@ permalink: /
                 <li class="p-name">{{ site.author.name | escape }}</li>
                 <li class="p-name">Machine Learning PhD</li>
                 <li class="p-name">University of Wisconsin-Madison</li>
-                <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+                <!-- <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li> -->
+                <li class="p-name">ronakrm @ the big G's mail</li>
             </ul>
-            I've completed my dissertation and am on the job market! Find me at at the typical monoliths:
+            I've completed my dissertation and am starting work on some cool stuff! Find me at at the typical monoliths:
             <ul class="social-media-list">
                 <li class="p-name"><a class="social" href="https://www.linkedin.com/in/ronak-mehta-64627491/">LinkedIn</a></li>
                 <li class="p-name"><a class="social" href="https://scholar.google.com/citations?user=7hv6xqkAAAAJ">Google Scholar</a></li>
@@ -29,7 +30,7 @@ permalink: /
 
 My dissertation research focused on methods for efficiently identifying important subsets of features, parameters, and samples
 in modern ML settings. Current and future interests for me revolve around
-applying some of these ideas to interpretability, and more broadly
+applying some of these ideas to interpretability and safety, and more broadly
 exploring issues around alignment.
 
 For a take-away, check out my [R&eacute;sum&eacute;/CV](/resume/Ronak_Mehta_CV.pdf).

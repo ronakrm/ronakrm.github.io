@@ -19,10 +19,6 @@ Feel free to contact me via email, or at my few social media presences:
         <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
         {%- endif %}
 </ul>
-Office 5770<br>
-Medical Sciences Center, UW-Madison<br>
-1300 University Ave.<br>
-Madison, WI 53706<br>
 {% include social.html %}
 
 ### Website
@@ -33,3 +29,7 @@ This webpage was primarily built using
 and was generally inspired by [https://varunagrawal.github.io/](https://varunagrawal.github.io/).
 Source here: [https://github.com/ronakrm/ronakrm.github.io](https://github.com/ronakrm/ronakrm.github.io).
 LaTeX provided by [KaTeX](https://katex.org/).
+
+I aspire to eventually create posts at this level, but for now it's
+probably more important to just publish...
+[Echo Chess: The Quest for Solvability.](https://samiramly.com/chess)
