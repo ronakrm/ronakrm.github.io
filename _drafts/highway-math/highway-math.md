@@ -1,20 +1,22 @@
 ---
 layout: post
-title: "Simple JavaScript to Save Your Life"
+title: "Highway Math"
 tags: math
-date: 2023-05-26
+date: 2023-08-31
 katex: True
 ---
 
 <style>
 p input {
-  border: none;
+  border-radius: 5px;
+  border-width: 1px;
   display: inline;
   font-family: inherit;
   font-size: inherit;
+  color: inherit;
   padding: none;
-  width: 1em;
-  background: inherit;
+  width: 1.5em;
+  background: none;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -30,47 +32,104 @@ input[type=number] {
 }
 </style>
 
-
+<p style="text-align: center;">
 Your original trip of
 <input id="distance" type="number" min=1 max=2000 step=1 value=60 onmousewheel="onWheel()"/>
-miles at
+miles, at
 <input id="oldSpeed" type="number" min=1 max=150 step=1 value=60 onmousewheel="onWheel()"/>
 mph would take
 <span id='time'>50</span>
 minutes.
+</p>
+<p style="text-align: center;">
 Going
 <input id="newSpeed" type="number" min=1 max=150 step=1 value=65 onmousewheel="onWheel()"/>
 mph
 <span id='saveadd'>saves</span>
 <span id='timeChange'>5</span>
-minutes
+minutes,
 <span id='butand'>but increases</span>
 your risk of an accident with injury by
-<span id='ARR'>38</span>
-%.
+</p>
+<h4 style="text-align: center;">
+<span id='ARR'>38%.</span>
+</h4>
+<h3 style="text-align: center;">
+<strong><em>Slow Down.</em></strong>
+</h3>
 
-__Slow Down.__
-
-At your original speed, if your reaction time is
-<input id="reactionTimeS" type="number" min="0.1" max="2" step="0.1" value=1 onmousewheel="onWheel()"/>
-seconds, your estimated stopping distance would be
-<span id="stoppingDistance">200</span> feet.
+<p style="text-align: center;">
+At your <em>original</em> speed, if your reaction time is
+<input id="reactionTimeS" type="number" min="0.1" max="2" step="0.1" value="0.5" onmousewheel="onWheel()"/>
+seconds,
+your approximate stopping distance is
+</p>
+<h4 style="text-align: center;">
+<span id="stoppingDistance">200 feet.</span>
+</h4>
+<p style="text-align: center;">
 The typical car length is 15 feet.
+</p>
 
-__Keep More Distance.__
+<h3 style="text-align: center;">
+<strong><em>Keep More Distance.</em></strong>
+</h3>
 
 
-### Epistemics
-The risk computation has significant wiggle room based on many factors,
-but the general exponential trend seems consistent across studies.
-Even if you vary the exponent in those ranges,
-for human-reaction-to-number the result would be similar.
 
+## Discussion and References
+
+### Accident Risk
+The computation of increased accident risk is based on an updated 2019
+analysis below.
+They have a number of different models
+they evaluate, but loosely there seems to be a strong
+power function relationship among relative risk and relative speed.
+Playing with the exponent doesn't change the result meaningfully.
+
+Updated estimates of the relationship between speed and road safety at the aggregate and individual levels.
+<br/>
+_Elvik, Rune, Anna Vadeby, Tove Hels, and Ingrid Van Schagen._
+<br/>
+Accident Analysis & Prevention 123 (2019): 114-122.
+(pdf available on first Scholar search)
+
+
+### Stopping Distance
 Stopping distance is similar, where the computation can vary
 heavily based on the particular situation being studied.
 The factors involve may seem extremely conservative,
 but even if you cut reaction time to 0,
 from 60MPH braking distances are around 170 feet.
+[NACTO: Vehicle Stopping Distance and Time](https://nacto.org/references/a-hrefdocsusdgvehicle_stopping_distance_and_time_upenn/)
+
+The formula used here is from this calculator:
+[Stopping Distance Calculator](https://www.omnicalculator.com/physics/stopping-distance),
+(also check out [Car Crash Calculator](https://www.omnicalculator.com/physics/car-crash-force)),
+which cites the [AASHTO](transportation.org) but I could
+not find a direct source from AASHTO.
+
+### Reaction Time
+If you want to test what your "sterile" reaction time would be:
+[Reaction Time Test](https://humanbenchmark.com/tests/reactiontime).
+
+The distribution shown there is likely a gross underestimate of
+what your typical response time would be on the road, for a number of factors
+including anticipating the stimulus, the extreme nature of it (portion of view, green to red),
+and the people normally using that site are frequent video game players/professionals.
+Other recent studies on typical reaction times are closer to 500ms on average:
+
+The Effects of driver age and gender on vehicle stopping distance under different speeds. 
+<br/>
+_Hichim, Majid Farag, Ahmed Shany Khusheef, and S. H. Raheemah._
+<br/>
+Eur Transp 2020.80 (2020): 1-11.
+(pdf available on first Scholar search)
+
+Also, apparently the study of 
+human reaction times is called
+[Mental Chronometry](https://en.wikipedia.org/wiki/Mental_chronometry),
+fun.
 
 
 
@@ -134,20 +193,25 @@ from 60MPH braking distances are around 170 feet.
         if (Math.sign(timediff) == -1) {
             sa.textContent = "adds";
             ba.textContent = "and decreases";
+            ba.style.color = "Green";
+            arr.style.color = "Green";
         } else {
             sa.textContent = "saves";
             ba.textContent = "but increases";
+            ba.style.color = "Red";
+            arr.style.color = "Red";
         }
         timesave.textContent = Math.abs(timediff);
 
         // from 2019 meta study of accident rates based on speed
         var arrval = (100 - 100*(ns / os)**3.763).toFixed(2);
 
-        arr.textContent = Math.abs(arrval);
+        arr.textContent = Math.abs(arrval) + "%.";
 
         // from https://www.omnicalculator.com/physics/stopping-distance
         // conversion from miles to kilometers (1.6) back to feet (3)
-        sd.textContent = (3*((0.278 * rt * os*1.6) + (os*1.6)**2 / (254 * (0.7 + 0)))).toFixed(0);
+        sd.textContent = (3*((0.278 * rt * os*1.6) + (os*1.6)**2 / (254 * (0.7 + 0)))).toFixed(0) + " feet.";
+        sd.style.color = "Red";
 
     }
 
