@@ -51,9 +51,9 @@ minutes,
 <span id='butand'>but increases</span>
 your risk of an accident with injury by
 </p>
-<h4 style="text-align: center;">
+<h3 style="text-align: center;">
 <span id='ARR'>38%.</span>
-</h4>
+</h3>
 <h3 style="text-align: center;">
 <strong><em>Slow Down.</em></strong>
 </h3>
@@ -64,11 +64,11 @@ At your <em>original</em> speed, if your reaction time is
 seconds,
 your approximate stopping distance is
 </p>
-<h4 style="text-align: center;">
+<h3 style="text-align: center;">
 <span id="stoppingDistance">200 feet.</span>
-</h4>
+</h3>
 <p style="text-align: center;">
-The typical car length is 15 feet.
+The typical car length is <em>15 feet.</em>
 </p>
 
 <h3 style="text-align: center;">
@@ -105,9 +105,9 @@ from 60MPH braking distances are around 170 feet.
 
 The formula used here is from this calculator:
 [Stopping Distance Calculator](https://www.omnicalculator.com/physics/stopping-distance),
-(also check out [Car Crash Calculator](https://www.omnicalculator.com/physics/car-crash-force)),
-which cites the [AASHTO](transportation.org) but I could
+which cites the [AASHTO](https://transportation.org) but I could
 not find a direct source from AASHTO.
+(also check out [Car Crash Calculator](https://www.omnicalculator.com/physics/car-crash-force))
 
 ### Reaction Time
 If you want to test what your "sterile" reaction time would be:
@@ -117,7 +117,9 @@ The distribution shown there is likely a gross underestimate of
 what your typical response time would be on the road, for a number of factors
 including anticipating the stimulus, the extreme nature of it (portion of view, green to red),
 and the people normally using that site are frequent video game players/professionals.
-Other recent studies on typical reaction times are closer to 500ms on average:
+Other recent studies on typical reaction times are closer to 500ms on average,
+and you can find transportation sources indicating greater than 1 second
+for practical estimates!
 
 The Effects of driver age and gender on vehicle stopping distance under different speeds. 
 <br/>
@@ -131,6 +133,12 @@ human reaction times is called
 [Mental Chronometry](https://en.wikipedia.org/wiki/Mental_chronometry),
 fun.
 
+
+### y u no use metric
+Who really needs to hear this? I'm on a public transport/urban planning
+kick and live in the US.
+Also, the relative risk computation is unit-agnostic up to linear factors because it's
+relative (s1/s2), so it works regardless!
 
 
 <script>
