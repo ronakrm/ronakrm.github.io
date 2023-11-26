@@ -77,8 +77,6 @@ it to another that was all in the last bin,
 we would have to move all of the "mass" over by the number of bins.
 This gives rise to classical Earth Mover's Distance.
 
-![Delta functions at the end, shifting over](){:.centered}
-
 A cool mathematical result that comes out of this
 is that we can make a single pass over any arbitrary distribution
 to figure out the cost to make it match another!
@@ -94,45 +92,28 @@ equal to the two original distributions!
 ![asdf](/assets/blogfigs/animtest_5.gif){:.centered}
 
 
-# With More Distributions
+## With More Distributions
 
 Our ICLR paper focuses on this setting, and we show that everything above kind of extends very naturally and linearly(!) to more distributions.
 
-The above procedure basically is simply modified to find the index of the distribution with the minimum value at any point as we move in axis-aligned steps from the "first" bin at $(0,0,\ldots,0)$ to $(d,d,\ldots,d)$.
+The above procedure is essentially modified to find the index of the distribution with the minimum value at any point as we move in axis-aligned steps from the "first" bin at $(0,0,\ldots,0)$ to $(d,d,\ldots,d)$.
 
 ![amazing](/assets/blogfigs/first_fixed_50.gif){:.centered}
 
-## New preferences?
 
-## Changing preferences?
+# Pushing Them Together
 
+That paper also shows we can push those distributions together concurrently, with a "push" direction coming directly from the way we set up the optimization problem
+to compute the total distance.
+We didn't get a chance to explore too much with respect to visualizations,
+and I wanted an excuse to make a pretty blog post,
+so here are a few more explorations as we minimize this distance.
 
+![4_distributions_1_fixed](/assets/blogfigs/first_fixed_4_dists_n_50_lr_0.1_niters_1000.gif){:.centered}
 
-## Theoretical Properties
+## Sampling
 
-### Convergence to barycenters
-### convergence to continuous
-
-
----
-layout: post
-title: "A Neat Way to Address Calibration"
-tags: fairness emd safety calibration
-date: 2023-05-26
-katex: True
----
-<style>
-body {
-  font: 'warnock-pro', "Palatino", "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-}
-</style>
-
-
-tl;dr: 
-
-
-# Calibration
-
+## Calibration
 Moving deeper past typical measures of performance like accuracy,
 we've come to a point where we now care not only when we are correct or not,
 but also on being _confident_ in our correctness.
@@ -155,19 +136,28 @@ distributions you want to calibrate concurrently, and when
 you do the practical thing of comparing to a discrete calibration
 (e.g., calibrate to bin counts vs. a continuous measure)
 
-## The Simple Case
-
 The easiest application is to just take the Earth Mover's Distance
 between our current predictions and the goal, and use some
 derivative of this as signal to help push the model during training
 towards a ``calibrated" outcome.
 
-(figure with A and B)
 
 
+# Some Theoretical Future Work
 
-# Multiple Calibrations
+We pose some questions at the end of our ICLR paper, but here are a few more kernels for thought.
 
-## freeze the target
+An important part of getting some of these pretty animations was selecting the learning rate.
+In the original ICLR paper, we used the dual variables as is and applied either a constant learning rate
+or deferred to the neural network optimizers (i.e., Adam) to determine the gradient step size.
+However it's clear that we can choose this in a more informed manner.
+If we are taking a single step moving mass only locally,
+we actually know exactly how much mass should be moving and to where:
+it is porportional to the mass in the current bin and its immediate neighbors.
 
-## support set
+Can we prove this is linear? I've got a feeling it is; there's definitely a strong connection to (isotonic regression)[https://en.wikipedia.org/wiki/Isotonic_regression],
+and we can already show empirically that learning rates close to 1 when we normalize the gradient by the amount of mass in the current bin give us fast convergence.
+
+What is the set of solutions this will converge to if all of the distributions are free? Is it some barycenter? If the discretization level goes to infinity,
+does this approach some continuous result?
+
