@@ -59,8 +59,8 @@ It could be hard for me to express a preference or measure continuously,
 but I could say "I think this outcome or set of outcomes is possible with probability "50%",
 corresponding to some discrete uniform mass over a discrete area of input space.
 
-An important part of this is that it's not really _discrete_, it's _discretized_.
-The difference here is that we are assuming a different type of topology over the input space.
+An important part of this is that it's not really _discrete_, it's __discretized__.
+We are applying a different topology over the input space.
 If it were fully discrete, the cost to move from one end to another would be the same as moving
 just one "bin" over.
 
@@ -100,6 +100,7 @@ Our ICLR paper focuses on this setting, and we show that everything above kind o
 
 The above procedure basically is simply modified to find the index of the distribution with the minimum value at any point as we move in axis-aligned steps from the "first" bin at $(0,0,\ldots,0)$ to $(d,d,\ldots,d)$.
 
+![amazing](/assets/blogfigs/first_fixed_50.gif){:.centered}
 
 ## New preferences?
 
@@ -111,3 +112,62 @@ The above procedure basically is simply modified to find the index of the distri
 
 ### Convergence to barycenters
 ### convergence to continuous
+
+
+---
+layout: post
+title: "A Neat Way to Address Calibration"
+tags: fairness emd safety calibration
+date: 2023-05-26
+katex: True
+---
+<style>
+body {
+  font: 'warnock-pro', "Palatino", "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+}
+</style>
+
+
+tl;dr: 
+
+
+# Calibration
+
+Moving deeper past typical measures of performance like accuracy,
+we've come to a point where we now care not only when we are correct or not,
+but also on being _confident_ in our correctness.
+This is the idea of being __well-calibrated__: the frequentist, measurable
+frequency that we are incorrect should reflect our confidence in those particular responses.
+For example, if we filter our predictions based on those that we believe
+are 90% correct, when we actually check the true labels or outcomes,
+we should _actually be_ 90% correct.
+
+This idea has a lot of practical benefits, including being highly correlated with
+overfitting and generalization, as well as ...(cite here)...
+As expected with the large amount of ML research happening,
+there are many different ways people have come at this problem.
+(refs/cite) (other openreview ICLR paper)
+
+While not particularly groundbreaking, calibration 
+is a great application for our recent-ish ICLR work on
+Earth Mover's Distance, especially when you may have many different
+distributions you want to calibrate concurrently, and when
+you do the practical thing of comparing to a discrete calibration
+(e.g., calibrate to bin counts vs. a continuous measure)
+
+## The Simple Case
+
+The easiest application is to just take the Earth Mover's Distance
+between our current predictions and the goal, and use some
+derivative of this as signal to help push the model during training
+towards a ``calibrated" outcome.
+
+(figure with A and B)
+
+
+
+# Multiple Calibrations
+
+## freeze the target
+
+## support set

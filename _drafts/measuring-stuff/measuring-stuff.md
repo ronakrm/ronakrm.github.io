@@ -6,17 +6,11 @@ date: 2023-05-26
 katex: True
 ---
 
-_Epistemic Status_: Haven't engaged enough with existing interpretability folks to know if this is common knowledge already, imposter syndrome, I just need to write/publish.
+[//]: # _Epistemic Status_: Haven't engaged enough with existing interpretability folks to know if this is common knowledge already, imposter syndrome, I just need to write/publish.
 
 
-_tl;dr_: Sometimes you might actually want the distribution of a thing instead of whatever individual difference measure you're using.
-
-I've noticed this in a few places now, where I'll be reading a paper,
-or discussing how to evaluate a specific idea or intervention,
-and I'll see or hear a specific measure being used or proposed.
-And it will make me hesitate, and originally it was just
-an inkling that something was wrong.
-But I think I've identified the disconnect.
+_tl;dr_: The distribution of a thing is often more important than a specific single measure.
+[//]: # Sometimes you might actually want the distribution of a thing instead of whatever individual difference measure you're using.
 
 <script type="text/tikz">
   \begin{tikzpicture}
