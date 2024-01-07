@@ -5,8 +5,7 @@ author:
 
 # The `>` after `description:` means to ignore line-breaks until next key.
 # If you want to omit the line-break after the end of text, use `>-` instead.
-description: >
-  Homepage for Ronak Mehta. Machine Learning PhD. Moving towards Alignment work, seems important.
+description: Ronak Mehta
 
 # Build settings
 
@@ -59,4 +58,4 @@ header_pages:
 
 # Set to `true` to show excerpts on the homepage.
 #
-# show_excerpts: false
+show_excerpts: true

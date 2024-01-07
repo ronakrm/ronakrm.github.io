@@ -21,9 +21,13 @@
     if (SSName === "dark.css") {
       metaTag.href = SSHref.replace(SSName, "style.css"); 
       document.getElementById("color-mode-switch").getElementsByTagName("label")[0].style.background = "#c3a554";
+      // add the dark mode class to style links with the dark mode class
+      document.querySelectorAll("a.dark").forEach((e) => e.classList.remove("dark"));
     } else {
       metaTag.href = SSHref.replace(SSName, "dark.css");
       document.getElementById("color-mode-switch").getElementsByTagName("label")[0].style.background = "#a076ce";
+      // add the dark mode class to style links with the dark mode class
+      document.querySelectorAll("a").forEach((e) => e.classList.add("dark"));
     }
   }
   // Update root html class to set CSS colors

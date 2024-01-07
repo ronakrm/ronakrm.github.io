@@ -23,6 +23,18 @@ html.dark {
   --color-toggle-accent: #a076ce;
 }
 
+a:hover,
+.site-nav a:hover, 
+header a:hover {
+  color: #c3a554;
+  text-decoration: none;
+}
+
+a.dark:hover {
+  color: #a076ce;
+  text-decoration: none;
+}
+
 #color-mode-switch {
   &:hover {
     text-decoration: none;
