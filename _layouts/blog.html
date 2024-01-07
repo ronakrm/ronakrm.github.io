@@ -3,20 +3,18 @@ layout: base
 ---
 
 <div class="blog">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
 
   {{ content }}
 
-
+  <!-- No Pagination
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
     {% assign posts = site.posts %}
   {% endif %}
+  -->
 
-
+  <!--
   {%- if posts.size > 0 -%}
     {%- if page.list_title -%}
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
@@ -31,13 +29,17 @@ layout: base
             {{ post.title | escape }}
           </a>
         </h3>
+        <p>Testing One</p>
         {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+          <p>Testing!</p>
+          {{ post.excerpt | strip_html }}
         {%- endif -%}
       </li>
       {%- endfor -%}
     </ul>
+  -->
 
+    <!-- No Pagination
     {% if site.paginate %}
       <div class="pager">
         <ul class="pagination">
@@ -55,7 +57,6 @@ layout: base
         </ul>
       </div>
     {%- endif %}
-
   {%- endif -%}
-
+  -->
 </div>

@@ -11,8 +11,7 @@ permalink: /
         <div style="padding: 10px 0 0 0">
             <ul class="contact-list">
                 <li class="p-name">{{ site.author.name | escape }}</li>
-                <li class="p-name">Machine Learning PhD</li>
-                <li class="p-name">University of Wisconsin-Madison</li>
+                <li class="p-name">Math-ier Machine Learning</li>
                 <!-- <li><a class="u-email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li> -->
                 <li class="p-name">ronakrm @ the big G's mail</li>
             </ul>
