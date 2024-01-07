@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Don't Trust Me, Trust Someone Else"
-categories: misc
+categories: misc, musings
 date: 2023-05-01
 ---
 

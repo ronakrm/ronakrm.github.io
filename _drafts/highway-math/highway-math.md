@@ -1,10 +1,13 @@
 ---
 layout: post
 title: "Highway Math"
-tags: math
+excerpt: "Build some intuition for how speed affects travel time and safety."
+tags: misc
 date: 2023-08-31
 katex: True
 ---
+
+{{ page.excerpt }}
 
 <style>
 p input {
@@ -75,6 +78,8 @@ The typical car length is <em>15 feet.</em>
 <strong><em>Keep More Distance.</em></strong>
 </h3>
 
+Even if you think you can stop in much less than that distance,
+do you trust the person behind you to? Do you trust their reaction time?
 
 
 ## Discussion and References
@@ -115,8 +120,8 @@ If you want to test what your "sterile" reaction time would be:
 
 The distribution shown there is likely a gross underestimate of
 what your typical response time would be on the road, for a number of factors
-including anticipating the stimulus, the extreme nature of it (portion of view, green to red),
-and the people normally using that site are frequent video game players/professionals.
+including anticipating the stimulus, the stimulus intensity (portion of view, green to red),
+and selection bias (the people normally using that site are frequent video game players/professionals).
 Other recent studies on typical reaction times are closer to 500ms on average,
 and you can find transportation sources indicating greater than 1 second
 for practical estimates!
@@ -134,11 +139,10 @@ human reaction times is called
 fun.
 
 
-### y u no use metric
-Who really needs to hear this? I'm on a public transport/urban planning
-kick and live in the US.
-Also, the relative risk computation is unit-agnostic up to linear factors because it's
-relative (s1/s2), so it works regardless!
+### Metric?
+The relative risk computation cancels the constant factor so it doesn't matter
+except for helping with intuition.
+But I'll accept your pull request and give you credit if you want to do it!
 
 
 <script>

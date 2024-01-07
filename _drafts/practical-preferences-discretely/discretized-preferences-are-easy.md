@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Incorporating Preferences is Easy if you Discretize"
-tags: fairness emd safety
+excerpt: "Continuous settings can be hard, but some things can be easier if you discretize."
+tags: fairness emd safety math viz
 date: 2023-05-26
 katex: True
 ---

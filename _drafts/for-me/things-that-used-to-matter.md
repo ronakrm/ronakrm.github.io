@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Priorities Change"
+excerpt: "The world is changing fast, and some things I used to care about are less important."
 tags: misc naivete
 date: 2023-05-01
 ---
@@ -10,8 +11,9 @@ to drastically change in the near future at a most likely exponential rate.
 Realizing and internalizing this 
 is scary, but also somewhat motivating:
 things I used to be concerned about are now
-small issues I can with high confidence decide will
-be dealt with later, or are lower priority.
+small issues.
+For me, I feel more confident they will be solved,
+but have moved lower in priority for me.
 
 I think in some ways this is good for me,
 if the world were to continue unfolding sans AGI.

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "How To Measure Stuff Sometimes"
-tags: interpretability
+excerpt: Sometimes you might actually want the distribution of a thing instead of whatever individual difference measure you're using.
+tags: interpretability math
 date: 2023-05-26
 katex: True
 ---
@@ -9,8 +10,7 @@ katex: True
 [//]: # _Epistemic Status_: Haven't engaged enough with existing interpretability folks to know if this is common knowledge already, imposter syndrome, I just need to write/publish.
 
 
-_tl;dr_: The distribution of a thing is often more important than a specific single measure.
-[//]: # Sometimes you might actually want the distribution of a thing instead of whatever individual difference measure you're using.
+_tl;dr_: {{ page.excerpt }}
 
 <script type="text/tikz">
   \begin{tikzpicture}

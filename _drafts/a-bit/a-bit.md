@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "A Bit For You"
-tags: math, musings
+excerpt: Some musings on overloading a single bit.
+tags: math, musings, misc
 date: 2024-01-01
 katex: True
 ---
