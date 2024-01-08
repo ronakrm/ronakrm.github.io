@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Scratch/Progress on Site Building"
-categories: misc
+excerpt: Scratch post for site imports, styling, etc. Old now.
+tags: misc
 date: 2023-03-25
 katex: True
 ---

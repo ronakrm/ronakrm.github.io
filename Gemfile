@@ -8,3 +8,4 @@ gemspec
 
 gem "github-pages", "~> 228", group: :jekyll_plugins
 gem "webrick", "~> 1.8"
+gem "json", "2.7.1"
