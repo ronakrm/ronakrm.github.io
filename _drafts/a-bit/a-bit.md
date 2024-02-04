@@ -2,27 +2,33 @@
 layout: post
 title: "A Bit For You"
 excerpt: Some musings on overloading a single bit.
-tags: math, musings, misc
+tags: musings, misc
 date: 2024-01-01
-katex: True
+katex: False
 ---
 
-This button will send a single bit (1).
-The purpose of this singular bit is __entirely up to you__.
 
 <div style="text-align:center">
+This button will send a single bit (1).
+<br/>
 <button name="TheButton">The Button</button>
 </div>
 <br/>
-There will be no response to you in any form, nor to your current browsing session.
+There will be no formal followup. There will be no response to you in any form, nor to your current browsing session.
 No information besides the constant singular bit is sent, no session information,
 no location information, nothing. 
 This is no mindgame, no weird trolley-problem-monkey's-paw-dilemma.
-You can look at the source code to see what is being sent
-and to where, though this post could possibly not be as valuable if you do.
 
-This page, reading this text, or pressing this button are meant to be whatever they need to be
-for you in this moment. Take a second, and Consider The Button.
+<div style="text-align:center">
+<p>
+*
+</p>
+</div>
+
+This page, this post, pressing this button, are meant to be whatever they need to be
+for you in this moment. 
+The purpose of this singular bit is __entirely up to you__.
+Take a second, and Consider The Button. What do you need from this?
 
 <div style="text-align:center">
 <p>
@@ -37,12 +43,12 @@ or your mind skips to The Next Thing.
 
 ## A Single Bit
 Sometimes a single bit of information is sufficient,
-if we had a predetermined context to understand that bit.
+if we have a predetermined context to understand that bit.
 When scheduling over a chat, A question like "How's 2pm?"
 should resolve in either two ways. If that is acceptable, it is confirmed
 and we move on. Otherwise, we keep organizing. The amount of information
 needed in the second case is significantly more and potentially unbounded; it could resolve
-in postponing planning, deferring scheduling, and any number of additional "What about Y?" down
+in postponing planning, deferring scheduling, and any number of additional "What about Y?"'s down
 the road.
 
 However, when the first case is true, we only need that one bit, and everything is done!
