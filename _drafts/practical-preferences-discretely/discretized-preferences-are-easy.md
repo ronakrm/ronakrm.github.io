@@ -13,9 +13,9 @@ body {
 </style>
 
 
-tl;dr: The classical Earth Mover's Distance can linearly incorporate any number of preferences, including new online/streaming preferences, and is completely differentiable with gradients provided during distance computation.
+tl;dr: Discretizing or binning distributions can make computation of a "probability distance" easier, and also allows fixed cost gradient computations that plug in directly to stochastic-gradient based models!
 
-This post is in companion to work myself and collaborators presented at ICLR 2023, see LINK for more technical discussion.
+This post is in companion to work myself and collaborators presented at ICLR 2023, see [our paper](https://openreview.net/forum?id=R98ZfMt-jE) for more technical discussion.
 
 ## Bird's Eye View
 
@@ -82,35 +82,40 @@ A cool mathematical result that comes out of this
 is that we can make a single pass over any arbitrary distribution
 to figure out the cost to make it match another!
 This ends up being something like a difference match with a carry:
-at each bin we figure out how much stays and how much moves,
-and we keep track of how much we have left over.
+__at each bin we figure out how much stays and how much moves, and we keep track of how much we have left over.__
 This local operation ends up giving us a global solution.
 
 Another byproduct of this is that the solution we get
 ends up being a joint distribution, with the _marginal distributions_
 equal to the two original distributions!
 
-![asdf](/assets/blogfigs/animtest_5.gif){:.centered}
+![marginal_dist_gif](/assets/blogfigs/animtest_5.gif){:.centered width="400"}
 
 
 ## With More Distributions
 
-Our ICLR paper focuses on this setting, and we show that everything above kind of extends very naturally and linearly(!) to more distributions.
+Our ICLR paper focuses on the setting where we may have a larger number of distributions,
+and we show that everything above extends very naturally and linearly(!) to more distributions.
 
 The above procedure is essentially modified to find the index of the distribution with the minimum value at any point as we move in axis-aligned steps from the "first" bin at $(0,0,\ldots,0)$ to $(d,d,\ldots,d)$.
-
-![amazing](/assets/blogfigs/first_fixed_50.gif){:.centered}
 
 
 # Pushing Them Together
 
-That paper also shows we can push those distributions together concurrently, with a "push" direction coming directly from the way we set up the optimization problem
+The super cool part is we can also push those distributions together concurrently, with a "push" direction coming directly from the way we set up the optimization problem
 to compute the total distance.
 We didn't get a chance to explore too much with respect to visualizations,
 and I wanted an excuse to make a pretty blog post,
 so here are a few more explorations as we minimize this distance.
+If you want more technical details, definitely check out [the paper](https://openreview.net/forum?id=R98ZfMt-jEu), but the tl;dr is that the gradient of the linear optimization problem
+is exactly the dual variables, and the algorithm we use to compute the distance
+gives us the dual variables as a byproduct, meaning we have gradient directions
+from the "forward pass"!
 
-![4_distributions_1_fixed](/assets/blogfigs/first_fixed_4_dists_n_50_lr_0.1_niters_1000.gif){:.centered}
+![Symmetric_2](/assets/blogfigs/simple_calibrate_symmetric_ff_False_n_50_lr_0.1_niters_1000.gif){:.centered}
+
+![4_distributions](/assets/blogfigs/four_dists_ff_False_n_50_lr_0.1_niters_1000.gif){:.centered}
+![4_distributions_1_fixed](/assets/blogfigs/four_dists_ff_True_n_50_lr_0.1_niters_1000.gif){:.centered}
 
 ## Sampling
 
