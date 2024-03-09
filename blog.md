@@ -9,10 +9,11 @@ some cool ways to communicate or think about ideas,
 some more math-y/machine learning stuff.
 If you have ways in which these can be improved
 for clarity or accessibility please let me know!
-I reserve the right to edit and update these at any point in the future:
-[things can move fast](/_drafts/for-me/things-that-used-to-matter.md).
+I reserve the right to edit and update these at any point in the future.
+<!-- :[things can move fast](/_drafts/for-me/things-that-used-to-matter.md).-->
+Maybe I'll add some cute GitHub last commit link and preview for each post.
 
-<h2 class="post-list-heading">Mathy, More Formal Posts</h2>
+<h2 class="post-list-heading">Math-y, More Formal Posts</h2>
 <!-- <p>More technical stuff about math, machine learning, ways of thinking about complex topics, etc.</p> -->
 <ul class="post-list">
 {%- for post in site.tags.math -%} 

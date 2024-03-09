@@ -3,7 +3,8 @@ layout: post
 title: "Highway Math"
 excerpt: "Build some intuition for how speed affects travel time and safety."
 tags: misc
-date: 2023-08-31
+date: 2024-03-10
+modified_date: 2024-03-10
 katex: True
 ---
 
@@ -142,7 +143,7 @@ fun.
 ### Metric?
 The relative risk computation cancels the constant factor so it doesn't matter
 except for helping with intuition.
-But I'll accept your pull request and give you credit if you want to do it!
+
 
 
 <script>

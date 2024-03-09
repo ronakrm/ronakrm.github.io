@@ -3,16 +3,10 @@ layout: post
 title: "Incorporating Preferences is Easy if you Discretize"
 excerpt: "Continuous settings can be hard, but some things can be easier if you discretize."
 tags: fairness emd safety math viz
-date: 2023-05-26
+date: 2024-03-09
+modified_date: 2024-03-09
 katex: True
 ---
-<style>
-body {
-  font: 'warnock-pro', "Palatino", "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-}
-</style>
-
-Last Updated: 2024-03-09
 
 tl;dr: Discretizing or binning distributions can make computation of a "probability distance" easier, and also allows fixed cost gradient computations that plug in directly to stochastic-gradient based models!
 
@@ -39,7 +33,7 @@ If the distributions are nice like these, then we can easily compute continuous 
 If it's possible to write out the distributions as functions of the domain,
 we might try things like integrating over the difference of the functions.
 
-## Down to Earth
+### Down to Earth
 
 However if these distributions are less nice,
 then this problem can be intractable: we don't have any nice closed form representations that we can do algebra and easy calculus on to directly compute stuff.
@@ -64,7 +58,7 @@ We are applying a different topology over the input space.
 If it were fully discrete, the cost to move from one end to another would be the same as moving
 just one "bin" over.
 
-# With Two Distributions
+## Distances With Two Distributions
 
 One way to talk about this mathematically is using the Monge cost definition. 
 Without too much detail, moving further away should entail a higher "cost".
@@ -88,12 +82,12 @@ Another byproduct of this is that the solution we get
 ends up being a joint distribution, with the _marginal distributions_
 equal to the two original distributions!
 
-Here's a brief animation of this in action:
+Here's a brief animation of the algorithm in action:
 
 ![marginal_dist_gif](/assets/blogfigs/animtest_5.gif){:.centered width="400"}
 
 
-## With More Distributions
+### With More Distributions
 
 Our ICLR paper focuses on the setting where we may have a larger number of distributions,
 and we show that everything above extends very naturally and linearly(!) to more distributions.
@@ -101,7 +95,7 @@ and we show that everything above extends very naturally and linearly(!) to more
 The above procedure is essentially modified to find the index of the distribution with the minimum value at any point as we move in axis-aligned steps from the "first" bin at $(0,0,\ldots,0)$ to $(d,d,\ldots,d)$.
 
 
-# Pushing Them Together
+## Pushing Distributions Together
 
 The super cool part is we can also push those distributions together concurrently, with a "push" direction coming directly from the way we set up the optimization problem
 to compute the total distance.
@@ -143,7 +137,7 @@ gradient updates for the target distribution.
 A bit slower, oooh so smooth.
 </p>
 
-# More Practical Applications
+## More Practical Applications
 Aside from the applications we discuss in the paper, there are a few other places where this could be useful.
 A big one is in calibration, where we want to ensure that our model's confidence matches its accuracy.
 We can use the Earth Mover's Distance to help inform our training process to push our model towards being well-calibrated.
@@ -160,9 +154,7 @@ and the algorithms may still work!
 People who want to be more precise can use more bins, and people who want to be more efficient can use fewer.
 
 
-
-
-# More Theoretical Questions
+## More Theoretical Questions
 
 As mentioned,
 an important part of getting some of these pretty animations was selecting the learning rate.
@@ -181,3 +173,18 @@ does this approach some continuous result?
 Our experiments show this works well in the stochastic ML setting,
 can we identify a theoretical guarantee that this stochastic application is sufficient?
 
+
+### Citation
+Mehta, Ronak, Jeffery Kline, Vishnu Suresh Lokhande, Glenn Fung, and Vikas Singh. "Efficient Discrete Multi-Marginal Optimal Transport Regularization."
+[ICLR 2023](https://openreview.net/forum?id=R98ZfMt-jE).
+
+```
+@inproceedings{
+mehta2023efficient,
+title={Efficient Discrete Multi Marginal Optimal Transport Regularization},
+author={Ronak Mehta and Jeffery Kline and Vishnu Suresh Lokhande and Glenn Fung and Vikas Singh},
+booktitle={The Eleventh International Conference on Learning Representations },
+year={2023},
+url={https://openreview.net/forum?id=R98ZfMt-jE}
+}
+```

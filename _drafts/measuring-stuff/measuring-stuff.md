@@ -3,7 +3,8 @@ layout: post
 title: "How To Measure Stuff Sometimes"
 excerpt: Sometimes you might actually want the distribution of a thing instead of whatever individual difference measure you're using.
 tags: interpretability math
-date: 2023-05-26
+date: 2024-03-09
+modified_date: 2024-03-09
 katex: True
 ---
 

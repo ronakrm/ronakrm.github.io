@@ -3,7 +3,8 @@ layout: post
 title: "A Bit For You"
 excerpt: Some musings on overloading a single bit.
 tags: musings, misc
-date: 2024-01-01
+date: 2024-03-13
+Last Updated: 2024-03-13
 katex: False
 ---
 
