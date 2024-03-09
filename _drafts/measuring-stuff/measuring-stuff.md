@@ -7,17 +7,19 @@ date: 2023-05-26
 katex: True
 ---
 
+
 [//]: # _Epistemic Status_: Haven't engaged enough with existing interpretability folks to know if this is common knowledge already, imposter syndrome, I just need to write/publish.
 
 
 _tl;dr_: {{ page.excerpt }}
 
-<script type="text/tikz">
-  \begin{tikzpicture}
-    \draw (0,0) circle (1in);
-    \node (0,0) (0.5in) {$H$};
-  \end{tikzpicture}
-</script>
+### Todos
+- reference causal
+- reference ACDC, others
+- reference MIRI stuff
+- state its just some thoughts, not a full thing
+- maybe everyone knows this already
+
 
 ### Quick Notation
 
@@ -27,7 +29,7 @@ and we compute the correctness of the model against a true $y$ via some loss:
 $$l := \left(y - f(x)\right)^2 $$
 
 or some other distance $d(y, f(x))$ (cross entropy, etc.).
-If we have some dataset $\cD:= \{x_i,y_i\}_{i=1}^n$,
+If we have some dataset $\cD:= \\{x_i,y_i\\}_{i=1}^n$,
 then let
 
 $$\cL(f,\cD) := \sum_{\cD} l_i := \sum_{(x_i,y_i)\in \cD} \left(y_i-f(x_i)\right)^2 $$
@@ -97,25 +99,31 @@ $$ \frac{\cL(f,\cD) - \cL(\tf,\cD)}{\cL(f,\cD)} $$
 
 This gives us a scaled distance from the original loss in terms of a multiplicative factor. We still have an issue of understanding the scale: interpretation has not moved further than our original closer to 0 means "less difference."
 
-A term used in some of the art (ref: Causal Scrubbing) is the gain relative to the gain against, e.g. a random baseline.
+A term I've seen used in some places is the gain relative to the gain against, e.g. a random baseline.
 
 $$ \frac{\cL(\tf) - \cL(b)}{\cL(f) - \cL(b)} \times 100\% $$
 
-As described therein,
+As described in Causal Scrubbing (ref{CS}):,
 > This percentage can exceed 100% or be negative. It is not very meaningful as a fraction, and is rather an arithmetic aid for comparing the magnitude of expected losses under various distributions. However, it is the case that hypotheses with a “% loss recovered” closer to 100% result in predictions that are more consistent with the model.
 
-Extending the above random effects issue here helps with Simpson's like cancellation, but it is still one number, and how do we interpret a single number?
+There are probably variations of this scheme which can be used to deal with these issues,
+and we can again extend the random effects idea above to help with
+Simpson's like cancellation,
+but it is still one number, and how do we interpret a single number?
 
 ## Distributions
 
-ref{CS} briefly mention that one could look at the full over the dataset, i.e., compare the distributions of the random variables $l(f,\cD)$ vs. $l(\tf,\cD)$.
+ref{CS} briefly mention that one could look at these measures over the full dataset, i.e., compare the distributions of the random variables $l(f,\cD)$ vs. $l(\tf,\cD)$.
 This would help us a bit as they mention, but conclude that it would require an explanation of the noise that may be compute-intensive.
 
-I'd like to argue that distributions are _necessary_ in the case of interpretability here, and that framing a perturbation as an _alternative hypothesis_ is the right way to approach this.
+I'll argue that distributions are _necessary_ in the case of interpretability here. Framing a perturbation as an _alternative hypothesis_ is the right way to approach this,
+and there are computationally feasible ways to do it.
 
-# Interpretability via Hypothesis Testing
 
-The main issue with our measures above were that we were getting a single value, and that was not effectively capturing everything that we were wrapping as "explainable" or "not explainable". And in fact, with a real number we're really trying to answer "HOW explainable?" "How much is explained by X?"
+# Scalable Interpretability via Hypothesis Testing
+
+The main issue with with a single value is that it does not effectively capturing everything that we were wrapping as "explainable" or "not explainable".
+And in fact, with a real number we're really trying to answer "HOW explainable?" "How much is explained by X?"
 
 My perspective is that much of interpretability and XAI research is circling around these questions because they aren't well posed. But if we harken back to ye olde classical science, we can get a lot more mileage.
 
@@ -130,7 +138,7 @@ H_A &: f \quad \text{is different from} &\tf \\
 \end{aligned}
 $$
 
-Importantly, the null hypothesis is __rejected__ and we __accept__ the alternative if for whatever measure we choose, the measurement lies in the __rejection region__ of the space it's in. The classical constructions define this region by an $\alpha$-level hypothesis test, where the region defined by some level-set is determined based on our desire for a certain level of certainty in the conclusion.
+Importantly, the null hypothesis is __rejected__ and we __accept__ the alternative if for whatever measure we choose, the measurement lies in the __rejection region__ of the space it's in. The classical constructions define this region by an $\alpha$-level hypothesis test, where the region defined by some level-set is based on our desire for a certain level of certainty in the conclusion.
 
 The measures and rejection regions are importantly constructed so that, whenever we get our measurement to test, it is only possible for it to lie in either the null space or the alternative space. A well-formed hypothesis test only allows for these two possibilities, and as such there is no ambiguity.
 
@@ -159,29 +167,11 @@ $$
 
 we assume something about the distribution of this test statistic under the null, and see if what we measure is significantly different from that distribution.
 
-```latex {cmd=true hide=true}
-\documentclass{standalone}
-\usepackage{tikz}
-\usetikzlibrary{matrix}
-\begin{document}
-\begin{tikzpicture}
-  \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
-  {
-     F & B \\
-      & A \\};
-  \path[-stealth]
-    (m-1-1) edge node [above] {$\beta$} (m-1-2)
-    (m-1-2) edge node [right] {$\rho$} (m-2-2)
-    (m-1-1) edge node [left] {$\alpha$} (m-2-2);
-\end{tikzpicture}
-\end{document}
-```
-
 The issues with the above and its instantations in sciences have been enumerated, and issues with selecting the rejection level, multiple hypothesis testing, p-hacking, etc. are all real problems. But we can use these ideas as a way to inform how we approach interpretability,
 and take advantage of our distinct and unique model setting, as well as more topical Bayesian approaches, to get around these.
 
-## something here
-Let's say we believe that a part of $f$ is doing some operation $g$. Our hypothesis is that if it is doing that function, we can replace that part with $g$ and the output of the model will not change.
+## For Mechanistic Interpretability
+Let's say we believe that a part of some model or function $f$ is doing some operation $g$. Our hypothesis is that if it is doing that function, we can replace that part with $g$ and the output of the model will not change.
 Call the model with the replaced module $\tf$. Then we want to test:
 
 $$
@@ -192,19 +182,35 @@ H_A &: \cL(f) = \cL(\tf)
 $$
 
 As written this will run into the same issue above. We want our rejection region to be larger than exact equality, but we don't have any idea of how large it should be! Taking a classical statistics approach we might make (strong) assumptions about the distribution of these losses, but these might be extremely strict and may not even be reasonable given true unknown distributions of these measures.
+But we can borrow from the classical statistics approach to a similar problem.
 
 ## Null Permutation Testing
-A common strategy when the distribution is unknown is to estimate it via permuation testing. This involves drawing additional samples under other in the class, and the idea can be applied here.
+A common strategy when the distribution is unknown is to estimate it via permuation testing. This involves drawing additional samples in the class to bootstrap the estimation of the null.
 
-What is the class of hypotheses we want to compare to? Let's say we want to know if this part of $f$ is doing $g$, or $g+\epsilon$, or any other function. At a first glance,
-we might first consider other possible functions as alternative hypotheses. If it's not doing $g$, then it must be doing $\not g$, or maybe $\sin{\cdot}$, or $g^2$, or $rand(\cdot)$, or anything else. So we could choose a class of functions, check if it is performing any of those, and perhaps using some measure of "performing" decide if it is more likely to be $g$ or something other than $g$. We might observe this measure distributed as some univariate distribution:
+What is the class of hypotheses we want to compare to? Let's say we want to know if $A$ part of $f$ is doing $g$, or $g+\epsilon$, or any other function. At a first glance,
+we might first consider other possible functions as alternative hypotheses. If it's not doing $g$, then it must be doing $\not g$, or maybe $\sin{\cdot}$, or $g^2$, or $rand(\cdot)$, or anything else. So we could choose a class of functions, check if it is performing any of those, and perhaps using some measure of "performing" (e.g., the measures above) decide if it is more likely to be $g$ or something other than $g$. We might observe this measure distributed as some univariate distribution:
 
+![Null_Dist](/assets/blogfigs/null_dist.png){:.centered}
 
 And see that the measure at $g$ is significantly larger than others.
 
-_However_, it is possible that not just this part of $f$ is performing this function, and even that other parts of $f$ are performing it better! 
+_However_, it is possible that not just this part $A$ of $f$ is performing this function, and even that other parts of $f$ ($B, A^\prime, \ldots$) are performing it better! 
+I think this can be a good thing, and we can use this to our advantage.
 
 ### __Our Situation is Even Better__
-In the real world we can never hope to draw enough samples to estimate complex, multidimensional distributions. Cost of sample collection and computation can become exhorbitant, e.g., computing summary statistics over functional MRI sequences. But in our machine learning, deep model case we are only limited by our compute, and our compute only consists of possible paths through the model!
+In the real world we can never hope to draw enough samples to estimate complex, multi-dimensional distributions. Costs of sample collection and computation can become exhorbitant, e.g., computing summary statistics over functional MRI sequences. But in our machine learning, deep model case we are only limited by our compute, and our compute only consists of possible paths through the model!
 
-In fact, _if we wanted_, we could __enumerate all possible hypotheses__. Of course in practice we would never do this, but it does suggest that we do not have to worry about permutation costs in the same way that classical science does. We are not limited by ethical concerns of additional animal testing, or prohibitive costs associated with high-fidelity data collection or expert time. Our limits are purely defined by how we define our hypothesis space, and the full number of hypotheses can be directly computed when this space is set.
+In fact, _if we wanted_, we could __enumerate all possible hypotheses__. Of course in practice we would never do this, but it does suggest that we do not have to worry about permutation costs in the same way that classical science does.
+We are not limited by ethical concerns of additional animal testing, or prohibitive costs associated with high-fidelity data collection or expert time.
+Our limits are purely defined by how we define our hypothesis space, and the full number of hypotheses can be directly computed when this space is set.
+
+Even moreso, this type of testing is fully and embarassingly parallel! Anyone with a specific hypothesis about a particular part of a network
+can test it, and that particular result, even if it turns out to be nothing, can be used as a sample for someone else's null distribution,
+depending on the hypothesis and hypothesis space in question. We don't even have to be careful about defining the hypothesis spaces at the start,
+because we don't have to worry about double-dipping, or p-hacking, or using too much of sample. 
+We can collect any number of samples of the form "replace subset of model with my guess $g$ and measure loss",
+and later define our hypothesis space to determine if a particular guess of a particular model subset is performing a particular function.
+A new subset can be tested, a new function could be replaced, and we can continuously 
+compare subsequent measures against our growing null distribution.
+
+In this framing, failures are still extremely valuable, as they increase the confidence we have that successes are _true_ successes.
