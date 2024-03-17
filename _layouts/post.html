@@ -23,7 +23,13 @@ layout: base
             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
             {%- if forloop.last == false %}, {% endif -%}
         {% endfor %}
-      {%- endif -%}</p>
+      {%- endif -%}
+      {% assign wordCount = page.content | number_of_words %}
+      <br/>
+      <span>
+        <span>Conservative Read Time: {{ wordCount | divided_by: 200 }} Minutes</span>
+      </span>
+      </p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
