@@ -1,37 +1,26 @@
 ---
 layout: post
-title: "How To Measure Stuff Sometimes"
-excerpt: Sometimes you might actually want the distribution of a thing instead of whatever individual difference measure you're using.
-tags: interpretability math
+title: "Interpretability As A Science"
+excerpt: Knowing the typical or base distribution of a measure is important to be able to interpret a specific outcome of that measure!
+tags: interpretability math statistics hypothesis-testing
 date: 2024-03-09
 modified_date: 2024-03-09
 katex: True
 ---
 
+__tl;dr__: {{ page.excerpt }}
 
-[//]: # _Epistemic Status_: Haven't engaged enough with existing interpretability folks to know if this is common knowledge already, imposter syndrome, I just need to write/publish.
+_Epistemic Status_:
+I've read the main mechanistic interpretability papers,
+a smattering of the blog posts on the Alignment Forum,
+and am familiar with mainstream ML interpetability work.
+See the Motivation section for more.
 
+Audience: You know some ML math basics, like how losses are typically computed.
 
-_tl;dr_: {{ page.excerpt }}
-
-### Todos
-- reference causal
-- reference ACDC, others
-- reference MIRI stuff
-- state its just some thoughts, not a full thing
-- maybe everyone knows this already
-
-# A More Persuasive Version As a Research Proposal
-
-## Abstract
-
-Mechanistic interpretability research currently approaches the problem
-from a machine learning perspective:
-with tools for black-box
-explainability in hand, how can we "open-up" the box and understand
-what is going on under the hood?
-From an alternative perspective,
-I argue that white-box interpretability of machine learning models
+### Abstract
+{:.no_toc}
+I think white-box interpretability of machine learning models
 is directly analogous to the classical scientific study of real world phenomena.
 Questions such as 
 "What is this mechanism doing?",
@@ -41,12 +30,57 @@ Questions such as
 can all be asked both of the real world and of machine learning models.
 As such,
 interpretability of neural network models
-can not only be seen through the lens of machine learning,
-but also through the lens of _science_.
+can be seen through the existing lens of _science_,
+and some hypothesis testing tools could be helpful in "interpreting interpretability".
 
-# A Blog-y Version with Very Light Math
 
-### Quick Notation
+## Table of Contents
+{:.no_toc}
+
+Skip to [Scalable Interpretability via Hypothesis Testing](#scalable-interpretability-via-hypothesis-testing)
+for the main content.
+
+* seed list
+{:toc}
+
+## Motivation
+
+Towards the end of REMIX at Redwood I had some thoughts,
+and for a number of reasons never really got around to writing or formalizing them.
+I (poorly) tried to explain them to a few people, but I don't 
+think I was able to get across what I was thinking.
+Recent personal developments and more discussions I've seen have motivated pushing this out.
+
+There have been a few big reflections on mechanistic interpretability that set the stage
+for my proposal below. 
+
+From [How useful is mechanistic interpretability?](https://www.lesswrong.com/posts/tEPHGZAb63dfq2v8n/how-useful-is-mechanistic-interpretability), it seems like others are also confused and concerned
+by the value and interpretation of mechanistic interpretability results so far.
+
+Some relevant quotes:
+> ...current work fails to explain much of the performance of models...
+
+> ...Aim to more directly measure and iterate on key metrics of usefulness for mech interp...
+
+> ...compare to other methods...
+
+> An uncertainty here is whether the lost performance comes from some genuinely different algorithm, vs some clumsiness in our ablations.
+
+> (Note that by my definition no interp has ever succeeded on a model trained on a real task, afaik.)...
+
+
+From [Against Almost Every Theory of Impact of Interpretability](https://www.lesswrong.com/posts/LNA8mubrByG7SFacm/against-almost-every-theory-of-impact-of-interpretability-1):
+> ...toy models on cherry-picked problems...
+
+> Stephen Casper makes a similar point here: “From an engineer’s perspective, it’s important not to grade different classes of solutions each on different curves.”
+
+Richard Ngo's comment therin is an underlying theme for this post:
+> ...connect our understanding of neural networks to our understanding of the real world...
+
+Anthropic's [Reflections on Qualitative Research](https://transformer-circuits.pub/2024/qualitative-essay/index.html) 
+is a strong independent thread providing motivation for the thoughts below, and written up better and faster than I could have or did.
+
+## Brief Background: Measuring Loss
 
 Let's say we have a model $f$ that takes input $x$ and outputs estimate $\hat{y}$,
 and we compute the correctness of the model against a true $y$ via some loss:
@@ -59,7 +93,7 @@ then let
 
 $$\cL(f,\cD) := \sum_{\cD} l_i := \sum_{(x_i,y_i)\in \cD} \left(y_i-f(x_i)\right)^2 $$
 
-## What's the Question
+### Did We Do Something?
 
 We want to know if we do something to $f$, say $\tf$,
 if it has done anything to the output we get at $\cL$.
@@ -74,7 +108,7 @@ $$ \cL(f,\cD) - \cL(\tf,\cD) $$
 After all, we want to know if our change or operation
 results in a _different_ output, right?
 
-### On Direction
+### A Representative Pitfall
 
 Let's say we have 2 "samples" in our "dataset",
 and for our original model $f$ they result in losses
@@ -83,26 +117,25 @@ $$ l(f,1) = 0.4,\ l(f,2) = -0.2, $$
 
 and using a typical summation for aggregating the losses, $$\cL(f,\cD)  = 0.2$$. 
 
-Now we take some perturbed model $\tf$, and it results in losses
+Now we take some perturbed or alternate model $\tf$, and it results in losses
 
-$$ l(\tf,1) = -4,\ l(\tf,2) = 4.2. $$
+$$ l(\tf,1) = -2.9,\ l(\tf,2) = 3.1. $$
 
-Using the aggregate above we'll clearly get the same value, and conclude that the change in model did nothing!
+Using the aggregate above we'll get the same value, and conclude that the change in model did nothing!
 
-Okay, obviously combining losses in this way is not the right thing to do. In classical statistics, this is related to Simpson's Paradox, where we have _correlated samples_. We need to account for the fact that each computed loss corresponds to the function taking a specific input: the samples are not interchangeable when comparing measures (stats: random effects). 
+Obviously combining losses in this way is not the right thing to do. In classical statistics, this is related to Simpson's Paradox, where we have _correlated samples_. We need to account for the fact that each computed loss corresponds to the function taking a specific input: the samples are not interchangeable when comparing measures (stats: random effects). 
 
 Great, so the next thing we do is break up the $\cL$ differences by sample and instead look at the aggregate _differences_:
 
 $$ \sum_{i} \left(l(f,i) - l(\tf,i) \right) $$
 
-With this simple difference we still kind of have the same problem! The difference has simply been distributed, and the above example results in the same conclusion. Ok, but we never look at the simple difference right? We should use the absolute difference, or sometimes equivalently, the squared difference.
+We still have the same problem! The difference has only been distributed, and the above example results in the same conclusion. Ok, but we never look at the simple difference right? We should use the absolute difference, or sometimes equivalently, the squared difference.
 
 $$ \sum_{i} \left(l(f,i) - l(\tf,i) \right)^2 $$
 
-This solves all of the above problems! With only positive measures of "difference", the aggregation can't lead to cancellation, and any differences for each sample will be effectively accounted for in this final measure.
+This does it! With only positive measures of "difference", the aggregation can't lead to cancellation, and any differences for each sample will be effectively accounted for in this final measure.
 
-#### Can we write this as a function of the aggregate losses?
-Let's try this using linearity of expectations. The expectation and sum are roughly interchangeable in this case, where our distribution is over our entire dataset $i\in \cD$.
+We can also see this effect using linearity of expectations. If we take our distribution over the entire dataset $i\in \cD$.
 
 $$\begin{aligned}
 \EE_i\left[ \left(l(f,i) - l(\tf,i) \right)^2\right] &= \EE_i \left[l(f,i)^2 - 2l(f,i)l(\tf,i) + l(\tf,i)^2 \right] \\
@@ -111,24 +144,23 @@ $$\begin{aligned}
 
 The expectation (or sum) in the middle term cannot be distributed because the sample $i$ is not independent for both losses. These are exactly those _correlated samples_ that we had to worry about when moving to squared difference!
 
-## One Value is Not Enough
-Ok so we've motivated, inuitively/empirically, why we might use something like squared difference to determine if a new model $\tf$ has changed the output with respect to some reference model $f$.
+### One Value is Not Enough
 
-But how do we interpret this measure? This will be some positive real number, but do we expect it to be zero? Are there small changes that would tell us that the intervention was loosely equal?
+But what if our measure is more complicated or has other dynamics? How do we interpret this measure? In this case the measure will be some positive real number, but do we expect it to be zero? Are there small changes that would tell us that the intervention had no effect?
 
 We need some sort of __reference__ to understand how we should interpret the number we get out.
 
-Normalization is one way that is often used to obtain a reference:
+Normalization is often used to obtain a reference:
 
 $$ \frac{\cL(f,\cD) - \cL(\tf,\cD)}{\cL(f,\cD)} $$
 
-This gives us a scaled distance from the original loss in terms of a multiplicative factor. We still have an issue of understanding the scale: interpretation has not moved further than our original statement of "closer to 0 means less difference."
+This gives us a scaled distance from the original loss in terms of a known and relevant multiplicative factor. We still have an issue of understanding the scale: interpretation has not moved further than our original statement of "closer to 0 means less difference."
 
-A term I've seen used in some places is the gain relative to the gain against a random baseline.
+Another possible term could be the gain relative to the gain against a random baseline.
 
 $$ \frac{\cL(\tf) - \cL(b)}{\cL(f) - \cL(b)} \times 100\% $$
 
-As described in Causal Scrubbing (ref{CS}):,
+As described in the [Causal Scrubbing Appendix](https://www.alignmentforum.org/posts/kcZZAsEjwrbczxN2i/causal-scrubbing-appendix#1_More_on_Hypotheses):
 > This percentage can exceed 100% or be negative. It is not very meaningful as a fraction, and is rather an arithmetic aid for comparing the magnitude of expected losses under various distributions. However, it is the case that hypotheses with a “% loss recovered” closer to 100% result in predictions that are more consistent with the model.
 
 There are probably variations of this scheme which can be used to deal with these issues,
@@ -136,20 +168,22 @@ and we can again extend the random effects idea above to help with
 Simpson's like cancellation,
 but it is still one number, and how do we interpret a single number?
 
-## Distributions
+Calling back to [Anthropic's Reflections](https://transformer-circuits.pub/2024/qualitative-essay/index.html), we need to be able to compare our measure to some reference, and we need to be able to understand the distribution ("Signal of Structure") of our measure to understand how to interpret a specific outcome.
 
-ref{CS} briefly mention that one could look at these measures over the full dataset, i.e., compare the distributions of the random variables $l(f,\cD)$ vs. $l(\tf,\cD)$.
+### Distributions
+
+The Causal Scrubbing authors briefly mention that one could look at these measures over the full dataset, i.e., compare the distributions of the random variables $l(f,\cD)$ vs. $l(\tf,\cD)$.
 This would help us a bit as they mention, but conclude that it would require an explanation of the noise that may be compute-intensive.
 
-I'll argue that distributions are _necessary_ in the case of interpretability here. Framing a perturbation as an _alternative hypothesis_ is the right way to approach this,
-and there are computationally feasible ways to do it.
-
+I think distributions are _necessary_ for proper interpretability here.
 
 # Scalable Interpretability via Hypothesis Testing
 
-The main issue with with a single value is that it does not effectively capturing everything that we were wrapping as "explainable" or "not explainable".
+The main issue with with a single value is that it does not effectively capture everything that we were wrapping as "explainable" or "not explainable".
 And in fact, with a real number we're really trying to answer "HOW explainable?" "How much is explained by X?"
-My perspective is that much of interpretability and XAI research is circling around these questions because they aren't well posed. But if we harken back to ye olde classical science, we can get a lot more mileage.
+My perspective is that much of interpretability and XAI research is circling around these questions because they aren't well posed.
+
+But if we harken back to ye olde classical science, I think we can make some progress.
 
 ## Hypothesis Spaces and Testing
 A hypothesis is a claim
@@ -205,8 +239,8 @@ All other fruits? All other foods?
 Anything for which we can measure Vitamin C?
 This choice explicitly defines
 how we can judge "a lot".
-This is extremely important:
-different choices can completely
+
+Different choices can completely
 reverse our conclusion to the original vague claim.
 Apples may have "a lot" of Vitamin C
 compared to other foods,
@@ -233,44 +267,40 @@ and we need some way to measure them.
 
 $$
 \begin{aligned}
-    H_A &:\qquad \text{Apples have \textbf{more} Vitamin C compared to other fruits.} \\ %  \label{hyp:worldA} \\
-    H_0 &:\qquad \text{Apples have the \textbf{same amount or less} Vitamin C compared to other fruits.} \\ % \label{hyp:world0} \\
+    H_A &:\qquad \text{Apples have \textbf{more} Vitamin C compared to \textbf{other fruits}.} \\ %  \label{hyp:worldA} \\
+    H_0 &:\qquad \text{Apples have the \textbf{same amount or less} Vitamin C compared to \textbf{other fruits}.} \\ % \label{hyp:world0} \\
     & & \\ % \nonumber\\
     H_A &:\qquad \text{The path through attention heads 1.5 and 2.4 is \textbf{more important}} \\ % \nonumber\\
-        & \quad\qquad \text{for induction compared to any other path.} \\ % \label{hyp:mlA} \\
+        & \quad\qquad \text{for induction compared to \textbf{any other path}.} \\ % \label{hyp:mlA} \\
     H_0 &:\qquad \text{The path through attention heads 1.5 and 2.4 is \textbf{equally or less important}} \\ % \nonumber\\
-        & \quad\qquad \text{for induction compared to any other path.} % \label{hyp:mlo}
+        & \quad\qquad \text{for induction compared to \textbf{any other path}.} % \label{hyp:mlo}
 \end{aligned}
 $$
 
 Concretely we are now determining if our hypothesis
 is more likely compared to another.
-Importantly, these hypotheses represent \textit{the entire set of possible outcomes}. If we had a measure, there would be no ambiguity of which hypothesis it supports. Mose classical hypothesis testing gives us this for free by requiring that nulls and alternatives explicitly define _regions of the outcome or measure space_ which correspond to those hypotheses, and even describe testing frameworks that ensure the entire space of outcomes is formed by the disjoint union of the two.
+In these cases, these hypotheses represent _the entire set of possible outcomes_.
+If we had a measure, there wouldn't be an outcome that describes some different hypothesis not written here.
+Classical hypothesis testing gives us this
+for free by requiring that nulls and alternatives explicitly define _regions of the outcome or measure space_ which correspond to those hypotheses,
+and even describe testing frameworks that ensure the entire space of outcomes is formed by the disjoint union of the two.
 
 From a probabilistic or Bayesian perspective,
 we're comparing the likelihood of observing
 these phenomena among possible "worlds."
 Bayes factors and credible intervals can be used
-in place of $p$-values and confidence intervals.
+in place of $p$-values and confidence intervals:
+we don't have to go all the way to those scary
+frequentist $p$-values if we don't want to.
 
-Unique for the case of machine learning models is that the entire "world"
-is explicitly defined, and we
-can actually compute
-population-level statistics, i.e.,
-all possible activations,
-for all possible inputs.
-Obviously
-computational complexity
-may limit or restrict
-full testing in practice,
-and as such using such hypothesis
-testing frameworks allow us to fall
-back on sample-based statistical testing.
-%What does this look like in interpretability?
+Unique for the case of machine learning models is that the entire "world" is explicitly defined,
+and we can actually compute population-level statistics, i.e., all possible activations, for all possible inputs.
+Obviously computational complexity may limit or restrict full testing in practice, but using such hypothesis
+testing frameworks allow us to fall back on sample-based statistical testing.
 
 ### Practical Testing
 
-How do we test a hypothesis?
+How do we _test_ a hypothesis?
 In the real world case,
 we cannot know for certain
 that all apples have more Vitamin C
@@ -289,12 +319,11 @@ and compute some measure that
 gets at the "importance for induction"
 of that path.
 
-These selection procedures are _part of the test definition_.
+These sample selection procedures are _part of the test definition_.
 If we want to say something about the population mean via a sample mean, it is expected that
 the sample is _representative_ in some form: the individual samples collected are independently and identically distributed.
 Clearly in the neural network setting, this may not be the case:
 paths through the network that overlap significantly would obviously have correlated values.
-
 
 What does this measure look like?
 There may 
@@ -315,8 +344,9 @@ it's easy to see that this assumes
 something about where the Vitamin C is, or at least that this process retrieves the same amount of it across differing fruits.
 In the same way, 
 we should make sure that the metric we choose
-for evaluating importance encodes
-the assumptions it actually does.
+for evaluating importance for interpretability
+encodes the assumptions we are actually making
+about the model.
 
 
 __Evaluating Measures.__ 
@@ -326,6 +356,7 @@ in the population _mean_,
 taking advantage
 of efficient properties
 that allow testing against closed form _null distributions._
+"On average, is there more Vitamin C in apples compared to other fruits?"
 Just because the observed difference
 in means is large, does not mean
 that the population difference may be large as well.
@@ -344,88 +375,15 @@ $$
 $$
 
 In this simple situation the distribution of the difference of the means
-is well studied and can be tested directly. The expected distribution of this statistic is known and easily computable: a commonly used tool in a statistician's toolbox.
+is well studied and can be tested directly.
+The expected distribution of this statistic is known and easily computable: a commonly used tool in a statistician's toolbox.
 
-__Unknown distributions.__ What if we are interested in something other than the mean?
-Perhaps some random function over the fruits,
-or a new ``interpretability measure" over transformer
-subnetworks.
-We may not know how that measure is distributed,
-or any other properties that may help define
-a null distribution. What can we do?
+### Back to Interpretability
 
-__Permutation testing__
-provides a method for estimating the null distribution
-using samples provided to us.
-By shuffling our labeling, in this case "apples" and "others",
-we can estimate the null distribution of
-the difference: if there was no difference between 
-the groups, then permuting the "labels" should have no effect.
-This can analogously be applied to neural network
-subgraph hypotheses: if we can "sample"
-other parts of the network through a resampling
-of our input data,
-we can estimate the distribution of the _null_ effect,
-and get an idea of how _relatively_ likely 
-a particular hypothesis is.
-
-These measures can become quite complex, and need not only be obvious functions of simple sample means.
-An interpretation of the statement "important for" can be seen 
-as "dependent on", suggesting
-either direct causality
-or a less strong _conditional dependence._
-Practical measures that 
-extend correlation metrics
-exist for independence
-and conditional independence.
-TODO
-
-
-In traditional sciences a question like those above is only the first step in the scientific method, and what typically follows is a __hypothesis test__. The defining of this test is critical in ensuring we have something that we can actually make conclusions from. The questions above as framed are not good hypotheses: they don't have definite outcomes, and they don't define a clear hypothesis space. If we only ask if $\tf$ is similar to $f$, and we only look at a real number, then how do we decide what defines a range of values that we would use to conclude explainability?
-
-Using the classical hypothesis testing framework, we could define a __null__ and __alternative__ hypothesis:
-
-$$
-\begin{aligned}
-H_0 &: f \quad \text{is equal to} &\tf \\
-H_A &: f \quad \text{is different from} &\tf \\
-\end{aligned}
-$$
-
-Importantly, the null hypothesis is __rejected__ and we __accept__ the alternative if for whatever measure we choose, the measurement lies in the __rejection region__ of the space it's in. The classical constructions define this region by an $\alpha$-level hypothesis test, where the region defined by some level-set is based on our desire for a certain level of certainty in the conclusion.
-
-The measures and rejection regions are importantly constructed so that, whenever we get our measurement to test, it is only possible for it to lie in either the null space or the alternative space. A well-formed hypothesis test only allows for these two possibilities, and as such there is no ambiguity.
-
-### Silly Example
-
-I have some magic number $z$ and I want to know if it is closer to 4 or 8. Let's define our measurement as observing $z$. A good hypothesis test might define our null and alternatives like so:
-
-$$
-\begin{aligned}
-H_0 &: z > 6  \\
-H_A &: z \leq 6 \\
-\end{aligned}
-$$
-
-When we observe $z$, we can clearly determine which region of the hypothesis space it corresponds to and thus conclude where it is cloer to 4 or 8.
-
-### Typical Testing
-This type of construction works when you have very clearly defined measures and assumptions about what corresponds to different regions of your hypothesis space. In the real world, when we measure sample data from a population and want to determine if it similar or different to another group, i.e.,
-
-$$
-\begin{aligned}
-H_0 &: \bar{x}_1 \neq \bar{x}_2  \\
-H_A &: \bar{x}_1 = \bar{x}_2,
-\end{aligned}
-$$
-
-we assume something about the distribution of this test statistic under the null, and see if what we measure is significantly different from that distribution.
-
-The issues with the above and its instantations in sciences have been enumerated, and issues with selecting the rejection level, multiple hypothesis testing, p-hacking, etc. are all real problems. But we can use these ideas as a way to inform how we approach interpretability,
-and take advantage of our distinct and unique model setting, as well as more topical Bayesian approaches, to get around these.
-
-## For Interpretability
-Let's say we believe that a part of some model or function $f$ is doing some operation $g$. Our hypothesis is that if it is doing that function, we can replace that part with $g$ and the output of the model will not change.
+Let's generalize the transformer/induction hypothesis back to our initial
+example and say we believe that a part of some model or function $f$ is doing some operation $g$.
+Our hypothesis is that if it is doing that function,
+we can replace that part of the model with $g$ and the output of the model will not change.
 Call the model with the replaced module $\tf$. Then we want to test:
 
 $$
@@ -435,34 +393,95 @@ H_A &: \cL(f) = \cL(\tf)
 \end{aligned}
 $$
 
-As written this will run into the same issue above. We want our rejection region to be larger than exact equality, but we don't have any idea of how large it should be! Taking a classical statistics approach we might make assumptions about the distribution of these losses, but these might be extremely strict and may not even be reasonable given true unknown distributions of these measures.
-But we can again borrow from classical statistics approach to address this problem.
+<style>
+#admon {
+ background-color: #e7eaed;
+ padding: 20px; 
+ margin: 20px;
+ border-style: solid;
+ border-radius: 20px;
+}
+</style>
+
+<div id="admon">
+<p style="margin: 0px">
+In this setting,
+we are explicitly focusing only on a single part of $f$, 
+and determining if it is performing a particular function <em>compared to others</em>.
+<strong>We are not testing if other parts of $f$ are performing that function better.</strong>
+This distinction is critical! These decisions define the hypothesis space,
+can lead us to different measures, and can lead to different conclusions.
+</p>
+</div>
+
+What does this look like for $\tf$'s that do nothing? 
+What is the class of hypotheses we want to compare to?
+Let's say we want to know if that part of $f$ is doing $g$, or $g+\epsilon$, or any other function.
+At a first glance,
+we might first consider other possible functions as alternative hypotheses.
+If it's not doing $g$,
+then it must be doing $\neg g$, or maybe $\sin{\cdot}$, or $g^2$, or $rand(\cdot)$, or anything else.
+But the set of all functions is Big! What would the distribution even look like? 
+It's unlikely that a Normal distribution about 0 would represent the loss differences between $f$ and $\tf$ that are not $g$,
+for _all possible other functions_.
+
+Aside from a theoretical guarantee, we still need 
+to operationalize something for practical interpretability.
+We can again borrow from classical statistics approach to 
+identify an immediate and practical solution.
 
 ## Null Permutation Testing
-A common strategy when the distribution is unknown is to estimate it via permuation testing. This involves drawing additional samples in the class to bootstrap the estimation of the null.
 
-What is the class of hypotheses we want to compare to? Let's say we want to know if $A$ part of $f$ is doing $g$, or $g+\epsilon$, or any other function. At a first glance,
-we might first consider other possible functions as alternative hypotheses. If it's not doing $g$, then it must be doing $\neg g$, or maybe $\sin{\cdot}$, or $g^2$, or $rand(\cdot)$, or anything else. So we could choose a class of functions, check if it is performing any of those, and perhaps using some measure of "performing" (e.g., the measures above) decide if it is more likely to be $g$ or something other than $g$. We might observe this measure distributed as some univariate distribution:
+Permutation testing
+estimates the null distribution
+using various re-sampling methods.
+By shuffling our labeling, say "apples" and "others",
+we can estimate the null distribution of
+the difference: if there was no difference between 
+the groups, then permuting the "labels" should have no effect.
+
+For our interpretability neural network
+interpretability hypotheses:
+if we can "sample"
+over other functions in a way that is representative of the entire space of functions,
+we can estimate the distribution of the _null_ effect,
+and get an idea of how _relatively_ likely 
+a particular hypothesis is.
+We can collect our same measure (say, our squared loss difference)
+over whatever finite, reasonable set of functions we can think of,
+and use that as our null distribution.
 
 ![Null_Dist](/assets/blogfigs/null_dist.png){:.centered}
 
-And see that the measure at $g$ is significantly larger than others.
+This helps so much with interpreting our interpretability measure! We can get a good idea
+of how strongly our result supports our hypothesis: if it falls fairly far out in the tail of the null distribution,
+we can be more confident that our hypothesis is true.
+Follow-up tests could be informed by this result, as typical science operates. 
+
 _However_, it is possible that not just this part $A$ of $f$ is performing this function, and even that other parts of $f$ ($B, A^\prime, \ldots$) are performing it better!
 With a different perspective (null hypothesis space), we might observe and conclude something comletely different:
 
 ![Other_Null_Dist](/assets/blogfigs/null_dist_other.png){:.centered}
 
-__We have to decide what the hypothesis space looks like.__
+<div id="admon">
+<p style="margin: 0px">
+<strong>We have to decide what the hypothesis space looks like.</strong>
 Do we want to know if this part of the model is performing a particular function better than any other function?
-Do we want to know if this part of the model is performing a particular function better than any other part of the model?
-Do we want to know if this part of the model is performing a particular function better than any other part of the model on a particular subset of the data?
+Or is it better than any other part of the model?
+Or maybe just better than any other part of the model on a particular subset of the data?
 
 Choosing this question determines the hypothesis spaces, the types of samples we would draw, and the measures we would use to compare them. All of these form the definition of our hypothesis test.
+</p>
+</div>
 
-### __Our Situation is Even Better__
-In the real world we can never hope to draw enough samples to estimate complex, multi-dimensional distributions. Costs of sample collection and computation can become exhorbitant, e.g., computing summary statistics over functional MRI sequences. But in our machine learning, neural network case we are only limited by our compute, and our compute only consists of possible paths through the model!
+### __It's So Much Easier Than Real-World Science__
+In the real world we can never hope to draw enough samples to estimate complex, multi-dimensional distributions. Costs of sample collection and computation can become exhorbitant, e.g., computing summary statistics over functional MRI sequences.
+These can limit the number of potential tests that can be actually considered.
+But in our machine learning, neural network case we are only limited by our compute, and our compute only consists of possible paths through the model!
 
-In fact, _if we wanted_, we could __enumerate all possible hypotheses__. Of course in practice we would never do this and the compute cost can easily become obsene, but it does suggest that we do not have to worry about permutation costs in the same way that classical science does.
+In fact, _if we wanted_, we could __enumerate all possible hypotheses__.
+Of course, again in practice we would never do this and the compute cost can easily become obsene,
+but it does suggest that we do not have to worry about permutation costs in the same way that classical science does.
 We are not limited by ethical concerns of additional animal testing, or prohibitive costs associated with high-fidelity data collection or expert time.
 
 Even moreso, this type of testing is fully and embarassingly parallel! Anyone with a specific hypothesis about a particular part of a network
@@ -474,9 +493,101 @@ and later define our hypothesis space to determine if a particular guess of a pa
 A new subset can be tested, a new function could be replaced, and we can continuously 
 compare subsequent measures against our growing null distribution.
 
-In this framing, failures are still extremely valuable, as they increase the confidence we have that successes are _true_ successes.
+As science progresses in the real world, our null distribution and suggested hypotheses can become better and better.
+In this framing, failures are still extremely valuable, as they increase our confidence that successes are _true_ successes.
 
-An ideal endpoint that I can foresee if this were to all work out is a distributed hypothesis testing setup, where individual researchers testing particular models for particular functions contribute their results to build out the "global null". Slowly, we would build up a picture of what parts of what models are doing what, and how well they are doing it.
-We may begin to observe and characterize typical distributions that are common in certain types of tasks, models, archiectures, etc.
-These distributions would allow us to make large-sample inferences akin to the way in which null distributions are used in 
-classical science hypothesis testing.
+## Some More Concise and Concrete Research Directions
+
+On the slightly more theoretical side,
+we should be able to come up with formalisms for defining hypothesis spaces and measures that are relevant
+to interpretability.
+We should be able to come up with a way to describe
+spaces of functions and ways to practically sample from them,
+for typical types of interpretability hypothesis tests. 
+I don't expect this to go all the way to things analogous to "minimax optimal uniformly most powerful etc."
+type results a la classical stats,
+but there is probably a cool medium between that and the current state of interpretability research.
+
+On the more practical side,
+there are a lot tools that probably can be adapted 
+or easily built to help with testing these hypotheses.
+Existing mechanistic interpretability tools are probably
+sufficient for the actual sampling and measure computation,
+but there are probably 1) automated systems that can help with
+the permutation testing schemes and 2) some sort of distributed
+or centralized hypothesis sharing and aggregation platforms
+that can help replicating existing tests and minimizing duplicate
+effort.
+
+Minimally, it's probably valuable to at least try to
+instantiate something like this against an existing interpretability result,
+e.g., if you sampled tons of functions "around" i.e., induction heads,
+and found that the original hypothesis was not supported,
+that would be a valuable result in and of itself.
+
+Optimistically,
+if everything works out,
+there could be 
+a distributed hypothesis testing setup
+where individual researchers testing particular models for particular functions
+contribute their results to build out the "global null".
+Slowly, we would build up a picture of what parts of what models are doing what, and how well they are doing it.
+Each "hypothesis" is connected to specific models, functions, samples, networks, and measures,
+and different slicing can result in different types of tests.
+
+Say one organization tests a large number of different subgraphs, trying to identify which 
+are important for induction.
+Say another organization tests a large number of different functions, trying to identify which
+function a particular subgraph is performing.
+The current model with its current subgraph and function represent the intersection of these
+two hypothesis spaces, and the results of these tests can be used to inform future tests in either space!
+Slowly, cooperation would build up a picture of what parts of what models are doing what, and how well they are doing it.
+None of the samples would be wasted, and as parts of "potential null distributions for future testing"
+get filled in from "more immediate need testing", there's a natural growth of the "global null distribution"
+that fully represents the space of possible hypotheses.
+
+Yes, the space is impossible to enumerate,
+and we'll never be able to test all possible hypotheses.
+But this is true of the real world too, and look how far we've come!
+_Something_ is better than nothing,
+and I think this is a __pretty good something__.
+
+
+### Other Cool Things
+
+#### Fun With Measures
+
+The cool thing about this
+is we don't have to just use loss, or mean squared error,
+or any other typical measure.
+For networks the "acyclic directed graph"
+part is important structure,
+and we can use measures that respect that structure.
+We can even bring in probabilistic and causal measures.
+
+These measures can become quite complex.
+Going back a bit, an interpretation of the statement "important for" can be seen 
+as "dependent on", suggesting
+either direct causality
+or a less strong _conditional dependence._
+Practical measures that 
+extend correlation metrics
+exist for independence
+and conditional independence,
+and these can be used to
+decide if a particular part of a model
+is necessary for another's function.
+
+#### Ignore Statistical Rigor
+Ignore statistical rigor, and we can just get a better idea of different directions to explore:
+Our search for hypotheses can be informed,
+building on methods for things like [Automated Circuit Discovery](https://arxiv.org/abs/2304.14997).
+If our goal is to just figure out "what is this thing",
+we can inform our sampling
+using some sort of exploration/exploitation tradeoff:
+randomly sample "around" the current function or subgraph,
+find the most interesting samples,
+and then sample more around those.
+(Don't throw out the samples that don't support the hypothesis:
+they can be used to inform future tests!)
+We're just _narrowing our search space to more likely hypotheses_.
