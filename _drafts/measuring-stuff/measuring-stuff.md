@@ -13,7 +13,7 @@ __tl;dr__: {{ page.excerpt }}
 _Epistemic Status_:
 I've read the main mechanistic interpretability papers,
 a smattering of the blog posts on the Alignment Forum,
-and am familiar with mainstream ML interpetability work.
+and am familiar with mainstream ML interpretability work.
 See the Motivation section for more.
 
 Audience: You know some ML math basics, like how losses are typically computed.
@@ -34,6 +34,7 @@ can be seen through the existing lens of _science_,
 and some hypothesis testing tools could be helpful in "interpreting interpretability".
 
 
+<!--
 ## Table of Contents
 {:.no_toc}
 
@@ -42,6 +43,7 @@ for the main content.
 
 * seed list
 {:toc}
+-->
 
 ## Motivation
 
