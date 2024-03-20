@@ -47,15 +47,17 @@ for the main content.
 
 ## Motivation
 
+<!--
 I had some reflections towards the end of REMIX,
 and never got around to writing or formalizing them.
 I (poorly) tried to explain them to a few people, but I don't 
 think I was able to get across what I was thinking.
 Recent personal developments and more discussions I've seen have motivated pushing this out.
+-->
 
-There have been a few discussions on mechanistic interpretability 
-that set the stage
-for my proposal below. 
+There have been a few recent discussions on mechanistic interpretability 
+that set the stage. Though I've been sitting on this for some time,
+these recent public posts reflect a lot of my own motivations for this post.
 
 From [How useful is mechanistic interpretability?](https://www.lesswrong.com/posts/tEPHGZAb63dfq2v8n/how-useful-is-mechanistic-interpretability), it seems like others are also confused and concerned
 by the value and interpretation of mechanistic interpretability results so far.
