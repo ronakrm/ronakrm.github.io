@@ -398,18 +398,9 @@ H_A &: \cL(f) = \cL(\tf)
 \end{aligned}
 $$
 
-<style>
-#admon {
- background-color: #e7eaed;
- padding: 20px; 
- margin: 20px;
- border-style: solid;
- border-radius: 20px;
-}
-</style>
 
-<div id="admon">
-<p style="margin: 0px">
+<div class="admon">
+<p>
 In this setting,
 we are explicitly focusing only on a single part of $f$, 
 and determining if it is performing a particular function <em>compared to others</em>.
@@ -468,8 +459,8 @@ With a different perspective (null hypothesis space), we might observe and concl
 
 ![Other_Null_Dist](/assets/blogfigs/null_dist_other.png){:.centered}
 
-<div id="admon">
-<p style="margin: 0px">
+<div class="admon">
+<p>
 <strong>We have to decide the hypothesis space that corresponds to our specific interpretability question.</strong>
 Do we want to know if this part of the model is performing a particular function better than any other function?
 Or is it better than any other part of the model?
