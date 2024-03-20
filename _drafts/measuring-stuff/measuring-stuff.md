@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Interpretability As A Science"
-excerpt: Knowing the typical or base distribution of a measure is important to be able to interpret a specific outcome of that measure!
+excerpt: Knowing the typical or base distribution of a measure is important to be able to interpret a specific instance of that measure!
 tags: interpretability math statistics hypothesis-testing
 date: 2024-03-09
 modified_date: 2024-03-09
@@ -47,13 +47,14 @@ for the main content.
 
 ## Motivation
 
-Towards the end of REMIX at Redwood I had some thoughts,
-and for a number of reasons never really got around to writing or formalizing them.
+I had some reflections towards the end of REMIX,
+and never got around to writing or formalizing them.
 I (poorly) tried to explain them to a few people, but I don't 
 think I was able to get across what I was thinking.
 Recent personal developments and more discussions I've seen have motivated pushing this out.
 
-There have been a few big reflections on mechanistic interpretability that set the stage
+There have been a few discussions on mechanistic interpretability 
+that set the stage
 for my proposal below. 
 
 From [How useful is mechanistic interpretability?](https://www.lesswrong.com/posts/tEPHGZAb63dfq2v8n/how-useful-is-mechanistic-interpretability), it seems like others are also confused and concerned
@@ -224,15 +225,15 @@ to explain future events.
 For this reason,
 classical hypothesis testing 
 requires rigorous definitions
-of a full experiment,
-including the measure of interest and
-not only the hypothesis,
+of a full experiment, a _hypothesis test_,
+including the the measure,
+measure and the specific hypothesis,
 but also the __space of hypotheses.__
 
 After a measure is chosen to 
 evaluate the hypothesis of interest (e.g., a test statistic),
-it is evaluated and compared to
-all other hypotheses within that space:
+it's evaluated and _compared to
+all other hypotheses within that space_:
 how likely is it to explain the 
 evidence compared to other hypotheses within its class?
 In the real world example above,
@@ -280,7 +281,7 @@ $$
 $$
 
 Concretely we are now determining if our hypothesis
-is more likely compared to another.
+is more likely compared to another (or another group).
 In these cases, these hypotheses represent _the entire set of possible outcomes_.
 If we had a measure, there wouldn't be an outcome that describes some different hypothesis not written here.
 Classical hypothesis testing gives us this
@@ -366,7 +367,7 @@ The null distribution
 encodes our prior belief about
 how the difference would be distributed
 if there were no differences between the true
-population means $\mu$, with appropriate adjustments based on the size of our sample.
+population means $\mu$.
 
 $$
 \begin{aligned}
@@ -378,7 +379,9 @@ $$
 
 In this simple situation the distribution of the difference of the means
 is well studied and can be tested directly.
-The expected distribution of this statistic is known and easily computable: a commonly used tool in a statistician's toolbox.
+The expected distribution of this statistic,
+with many different assumptions about the variance,
+is known and easily computable: a commonly used tool in a statistician's toolbox.
 
 ### Back to Interpretability
 
@@ -442,7 +445,7 @@ we can estimate the null distribution of
 the difference: if there was no difference between 
 the groups, then permuting the "labels" should have no effect.
 
-For our interpretability neural network
+For our neural network
 interpretability hypotheses:
 if we can "sample"
 over other functions in a way that is representative of the entire space of functions,
@@ -461,30 +464,30 @@ we can be more confident that our hypothesis is true.
 Follow-up tests could be informed by this result, as typical science operates. 
 
 _However_, it is possible that not just this part $A$ of $f$ is performing this function, and even that other parts of $f$ ($B, A^\prime, \ldots$) are performing it better!
-With a different perspective (null hypothesis space), we might observe and conclude something comletely different:
+With a different perspective (null hypothesis space), we might observe and conclude something completely different:
 
 ![Other_Null_Dist](/assets/blogfigs/null_dist_other.png){:.centered}
 
 <div id="admon">
 <p style="margin: 0px">
-<strong>We have to decide what the hypothesis space looks like.</strong>
+<strong>We have to decide the hypothesis space that corresponds to our specific interpretability question.</strong>
 Do we want to know if this part of the model is performing a particular function better than any other function?
 Or is it better than any other part of the model?
-Or maybe just better than any other part of the model on a particular subset of the data?
+Or maybe just better than any other part of the model on a particular subset of the data or sub-task?
 
 Choosing this question determines the hypothesis spaces, the types of samples we would draw, and the measures we would use to compare them. All of these form the definition of our hypothesis test.
 </p>
 </div>
 
-### __It's So Much Easier Than Real-World Science__
+### It's So Much Easier Than Real-World Science
 In the real world we can never hope to draw enough samples to estimate complex, multi-dimensional distributions. Costs of sample collection and computation can become exhorbitant, e.g., computing summary statistics over functional MRI sequences.
 These can limit the number of potential tests that can be actually considered.
 But in our machine learning, neural network case we are only limited by our compute, and our compute only consists of possible paths through the model!
 
-In fact, _if we wanted_, we could __enumerate all possible hypotheses__.
-Of course, again in practice we would never do this and the compute cost can easily become obsene,
-but it does suggest that we do not have to worry about permutation costs in the same way that classical science does.
-We are not limited by ethical concerns of additional animal testing, or prohibitive costs associated with high-fidelity data collection or expert time.
+Again, _if we really wanted to_, we could enumerate all possible hypotheses.
+Of course, again, in practice we would never do this and the compute cost can easily become obsene.
+But this does suggest that we do not have to worry about permutation costs in the same way that classical science does.
+We are not limited by ethical concerns of additional animal testing, or prohibitive costs associated with high-fidelity data collection or expert time, or the time it takes to run a physical experiment.
 
 Even moreso, this type of testing is fully and embarassingly parallel! Anyone with a specific hypothesis about a particular part of a network
 can test it, and that particular result, even if it turns out to be nothing, can be used as a sample for someone else's null distribution if it is relevant to their hypothesis.
@@ -497,6 +500,7 @@ compare subsequent measures against our growing null distribution.
 
 As science progresses in the real world, our null distribution and suggested hypotheses can become better and better.
 In this framing, failures are still extremely valuable, as they increase our confidence that successes are _true_ successes.
+We can adjust our hypotheses as we learn from previous tests (e.g., slowly "recover more loss").
 
 ## Some More Concise and Concrete Research Directions
 
@@ -506,7 +510,7 @@ to interpretability.
 We should be able to come up with a way to describe
 spaces of functions and ways to practically sample from them,
 for typical types of interpretability hypothesis tests. 
-I don't expect this to go all the way to things analogous to "minimax optimal uniformly most powerful etc."
+I don't expect this to go all the way to things analogous to "minimax optimal uniformly most powerful"
 type results a la classical stats,
 but there is probably a cool medium between that and the current state of interpretability research.
 
@@ -523,9 +527,11 @@ effort.
 
 Minimally, it's probably valuable to at least try to
 instantiate something like this against an existing interpretability result,
-e.g., if you sampled tons of functions "around" i.e., induction heads,
+e.g., if you sampled tons of functions "around" e.g., induction heads,
 and found that the original hypothesis was not supported,
-that would be a valuable result in and of itself.
+that would be a valuable standalone result.
+
+### Further Out
 
 Optimistically,
 if everything works out,
@@ -575,7 +581,7 @@ or a less strong _conditional dependence._
 Practical measures that 
 extend correlation metrics
 exist for independence
-and conditional independence,
+and conditional independence (e.g., [conditional mutual information](https://proceedings.mlr.press/v125/steinke20a.html), [CODEC](https://arxiv.org/abs/1910.12327), etc.),
 and these can be used to
 decide if a particular part of a model
 is necessary for another's function.
