@@ -4,6 +4,7 @@ title: "Scratch/Progress on Site Building"
 excerpt: Scratch post for site imports, styling, etc. Old now.
 tags: misc
 date: 2023-03-25
+modified_date: 2024-03-24
 katex: True
 ---
 
@@ -11,7 +12,7 @@ katex: True
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-### LaTeX
+### $\LaTeX$
 
 Here's a LaTeX Test: $$ \phi $$. In the line below, the expectation symbol is a macro defined in a separate latex sty file.
 
@@ -26,3 +27,10 @@ __EDIT:__ Got it to work! Definitely make sure you're only trying to make it wor
 ## Go!
 
 Basics all set, time to stop procrastinating and actually write!
+
+
+### Some Figures
+Mainly for reference in other places on the net.
+
+![Null_Dist](/assets/blogfigs/null_dist.png){:.centered}
+![Other_Null_Dist](/assets/blogfigs/null_dist_other.png){:.centered}
