@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I was a CS PhD at the UW-Madison, where I worked with [Dr. Vikas Singh](https://biostat.wisc.edu/~vsingh) on machine learning and computer vision projects, some in collaboration with the [Wisconsin Alzheimer's Disease Research Center](https://adrc.wisc.edu) to develop methods for analyzing preclinical datasets.
+I was a CS PhD at UW-Madison, where I worked with [Dr. Vikas Singh](https://biostat.wisc.edu/~vsingh) on machine learning and computer vision projects, some in collaboration with the [Wisconsin Alzheimer's Disease Research Center](https://adrc.wisc.edu) to develop methods for analyzing preclinical datasets.
 
 I completed my undergraduate degree in Computer Engineering at the University of Michigan-Ann Arbor in 2014, and my master's degree in Computer Science at UW-Madison in 2016.
 
