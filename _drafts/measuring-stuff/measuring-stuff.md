@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Interpretability As A Science"
-excerpt: Knowing the typical or base distribution of a measure is important to be able to interpret a specific instance of that measure!
+excerpt: Knowing the typical or base distribution of a measure is important for interpreting a specific instance of that measure!
 tags: interpretability math statistics hypothesis-testing
 date: 2024-03-09
 modified_date: 2024-03-09
@@ -10,17 +10,25 @@ katex: True
 
 __tl;dr__: {{ page.excerpt }}
 
+<!--- TODO remove all the could/can iffy wish-washy nonsense -->
+
 _Epistemic Status_:
 I've read the main mechanistic interpretability papers,
 a smattering of the blog posts on the Alignment Forum,
 and am familiar with mainstream ML interpretability work.
 See the Motivation section for more.
+<!-- hedge here only -->
 
-Audience: You know some ML math basics, like how losses are typically computed.
+Audience: You know some ML math basics, like how losses are typically computed, and/or are interested in how
+hypothesis testing can be used to interpret machine learning models.
+<!-- say you are X, or your goal is Y. -->
 
 ### Abstract
 {:.no_toc}
-I think white-box interpretability of machine learning models
+Interpretability of neural network models
+can be seen through the existing lens of _science_,
+and some hypothesis testing tools could be helpful in "interpreting interpretability".
+White-box interpretability of machine learning models
 is directly analogous to the classical scientific study of real world phenomena.
 Questions such as 
 "What is this mechanism doing?",
@@ -28,13 +36,8 @@ Questions such as
 "Is this mechanism similar to another?", and
 "Does this mechanism have multiple functions?"
 can all be asked both of the real world and of machine learning models.
-As such,
-interpretability of neural network models
-can be seen through the existing lens of _science_,
-and some hypothesis testing tools could be helpful in "interpreting interpretability".
 
 
-<!--
 ## Table of Contents
 {:.no_toc}
 
@@ -43,7 +46,6 @@ for the main content.
 
 * seed list
 {:toc}
--->
 
 ## Motivation
 
@@ -207,6 +209,7 @@ $$
 
 As written, 
 these both have a number of practical problems.
+<!-- TODO problems for what? -->
 How much is "a lot"? How do we define "important"?
 How do we measure Vitamin C? How do we measure "important"?
 If we have multiple measures, which should we choose?
@@ -429,6 +432,7 @@ We can again borrow from classical statistics approach to
 identify an immediate and practical solution.
 
 ## Null Permutation Testing
+<!-- TODO bring back fruit analagies here -->
 
 Permutation testing
 estimates the null distribution
@@ -477,7 +481,9 @@ In the real world we can never hope to draw enough samples to estimate complex, 
 These can limit the number of potential tests that can be actually considered.
 But in our machine learning, neural network case we are only limited by our compute, and our compute only consists of possible paths through the model!
 
-Again, _if we really wanted to_, we could enumerate all possible hypotheses.
+Again, _if we really wanted to_,
+<!-- footnote? -->
+we could enumerate all possible hypotheses.
 Of course, again, in practice we would never do this and the compute cost can easily become obsene.
 But this does suggest that we do not have to worry about permutation costs in the same way that classical science does.
 We are not limited by ethical concerns of additional animal testing, or prohibitive costs associated with high-fidelity data collection or expert time, or the time it takes to run a physical experiment.
@@ -492,6 +498,7 @@ A new subset can be tested, a new function could be replaced, and we can continu
 compare subsequent measures against our growing null distribution.
 
 As science progresses in the real world, our null distribution and suggested hypotheses can become better and better.
+<!-- TODO analogy for real science, or ML, or back to fruit -->
 In this framing, failures are still extremely valuable, as they increase our confidence that successes are _true_ successes.
 We can adjust our hypotheses as we learn from previous tests (e.g., slowly "recover more loss").
 
@@ -555,12 +562,14 @@ and I think this is a __pretty good something__.
 
 
 ### Other Cool Things
+<!-- TODO fix this up better -->
 
 #### Fun With Measures
 
 The cool thing about this
 is we don't have to just use loss, or mean squared error,
 or any other typical measure.
+<!-- TODO why are these insufficent -->
 For networks the "acyclic directed graph"
 part is important structure,
 and we can use measures that respect that structure.
@@ -592,3 +601,5 @@ and then sample more around those.
 (Don't throw out the samples that don't support the hypothesis:
 they can be used to inform future tests!)
 We're just _narrowing our search space to more likely hypotheses_.
+
+<!--- TODO footnotes? -->
