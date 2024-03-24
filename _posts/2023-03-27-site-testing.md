@@ -1,12 +1,16 @@
 ---
 layout: post
 title: "Scratch/Progress on Site Building"
-excerpt: Scratch post for site imports, styling, etc. Old now.
+excerpt: Scratch post for site imports, styling, etc. Skippable unless you're interested in the site's construction.
 tags: misc
 date: 2023-03-25
 modified_date: 2024-03-24
 katex: True
 ---
+
+This is mostly a place where I tested out various features of the site, such as LaTeX, images, and other formatting.
+If you have any questions about the site, feel free to reach out to me via email or social media,
+or check out the [source code](https://github.com/ronakrm/ronakrm.github.io) on GitHub.
 
 ### Basic Posting/Text
 
