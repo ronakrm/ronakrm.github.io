@@ -3,7 +3,7 @@ layout: post
 title: "Incorporating Preferences is Easy if you Discretize"
 excerpt: "Continuous settings can be hard, but some things are easier if you discretize."
 tags: fairness emd safety math viz
-date: 2024-03-09
+date: 2024-03-24
 modified_date: 2024-03-24
 katex: True
 ---
@@ -25,7 +25,7 @@ Sometimes we'll have some other preference, or distribution, along with our own:
 
 If they are different, we might want to figure out HOW different, and even moreso find some "middle ground" or some way to reconcile the difference, "pushing" the distributions to be similar.
 
-![Pushed Distributions Together](/assets/blogfigs/pushed_together.svg){:.centered} -->
+![Pushed Distributions Together](/assets/blogfigs/pushed_together.svg){:.centered}
 
 We could try to measure this difference with some _distance_ measure, $d(A,B)$
 If the distributions are nice like these, then we can easily compute continuous measures of distance, such as KL divergence and others.
