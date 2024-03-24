@@ -3,22 +3,24 @@ layout: post
 title: "A Bit For You"
 excerpt: Some musings on overloading a single bit.
 tags: musings, misc
-date: 2024-03-13
-Last Updated: 2024-03-13
+date: 2024-03-24
+Last Updated: 2024-03-24
 katex: False
 ---
 
 
 <div style="text-align:center">
-This button will send a single bit (1).
+This button will send a single bit.
+
+<br/>
 <br/>
 <button name="TheButton">The Button</button>
-</div>
 <br/>
-There will be no formal followup. There will be no response to you in any form, nor to your current browsing session.
-No information besides the constant singular bit is sent, no session information,
-no location information, nothing. 
+<br/>
 This is no mindgame, no weird trolley-problem-monkey's-paw-dilemma.
+</div>
+
+<br/>
 
 <div style="text-align:center">
 <p>
@@ -86,7 +88,7 @@ and error-checking for you and you, I think :).
 </div>
 
 I often need reminders or jumpstarts to hack my brain into doing
-things I want it to do. Often times what would be sufficient are single bits,
+things I want it to do. Most of the time a single bit is sufficient,
 with maybe a bit of context. I know what that context is, I know what that bit is for,
 I just needed it to be sent and _actually_ read. Hopefully in the vast distracting
 world we now live in, this post and That Button can be A Bit For You.
