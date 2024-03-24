@@ -1,16 +1,17 @@
 ---
 layout: post
 title: "Incorporating Preferences is Easy if you Discretize"
-excerpt: "Continuous settings can be hard, but some things can be easier if you discretize."
+excerpt: "Continuous settings can be hard, but some things are easier if you discretize."
 tags: fairness emd safety math viz
 date: 2024-03-09
-modified_date: 2024-03-09
+modified_date: 2024-03-24
 katex: True
 ---
 
-tl;dr: Discretizing or binning distributions can make computation of a "probability distance" easier, and also allows fixed cost gradient computations that plug in directly to stochastic-gradient based models!
+__tl;dr__: {{ page.excerpt }} Discretizing or binning distributions can make computation of a "probability distance" easier, and also allows fixed cost gradient computations that plug in directly to stochastic-gradient based models!
 
 This post is in companion to work myself and collaborators presented at ICLR 2023, see [our paper](https://openreview.net/forum?id=R98ZfMt-jE) for more technical discussion.
+This is a more visual and intuitive explanation of that work, and an excuse to make some pretty animations.
 
 ## Bird's Eye View
 
@@ -99,8 +100,7 @@ The above procedure is essentially modified to find the index of the distributio
 
 The super cool part is we can also push those distributions together concurrently, with a "push" direction coming directly from the way we set up the optimization problem
 to compute the total distance.
-We didn't get a chance to explore too much with respect to visualizations,
-and I wanted an excuse to make a pretty blog post,
+We didn't get a chance to explore too much with respect to visualizations for the paper,
 so here are a few more explorations as we minimize this distance.
 If you want more technical details, definitely check out [the paper](https://openreview.net/forum?id=R98ZfMt-jE), but the tl;dr is that the gradient of the linear optimization problem
 is exactly the dual variables, and the algorithm we use to compute the distance
@@ -142,16 +142,20 @@ Aside from the applications we discuss in the paper, there are a few other place
 A big one is in calibration, where we want to ensure that our model's confidence matches its accuracy.
 We can use the Earth Mover's Distance to help inform our training process to push our model towards being well-calibrated.
 Because the problem is easily extended to many distributions,
+any types of 
 calibrations, preferences, regulatory requirements, etc. can all be defined, by potentially many different
 stakeholders, and then reconciled in a single pass!
 
 These can even be private in the federated or distributed learning sense:
 individual users of a shared learning application can easily compute the distance and gradients
 locally, and then share the results with a central server to compute the global update.
+
+<!--
 While we didn't explore this particular property of the EMD,
 it's even possible for different users to have _different discretizations_,
 and the algorithms may still work!
 People who want to be more precise can use more bins, and people who want to be more efficient can use fewer.
+-->
 
 
 ## More Theoretical Questions
