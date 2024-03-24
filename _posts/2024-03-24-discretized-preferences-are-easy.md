@@ -1,21 +1,22 @@
 ---
 layout: post
-title: "Incorporating Preferences is Easy if you Discretize"
-excerpt: "Continuous settings can be hard, but some things are easier if you discretize."
+title: "Incorporating Preferences is Easy if You Discretize"
+excerpt: "Continuous settings can be hard, but matching and moving arbitrary distributions is easier if you discretize."
 tags: fairness emd safety math viz
 date: 2024-03-24
-modified_date: 2024-03-24
 katex: True
 ---
 
-__tl;dr__: {{ page.excerpt }} Discretizing or binning distributions can make computation of a "probability distance" easier, and also allows fixed cost gradient computations that plug in directly to stochastic-gradient based models!
+__tl;dr__: Nice figures and animations, mostly. {{ page.excerpt }}
+
+Discretizing or binning distributions can make computation of a "probability distance" easier, and certain methods compute gradients for free,meaning we can move and account for distributions with low cost and plug in directly with stochastic-gradient, neural network models!
 
 This post is in companion to work myself and collaborators presented at ICLR 2023, see [our paper](https://openreview.net/forum?id=R98ZfMt-jE) for more technical discussion.
 This is a more visual and intuitive explanation of that work, and an excuse to make some pretty animations.
 
 ## Bird's Eye View
 
-Often our preferences don't take the form of a single point, but a distribution over some set of outcomes. Here we'll focus on the case where our preference takes the form of a univariate distribution over the real line, i.e., the typical assumptions that come with this picture:
+Often our preferences don't take the form of a single point, but a distribution over some set of outcomes. To start, let's say our preference takes the form of a univariate distribution over the real line, i.e., the typical assumptions that come with this picture:
 
 ![A Single Continuous Normal Distribution](/assets/blogfigs/single_cont_dist.svg){:.centered}
 
@@ -27,7 +28,7 @@ If they are different, we might want to figure out HOW different, and even mores
 
 ![Pushed Distributions Together](/assets/blogfigs/pushed_together.svg){:.centered}
 
-We could try to measure this difference with some _distance_ measure, $d(A,B)$
+We could try to measure this difference with some _distance_ measure.
 If the distributions are nice like these, then we can easily compute continuous measures of distance, such as KL divergence and others.
 If it's possible to write out the distributions as functions of the domain,
 we might try things like integrating over the difference of the functions.
@@ -39,7 +40,7 @@ then this problem can be intractable: we don't have any nice closed form represe
 
 ![Real distributions are whacky!](/assets/blogfigs/two_cont_dist_whacky.svg){:.centered}
 
-Also, we may have many distributions or preferences that we want to understand.
+Also, we may have many distributions or preferences that we want to understand and unify.
 
 ![Ahhh what do we do?](/assets/blogfigs/many_cont_dist_whacky.svg){:.centered}
 
@@ -91,8 +92,7 @@ Here's a brief animation of the algorithm in action:
 Our ICLR paper focuses on the setting where we may have a larger number of distributions,
 and we show that everything above extends very naturally and linearly(!) to more distributions.
 
-The above procedure is essentially modified to find the index of the distribution with the minimum value at any point as we move in axis-aligned steps from the "first" bin at $(0,0,\ldots,0)$ to $(d,d,\ldots,d)$.
-
+The above procedure is generalized to find the index of the distribution with the minimum value at any point as we move in axis-aligned steps from the "first" bin at $(0,0,\ldots,0)$ to $(d,d,\ldots,d)$.
 
 ## Pushing Distributions Together
 
@@ -148,14 +148,6 @@ These can even be private in the federated or distributed learning sense:
 individual users of a shared learning application can easily compute the distance and gradients
 locally, and then share the results with a central server to compute the global update.
 
-<!--
-While we didn't explore this particular property of the EMD,
-it's even possible for different users to have _different discretizations_,
-and the algorithms may still work!
-People who want to be more precise can use more bins, and people who want to be more efficient can use fewer.
--->
-
-
 ## More Theoretical Questions
 
 As mentioned,
@@ -175,9 +167,10 @@ does this approach some continuous result?
 Our experiments show this works well in the stochastic ML setting,
 can we identify a theoretical guarantee that this stochastic application is sufficient?
 
+If you're interested in these questions, or have some of your own, feel free to reach out!
 
 ### Citation
-Mehta, Ronak, Jeffery Kline, Vishnu Suresh Lokhande, Glenn Fung, and Vikas Singh. "Efficient Discrete Multi-Marginal Optimal Transport Regularization."
+Ronak Mehta, Jeffery Kline, Vishnu Suresh Lokhande, Glenn Fung, and Vikas Singh. "Efficient Discrete Multi-Marginal Optimal Transport Regularization."
 [ICLR 2023](https://openreview.net/forum?id=R98ZfMt-jE).
 
 ```
