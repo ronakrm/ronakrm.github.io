@@ -34,3 +34,9 @@ Mainly for reference in other places on the net.
 
 ![Null_Dist](/assets/blogfigs/null_dist.png){:.centered}
 ![Other_Null_Dist](/assets/blogfigs/null_dist_other.png){:.centered}
+
+
+# Learning Notes
+
+I tried to do some fancy SVG animations, but GitHub Pages doesn't support them;
+appears to be related to security concerns. 

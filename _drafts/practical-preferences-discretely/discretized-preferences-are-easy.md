@@ -23,11 +23,9 @@ Sometimes we'll have some other preference, or distribution, along with our own:
 
 ![Two Continuous Normal Distributions](/assets/blogfigs/two_cont_dist.svg){:.centered}
 
-If they are different, we might want to figure out HOW different, and even more so find some "middle ground" or some way to reconcile the difference, "pushing" the distributions to be similar. (mouseover/tap)
+If they are different, we might want to figure out HOW different, and even moreso find some "middle ground" or some way to reconcile the difference, "pushing" the distributions to be similar.
 
-
-{%- include_relative two_cont_dists_anim_copy.svg -%}{:.centered}
-<br/>
+![Pushed Distributions Together](/assets/blogfigs/pushed_together.svg){:.centered} -->
 
 We could try to measure this difference with some _distance_ measure, $d(A,B)$
 If the distributions are nice like these, then we can easily compute continuous measures of distance, such as KL divergence and others.
