@@ -4,26 +4,22 @@ title: "Interpretability As A Science"
 excerpt: Knowing the typical or base distribution of a measure is important for interpreting a specific instance of that measure!
 tags: interpretability math statistics hypothesis-testing
 date: 2024-03-09
-modified_date: 2024-03-09
+modified_date: 2024-04-12
 katex: True
 ---
 
 __tl;dr__: {{ page.excerpt }}
-
-A test note[^1].
-
-<!--- TODO remove all the could/can iffy wish-washy nonsense -->
 
 _Epistemic Status_:
 I've read the main mechanistic interpretability papers,
 a smattering of the blog posts on the Alignment Forum,
 and am familiar with mainstream ML interpretability work.
 See the Motivation section for more.
-<!-- hedge here only -->
 
-Audience: You know some ML math basics, like how losses are typically computed, and/or are interested in how
-hypothesis testing can be used to interpret machine learning models.
-<!-- say you are X, or your goal is Y. -->
+Audience: You know some ML math basics, like how losses are typically computed.
+You are interested in how hypothesis testing can be used to interpret machine learning models,
+or are confused as to why that particular result you read about isn't convincing you 
+as much as you thought.
 
 ### Abstract
 {:.no_toc}
@@ -50,14 +46,6 @@ for the main content.
 {:toc}
 
 ## Motivation
-
-<!--
-I had some reflections towards the end of REMIX,
-and never got around to writing or formalizing them.
-I (poorly) tried to explain them to a few people, but I don't 
-think I was able to get across what I was thinking.
-Recent personal developments and more discussions I've seen have motivated pushing this out.
--->
 
 There have been a few recent discussions on mechanistic interpretability 
 that set the stage. Though I've been sitting on this for some time,
@@ -88,6 +76,8 @@ Richard Ngo's comment therin is an underlying theme for this post:
 
 Anthropic's [Reflections on Qualitative Research](https://transformer-circuits.pub/2024/qualitative-essay/index.html) 
 is a strong independent thread providing motivation for the thoughts below, and written up better and faster than I could have or did.
+This post ends up coming to similar conclusions, albeit from a different angle and with
+perhaps a bit more precription.
 
 ## Brief Background: Measuring Loss
 
@@ -152,6 +142,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 The expectation (or sum) in the middle term cannot be distributed because the sample $i$ is not independent for both losses. These are exactly those _correlated samples_ that we had to worry about when moving to squared difference!
+Put another way, we should be careful not to take our means too early!
 
 ### One Value is Not Enough
 
@@ -210,8 +201,8 @@ $$
 $$
 
 As written, 
-these both have a number of practical problems.
-<!-- TODO problems for what? -->
+these both have a number of practical problems
+for _actually doing a proper test_.
 How much is "a lot"? How do we define "important"?
 How do we measure Vitamin C? How do we measure "important"?
 If we have multiple measures, which should we choose?
@@ -310,7 +301,7 @@ testing frameworks allow us to fall back on sample-based statistical testing.
 
 ### Practical Testing
 
-How do we _test_ a hypothesis?
+How do we _test_ a hypothesis once we have one?
 In the real world case,
 we cannot know for certain
 that all apples have more Vitamin C
@@ -393,7 +384,7 @@ is known and easily computable: a commonly used tool in a statistician's toolbox
 ### Back to Interpretability
 
 Let's generalize the transformer/induction hypothesis back to our initial
-example and say we believe that a part of some model or function $f$ is doing some operation $g$.
+example and say we believe that a part of some model or function $f$ that is doing some operation $g$.
 Our hypothesis is that if it is doing that function,
 we can replace that part of the model with $g$ and the output of the model will not change.
 Call the model with the replaced module $\tf$. Then we want to test:
@@ -427,14 +418,15 @@ then it must be doing $\neg g$, or maybe $\sin{\cdot}$, or $g^2$, or $rand(\cdot
 But the set of all functions is Big! What would the distribution even look like? 
 It's unlikely that a Normal distribution about 0 would represent the loss differences between $f$ and $\tf$ that are not $g$,
 for _all possible other functions_.
+Without this, we can't rely on the mean of 30 random samples to represent the underlying full distribution.[^clt]
 
 Aside from a theoretical guarantee, we still need 
 to operationalize something for practical interpretability.
-We can again borrow from classical statistics approach to 
+If we can't use sample means, what can we do to get a good idea of how likely our hypothesis is?
+We can again borrow from classical statistics approaches to 
 identify an immediate and practical solution.
 
 ## Null Permutation Testing
-<!-- TODO bring back fruit analagies here -->
 
 Permutation testing
 estimates the null distribution
@@ -479,28 +471,28 @@ Choosing this question determines the hypothesis spaces, the types of samples we
 </div>
 
 ### It's So Much Easier Than Real-World Science
-In the real world we can never hope to draw enough samples to estimate complex, multi-dimensional distributions. Costs of sample collection and computation can become exhorbitant, e.g., computing summary statistics over functional MRI sequences.
+In the real world we can never hope to draw enough samples to estimate complex, high-dimensional distributions. Costs of sample collection and computation can become exhorbitant, e.g., computing summary statistics over functional MRI sequences.
 These can limit the number of potential tests that can be actually considered.
 But in our machine learning, neural network case we are only limited by our compute, and our compute only consists of possible paths through the model!
 
 Again, _if we really wanted to_,
-<!-- footnote? -->
-we could enumerate all possible hypotheses.
-Of course, again, in practice we would never do this and the compute cost can easily become obsene.
+we could enumerate all possible hypotheses for questions like "Which part of my model is responsible for behavior $A$?"
+In practice we would never do this and the compute cost can easily become obsene.[^enum]
 But this does suggest that we do not have to worry about permutation costs in the same way that classical science does.
 We are not limited by ethical concerns of additional animal testing, or prohibitive costs associated with high-fidelity data collection or expert time, or the time it takes to run a physical experiment.
 
 Even moreso, this type of testing is fully and embarassingly parallel! Anyone with a specific hypothesis about a particular part of a network
 can test it, and that particular result, even if it turns out to be nothing, can be used as a sample for someone else's null distribution if it is relevant to their hypothesis.
-We don't even have to be careful about defining the hypothesis spaces at the start,
-because we don't have to worry about double-dipping, or p-hacking, or using too much of sample. 
+We don't even have to be careful about defining the hypothesis spaces at the start.
 We can collect any number of samples of the form "replace subset of model with my guess $g$ and measure loss",
 and later define our hypothesis space to determine if a particular guess of a particular model subset is performing a particular function.
 A new subset can be tested, a new function could be replaced, and we can continuously 
-compare subsequent measures against our growing null distribution.
+compare subsequent measures against our growing null distribution, sliced to represent the _specific null for that particular question_.
 
 As science progresses in the real world, our null distribution and suggested hypotheses can become better and better.
-<!-- TODO analogy for real science, or ML, or back to fruit -->
+In the same way we may identify a bimodal distribution over the Vitamin C we measure in apples
+and conclude that perhaps we should stratify by variety,
+we may find our original subgraph size is too fine-grained, or too general, or our function space too large, or too small.
 In this framing, failures are still extremely valuable, as they increase our confidence that successes are _true_ successes.
 We can adjust our hypotheses as we learn from previous tests (e.g., slowly "recover more loss").
 
@@ -515,6 +507,7 @@ for typical types of interpretability hypothesis tests.
 I don't expect this to go all the way to things analogous to "minimax optimal uniformly most powerful"
 type results a la classical stats,
 but there is probably a cool medium between that and the current state of interpretability research.
+Perhaps some sub-topics under high-dimensional statistics could play larger roles.
 
 On the more practical side,
 there are a lot tools that probably can be adapted 
@@ -537,7 +530,7 @@ that would be a valuable standalone result.
 
 Optimistically,
 if everything works out,
-there could be 
+there I imagine
 a distributed hypothesis testing setup
 where individual researchers testing particular models for particular functions
 contribute their results to build out the "global null".
@@ -553,8 +546,8 @@ The current model with its current subgraph and function represent the intersect
 two hypothesis spaces, and the results of these tests can be used to inform future tests in either space!
 Slowly, cooperation would build up a picture of what parts of what models are doing what, and how well they are doing it.
 None of the samples would be wasted, and as parts of "potential null distributions for future testing"
-get filled in from "more immediate need testing", there's a natural growth of the "global null distribution"
-that fully represents the space of possible hypotheses.
+get filled in from "more immediate need testing", the "global null distribution" naturally grows to 
+fully represent the space of possible hypotheses.
 
 Yes, the space is impossible to enumerate,
 and we'll never be able to test all possible hypotheses.
@@ -563,19 +556,18 @@ _Something_ is better than nothing,
 and I think this is a __pretty good something__.
 
 
-### Other Cool Things
-<!-- TODO fix this up better -->
+### Related Ideas and Directios
 
 #### Fun With Measures
 
 The cool thing about this
 is we don't have to just use loss, or mean squared error,
 or any other typical measure.
-<!-- TODO why are these insufficent -->
+These may not capture exactly what we want to know.
 For networks the "acyclic directed graph"
 part is important structure,
 and we can use measures that respect that structure.
-We can even bring in probabilistic and causal measures.
+We can even bring in probabilistic and causal measures in some form.
 
 These measures can become quite complex.
 Going back a bit, an interpretation of the statement "important for" can be seen 
@@ -590,8 +582,9 @@ and these can be used to
 decide if a particular part of a model
 is necessary for another's function.
 
-#### Ignore Statistical Rigor
-Ignore statistical rigor, and we can just get a better idea of different directions to explore:
+#### Informing Progressive Testing
+Even if we ignore traditional statistical rigor,
+we can just get a better idea of different directions to explore:
 Our search for hypotheses can be informed,
 building on methods for things like [Automated Circuit Discovery](https://arxiv.org/abs/2304.14997).
 If our goal is to just figure out "what is this thing",
@@ -601,10 +594,11 @@ randomly sample "around" the current function or subgraph,
 find the most interesting samples,
 and then sample more around those.
 (Don't throw out the samples that don't support the hypothesis:
-they can be used to inform future tests!)
+they can be used to inform other, future tests!)
 We're just _narrowing our search space to more likely hypotheses_.
 
 
-<!--- TODO footnotes? -->
 # Footnotes
-[^1]: Some footnote.
+[^clt]: With nice distributions, we have strong guarantees via the statistcal test we choose (e.g., [Z-Test](https://en.wikipedia.org/wiki/Z-test)) that our sample mean will not be too far from the true population mean if we have enough samples.
+[^enum]: I could potentially see some value in actually doing enumeration on small models, e.g., GPT-2. To get better handles on methods and measures. Results here could be used to inform sampling required for larger models, or even to narrow hypothesis selection for larger models. 
+<!-- [^phack]: In classical statistics we have to rely on statistical estimations because it can be difficult to replicate or re-run experiments. It's important that results have some guarantee they might generalize. Here, costs for testing are much lower, and our primary goal is to just explain as much of the behavior as possible. We can design our tests to be more exploratory, and we can use the results of one test to inform the next.  -->
