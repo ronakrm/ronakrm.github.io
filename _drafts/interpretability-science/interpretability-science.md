@@ -10,6 +10,8 @@ katex: True
 
 __tl;dr__: {{ page.excerpt }}
 
+A test note[^1].
+
 <!--- TODO remove all the could/can iffy wish-washy nonsense -->
 
 _Epistemic Status_:
@@ -602,4 +604,7 @@ and then sample more around those.
 they can be used to inform future tests!)
 We're just _narrowing our search space to more likely hypotheses_.
 
+
 <!--- TODO footnotes? -->
+# Footnotes
+[^1]: Some footnote.
