@@ -471,17 +471,17 @@ Choosing this question determines the hypothesis spaces, the types of samples we
 </div>
 
 ### It's So Much Easier Than Real-World Science
-In the real world we can never hope to draw enough samples to estimate complex, high-dimensional distributions. Costs of sample collection and computation can become exhorbitant, e.g., computing summary statistics over functional MRI sequences.
+In the real world we can never hope to draw enough samples to estimate complex, high-dimensional distributions. Costs of sample collection and computation can become exorbitant, e.g., computing summary statistics over functional MRI sequences.
 These can limit the number of potential tests that can be actually considered.
 But in our machine learning, neural network case we are only limited by our compute, and our compute only consists of possible paths through the model!
 
 Again, _if we really wanted to_,
 we could enumerate all possible hypotheses for questions like "Which part of my model is responsible for behavior $A$?"
-In practice we would never do this and the compute cost can easily become obsene.[^enum]
+In practice we would never do this and the compute cost can easily become obscene.[^enum]
 But this does suggest that we do not have to worry about permutation costs in the same way that classical science does.
 We are not limited by ethical concerns of additional animal testing, or prohibitive costs associated with high-fidelity data collection or expert time, or the time it takes to run a physical experiment.
 
-Even moreso, this type of testing is fully and embarassingly parallel! Anyone with a specific hypothesis about a particular part of a network
+Even moreso, this type of testing is fully and embarrassingly parallel! Anyone with a specific hypothesis about a particular part of a network
 can test it, and that particular result, even if it turns out to be nothing, can be used as a sample for someone else's null distribution if it is relevant to their hypothesis.
 We don't even have to be careful about defining the hypothesis spaces at the start.
 We can collect any number of samples of the form "replace subset of model with my guess $g$ and measure loss",
@@ -556,7 +556,7 @@ _Something_ is better than nothing,
 and I think this is a __pretty good something__.
 
 
-### Related Ideas and Directios
+### Related Ideas and Directions
 
 #### Fun With Measures
 
@@ -599,6 +599,6 @@ We're just _narrowing our search space to more likely hypotheses_.
 
 
 # Footnotes
-[^clt]: With nice distributions, we have strong guarantees via the statistcal test we choose (e.g., [Z-Test](https://en.wikipedia.org/wiki/Z-test)) that our sample mean will not be too far from the true population mean if we have enough samples.
+[^clt]: With nice distributions, we have strong guarantees via the statistical test we choose (e.g., [Z-Test](https://en.wikipedia.org/wiki/Z-test)) that our sample mean will not be too far from the true population mean if we have enough samples.
 [^enum]: I could potentially see some value in actually doing enumeration on small models, e.g., GPT-2. To get better handles on methods and measures. Results here could be used to inform sampling required for larger models, or even to narrow hypothesis selection for larger models. 
 <!-- [^phack]: In classical statistics we have to rely on statistical estimations because it can be difficult to replicate or re-run experiments. It's important that results have some guarantee they might generalize. Here, costs for testing are much lower, and our primary goal is to just explain as much of the behavior as possible. We can design our tests to be more exploratory, and we can use the results of one test to inform the next.  -->
