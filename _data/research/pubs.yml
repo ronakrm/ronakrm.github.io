@@ -11,13 +11,14 @@
   links:
     ICLR: https://openreview.net/forum?id=R98ZfMt-jE
     code: https://github.com/ronakrm/demd/
+    video: https://www.iclr.cc/virtual/2023/oral/12599
 
 - title: Deep Unlearning via Randomized Conditionally Independent Hessians
   authors: [Ronak Mehta*, Sourav Pal*, Vikas Singh, Sathya Ravi]
   venue: Computer Vision and Pattern Recognition, CVPR 2022
   links:
     CVPR: https://openaccess.thecvf.com/content/CVPR2022/html/Mehta_Deep_Unlearning_via_Randomized_Conditionally_Independent_Hessians_CVPR_2022_paper.html
-    #website: /research/deep-unlearning/
+    #website: /research/deep-unlearning/https://www.iclr.cc/virtual/2023/oral/12599
     code: https://github.com/vsingh-group/LCODEC-deep-unlearning/
 
 - title: Investigating Functional Brain Network Abnormalities via Differential Covariance Trajectory Analysis and Scan Statistics
@@ -31,6 +32,10 @@
   venue: Uncertainty in Artificial Intelligence, UAI 2021
   links:
     UAI: https://proceedings.mlr.press/v161/nazarovs21b.html
+    arXiv: https://arxiv.org/abs/2202.09478
+    code: https://github.com/JurijsNazarovs/bayesian_nn
+    video: https://youtu.be/Vg5La64V9Bs
+
 
 - title: Scaling Recurrent Models via Orthogonal Approximations in Tensor Trains
   authors: [Ronak Mehta, Rudrasis Chakraborty, Yunyang Xiong, Vikas Singh]
@@ -71,6 +76,7 @@
   links:
     QAM: https://www.ams.org/journals/qam/2019-77-02/S0033-569X-2018-01522-9/
     arXiv: https://arxiv.org/abs/1711.07575
+    video: https://vimeo.com/205606140
     #website: /research/covtraj/
 
 - title: Robust Blind Deconvolution via Mirror Descent
