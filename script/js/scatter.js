@@ -1,14 +1,14 @@
 var scatter_option;
 scatter_option = {
-  title: {
-    text: 'Word Count vs Pronoun Count',
-    subtext: 'Data from Genius.com with LyricGenius API, 2022'
-  },
+  // title: {
+  //   text: 'Word Count vs Pronoun Count',
+  //   subtext: 'Data from Genius.com with LyricGenius API, 2022'
+  // },
   grid: {
     left: '5%',
     right: '5%',
     //bottom: '7%',
-    top: '20%',
+    top: '5%',
     //containLabel: true
   },
   tooltip: {
@@ -34,8 +34,8 @@ scatter_option = {
   brush: {},
   legend: {
 	orient: 'vertical',
-    left: 75,
-    top: 125,
+    right: 25,
+    top: 35,
 	float: true,
 	borderWidth: 2,
 	itemGap: 2,
