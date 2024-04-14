@@ -5,8 +5,8 @@ scatter_option = {
   //   subtext: 'Data from Genius.com with LyricGenius API, 2022'
   // },
   grid: {
-    left: '5%',
-    right: '5%',
+    left: '10%',
+    right: '10%',
     //bottom: '7%',
     top: '5%',
     //containLabel: true

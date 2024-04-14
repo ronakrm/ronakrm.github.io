@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why do I like Muse less now?"
+title: "Less Muse and Thicker Plots"
 excerpt: Some old but very pretty and satisfying visualizations for a pointless analysis. (JS, JQuery, HighCharts)
 tags: misc viz js
 date: 2022-01-01
@@ -39,7 +39,7 @@ with songs I enjoy and if they're more concise or less concrete.
 ## If I Come Back to This
 
 Maybe I'll update this with my ratings of each song and see if any of these
-features correlate!
+features correlate! For now I made some pretty plots.
 
 Happy to share the Python scripts if you want to do something related, feel free to reach out. I should put them somewhere, but it's small enough that I don't think it warrants it's own repo, but maybe fleshing out this blog post with code snippets? Hmm...
 
