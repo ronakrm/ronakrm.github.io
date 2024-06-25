@@ -4,7 +4,7 @@ title: "Interpretability As A Science"
 excerpt: Knowing the typical or base distribution of a measure is important for interpreting a specific instance of that measure!
 tags: interpretability math statistics hypothesis-testing
 date: 2024-03-09
-modified_date: 2024-04-12
+modified_date: 2024-06-25
 katex: True
 ---
 
