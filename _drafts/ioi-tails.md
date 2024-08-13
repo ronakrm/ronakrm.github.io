@@ -11,53 +11,75 @@ __tl;dr__: {{ page.excerpt }}
 
 _Code for this post can be found at [https://github.com/ronakrm/ioi-enumerate](https://github.com/ronakrm/ioi-enumerate)._
 
-Following the _trend_ of _recent_ _work_,
-I did a deeper dive into the IOI results and just
-ran it on all possible inputs that fit the original BABA
-template and PLACE/OBJECT tokens.
+Unintentionally continuing the trend of
+"following up" on the [IOI paper](https://arxiv.org/abs/2211.00593),
+I ran GPT-2 Small on all possible inputs that fit the original BABA
+templates, PLACE/OBJECT tokens, and set of names for Subjects and Indirect Objects.
 This results in 9 million strings, and instead 
 of just looking at the mean logit diff, let's look at the distribution.
 
-FIGURE OF FULL HISTOGRAMS FOR SMALL/MEDIUM/LARGE HERE
+![Logit Differences, GPT-2 Small](/assets/blogfigs/ioi/small_full.png){:.centered}
 
 These look pretty decent, but there's obviously some mass below zero!
 For what percent of the 9 million inputs does GPT-2 incorrectly predict
-the Subject instead of the Indirect Object as the higher logit?
+the Subject instead of the Indirect Object as the higher logit? 1.348%,
+or about 125,000 out of the ~9 million sentences have reversed and incorrect
+indirect object predictions!
 
-TABLE OF SIZE, COUNT, PERCENTAGE
-
-This isn't a lot, but from chatting with people at MATS it seems like 
-there may have been a prevailing belief that IOI definitely always works:
-but not if your Subject is XXXX:
-
-We can identify these subsets that fail programmatically by looking
+We can dig in a bit deeper and try to identify if a _structured subset_
+of the data is where the model consistently fails.
+We can identify these subsets by looking
 at the conditional means and finding the ones that are furthest from
-either the global mean or the mean when that condition is removed
-(check out the notebook in the repo above).
+either the global mean or the mean when that condition is removed.
+In other words, we can split our data into groups which have the subject as X and not X,
+the IO and X and not X,
+etc., and then sort by the mean difference between these groups to get an idea.
+(check out the [notebook in the repo](https://github.com/ronakrm/ioi-enumerate/blob/main/plot_results.ipynb))
 
-If we slice again by the Indirect Object being YYYY,
+![Logit Differences, GPT-2 Small, Subject: Lisa](/assets/blogfigs/ioi/small_s.png){:.centered}
+
+If we subset our data to this subset and do our procedure again,
+
+![Logit Differences, GPT-2 Small, Subject: Lisa, IO: Alicia](/assets/blogfigs/ioi/small_s_io.png){:.centered}
+
+we can find out that in a large portion of cases where the subject is Lisa
+and the indirect object is Alicia, GPT-2 Small fails to perform the IOI task
+correctly.
+The notebook and other code in [the repository](https://github.com/ronakrm/ioi-enumerate/) have slightly more exploration,
+and is reasonably easy to run and extend so feel free to poke!
+
+### A Quick Check on Larger Models
+For GPT-2 Medium, the number of examples with a negative logit difference
+is 4143, or 0.044% of all ~9M samples.
+
+![Logit Differences for IOI on GPT-Medium](/assets/blogfigs/ioi/med_full.png){:.centered}
+
+And for GPT-2 Large, 5986, or 0.064% of all ~9M samples.
+
+![Logit Differences for IOI on GPT-Large](/assets/blogfigs/ioi/large_full.png){:.centered}
+
+For both of these slicing by first-order obvious dataset groups did not show
+anything interesting (check the notebook in the repo).
 
 
-we can see that the model fails _every time_ to correctly complete the IOI task.
-
-### This occurs for the larger models as well, BUT...?
-plots for medium, large
-
-
-
-## Conclusion
-That's all I wanted to point out. I'm becoming more interested
-generally in bounding worst-case behaviors as a safety angle.
-This is a toy setup where the worst-case is not being handled correctly.
-If your name is XXXX or YYYY you may feel this more concretely,
+## Final Thoughts
+When we can, we should brute force all inputs that make reasonable
+sense and _look at the full distribution_.
+I'm becoming more interested
+generally in bounding worst-case behaviors as a safety angle:
+this one toy setup where the worst-case is not being handled correctly.
+If your name is Lisa or Alicia you may feel this more concretely,
 let alone if your name is uncommon, non-Western, or multi-token.
 As we worry more and more about extreme tail-risk failure modes,
 it's a good idea to keep things like this in mind, and perhaps
-ideas in fairness and more mainstream machine learning and 
-algorithmic fairness may be good "model organisms" for demonstrating
-and studying these failure modes.  
+ideas in fairness and more mainstream machine learning may be good
+"model organisms" for demonstrating and studying these failure modes.  
 
 I think it's good to worry about these kinds of issues as we attempt
 to scale interpretability approaches to large models, and I'm
 glad that new approaches for ensuring the robustness and faithfulness 
-of interpretability are becoming more common!
+of interpretability results are becoming more popular.
+
+Specifically I'm excited that work like [Hypothesis Testing the Circuit Hypothesis in LLMs](https://openreview.net/forum?id=ibSNv9cldu) and
+[Transformer Circuit Faithfulness Metrics are not Robust](https://arxiv.org/abs/2407.08734) are becoming a bit more mainstream; [I share a lot of their thoughts](/interpretability-science/) and am excited and optimistic
+to see this grow!
