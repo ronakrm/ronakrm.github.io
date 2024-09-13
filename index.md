@@ -30,7 +30,8 @@ permalink: /
 My dissertation research focused on methods for efficiently identifying important subsets of features, parameters, and samples
 in modern ML settings. Current and future interests for me revolve around
 applying some of these ideas to interpretability and safety, and more broadly
-exploring issues around alignment.
+exploring issues around alignment. I'm currently working on a couple
+of projects in the guaranteed-safe and provably-safe AI space, stay tuned!
 
 For a take-away, check out my [R&eacute;sum&eacute;/CV](/resume/Ronak_Mehta_CV.pdf).
 
