@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Current Compute is More Than Enough"
-excerpt: "A human brain operating for 40 years uses less energy than training a large language model. If we are truly concerned about safety our thresholds need to adjust appropriately."
+excerpt: "A human brain operating for 40 years uses less energy than training a large language model. If we are truly concerned about safety our compute thresholds need to be adjusted appropriately."
 tags: ai energy efficiency intelligence computation math
 date: 2024-10-15
 modified_date: 2024-10-15
