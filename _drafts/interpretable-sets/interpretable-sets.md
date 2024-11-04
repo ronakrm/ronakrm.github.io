@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Interpretability by Design: Constraint Sets With Disjoint Limit Sets and Natural Subspaces"
-excerpt: "How can we constrain our models to be interpretable? Convex linear sets make for more interpretable parameter spaces."
+title: "Interpretability by Design: Constraint Sets and Natural Subspaces"
+excerpt: "How can we constrain our models to be interpretable? Convex, linear sets make for more interpretable parameter spaces."
 tags: math interpretability geometry analysis convexity probability
 date: 2024-10-24
 katex: True
