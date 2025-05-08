@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
+<!-- 
 
 I was a CS PhD at UW-Madison, where I worked with [Dr. Vikas Singh](https://biostat.wisc.edu/~vsingh) on machine learning and computer vision projects, some in collaboration with the [Wisconsin Alzheimer's Disease Research Center](https://adrc.wisc.edu) to develop methods for analyzing preclinical datasets.
 
@@ -20,6 +21,8 @@ Feel free to contact me via email, or at my few social media presences:
         {%- endif %}
 </ul>
 {% include social.html %}
+-->
+
 
 ### Website
 
