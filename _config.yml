@@ -55,6 +55,7 @@ minima:
 header_pages:
   - research.md
   - blog.md
+  - shelf.md
   - about.md
 
 # Set to `true` to show excerpts on the homepage.

@@ -1,0 +1,87 @@
+# Shelf Database
+# Schema: see ShelfItem in scripts/shelf/cli.py
+# Manage with: uv run scripts/shelf/cli.py --help
+
+- title: The Dispossessed
+  author: Ursula K. Le Guin
+  type: book
+  link: https://en.wikipedia.org/wiki/The_Dispossessed
+  rating: 5
+  starred: true
+  visible: true
+  status: finished
+  tags:
+  - sci-fi
+  - politics
+  - utopia
+  comments: Amazing book, a totally different perspective on how crazy our world can
+    look from even a slight outside perspective!
+  date_added: '2026-04-09'
+- title: Consider Phlebas
+  author: Iain M. Banks
+  type: book
+  link: https://en.wikipedia.org/wiki/Consider_Phlebas
+  rating: 3
+  starred: false
+  visible: true
+  status: finished
+  tags:
+  - sci-fi
+  - culture-series
+  comments: Skippable if you want to get straight to the deep Culture stuff and the
+    Iain Banks universe vibe.
+  date_added: '2026-04-09'
+- title: The Player of Games
+  author: Iain M. Banks
+  type: book
+  link: https://en.wikipedia.org/wiki/The_Player_of_Games
+  rating: 4
+  starred: false
+  visible: true
+  status: finished
+  tags:
+  - sci-fi
+  - culture-series
+  comments: As people say, the one to read for post-scarcity utopia descriptions ASAP.
+  date_added: '2026-04-09'
+- title: Use of Weapons
+  author: Iain M. Banks
+  type: book
+  link: https://en.wikipedia.org/wiki/Use_of_Weapons
+  rating: 4
+  starred: false
+  visible: true
+  status: finished
+  tags:
+  - sci-fi
+  - culture-series
+  comments: Ambitious nonlinear storytelling, mostly great, a good mystery or slow
+    build.
+  date_added: '2026-04-09'
+- title: Excession
+  author: Iain M. Banks
+  type: book
+  link: https://en.wikipedia.org/wiki/Excession
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - sci-fi
+  - culture-series
+  comments: ''
+  date_added: '2026-04-09'
+- title: Fully Automated Luxury Communism
+  author: Aaron Bastani
+  type: book
+  link: https://en.wikipedia.org/wiki/Fully_Automated_Luxury_Communism
+  rating:
+  starred: false
+  visible: true
+  status: in-progress
+  tags:
+  - politics
+  - economics
+  - utopia
+  comments: ''
+  date_added: '2026-04-09'
