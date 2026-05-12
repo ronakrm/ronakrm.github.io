@@ -3,7 +3,7 @@ layout: post
 title: "Research Directions"
 excerpt: ""
 tags:
-date:
+date: 2027-01-01
 katex: True
 ---
 
