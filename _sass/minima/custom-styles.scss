@@ -307,6 +307,14 @@ img.centered {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  margin-bottom: 0.75em;
+}
+
+.shelf-queue-hidden {
+  display: none;
+}
+
+.shelf-show-more {
   margin-bottom: 1.5em;
 }
 

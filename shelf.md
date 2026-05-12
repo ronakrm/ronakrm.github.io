@@ -73,9 +73,9 @@ Recent things I've been reading, plus the stuff I'd recommend as support vectors
 {% assign queue_items = in_progress | concat: up_next %}
 {% if queue_items.size > 0 %}
 <h2 class="shelf-section-heading">In the Queue</h2>
-<div class="shelf-queue">
+<div class="shelf-queue" id="shelf-queue">
   {% for item in queue_items %}
-  <div class="shelf-card queue"
+  <div class="shelf-card queue{% if forloop.index > 5 %} shelf-queue-hidden{% endif %}"
        data-type="{{ item.type }}"
        data-status="{{ item.status }}"
        data-rating="{{ item.rating }}"
@@ -96,6 +96,9 @@ Recent things I've been reading, plus the stuff I'd recommend as support vectors
   </div>
   {% endfor %}
 </div>
+{% if queue_items.size > 5 %}
+<button class="shelf-btn shelf-show-more" id="shelf-queue-toggle">Show all ({{ queue_items.size }})</button>
+{% endif %}
 {% endif %}
 
 <!-- Full Table -->
@@ -149,6 +152,18 @@ Some shows, films, and games I've enjoyed or have thoughts about. Less structure
 
 <script>
 (function() {
+  // Queue show more/less toggle
+  var queueToggle = document.getElementById('shelf-queue-toggle');
+  if (queueToggle) {
+    queueToggle.addEventListener('click', function() {
+      var hidden = document.querySelectorAll('.shelf-queue-hidden');
+      var expanded = queueToggle.getAttribute('data-expanded') === 'true';
+      hidden.forEach(function(el) { el.style.display = expanded ? 'none' : ''; });
+      queueToggle.setAttribute('data-expanded', expanded ? 'false' : 'true');
+      queueToggle.textContent = expanded ? queueToggle.textContent.replace('Show less', 'Show all') : queueToggle.textContent.replace('Show all', 'Show less');
+    });
+  }
+
   // Filter buttons (multi-select: click toggles, "All" resets)
   document.querySelectorAll('.shelf-btn-group').forEach(function(group) {
     group.addEventListener('click', function(e) {

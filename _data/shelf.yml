@@ -65,7 +65,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: in-progress
   tags:
   - sci-fi
   - culture-series
@@ -85,3 +85,263 @@
   - utopia
   comments: ''
   date_added: '2026-04-09'
+- title: Meditations on Moloch
+  author: Scott Alexander
+  type: post
+  link: https://slatestarcodex.com/2014/07/30/meditations-on-moloch/
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - rationality
+  - coordination
+  - society
+  comments: ''
+  date_added: '2026-04-10'
+- title: Borges and AI
+  author: Matt Farr
+  type: post
+  link:
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - philosophy
+  - ai
+  comments: ''
+  date_added: '2026-04-10'
+- title: Hyperion
+  author: Dan Simmons
+  type: book
+  link: https://en.wikipedia.org/wiki/Hyperion_(Simmons_novel)
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - sci-fi
+  comments: ''
+  date_added: '2026-04-10'
+- title: Utopia, LOL?
+  author: ''
+  type: post
+  link:
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - politics
+  - utopia
+  comments: ''
+  date_added: '2026-04-10'
+- title: A Stranger's Journey
+  author: ''
+  type: book
+  link:
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags: []
+  comments: ''
+  date_added: '2026-04-10'
+- title: The Obstacle Is the Way
+  author: Ryan Holiday
+  type: book
+  link: https://en.wikipedia.org/wiki/The_Obstacle_Is_the_Way
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - stoicism
+  - philosophy
+  comments: ''
+  date_added: '2026-04-10'
+- title: The Gentle Seduction
+  author: Marc Stiegler
+  type: post
+  link:
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - sci-fi
+  - transhumanism
+  comments: ''
+  date_added: '2026-04-10'
+- title: Letter from Utopia
+  author: Nick Bostrom
+  type: post
+  link:
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - philosophy
+  - utopia
+  comments: ''
+  date_added: '2026-04-10'
+- title: Order Without Design
+  author: Alain Bertaud
+  type: book
+  link: https://en.wikipedia.org/wiki/Order_Without_Design
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - urbanism
+  - economics
+  comments: ''
+  date_added: '2026-04-10'
+- title: Accelerando
+  author: Charles Stross
+  type: book
+  link: https://en.wikipedia.org/wiki/Accelerando
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - sci-fi
+  - transhumanism
+  - singularity
+  comments: ''
+  date_added: '2026-04-10'
+- title: Too Like the Lightning
+  author: Ada Palmer
+  type: book
+  link: https://en.wikipedia.org/wiki/Too_Like_the_Lightning
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - sci-fi
+  - utopia
+  - philosophy
+  comments: ''
+  date_added: '2026-04-10'
+- title: Man on Earth
+  author: ''
+  type: book
+  link:
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags: []
+  comments: ''
+  date_added: '2026-04-10'
+- title: A Psalm for the Wild-Built
+  author: Becky Chambers
+  type: book
+  link: https://en.wikipedia.org/wiki/A_Psalm_for_the_Wild-Built
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - sci-fi
+  - solarpunk
+  comments: ''
+  date_added: '2026-04-10'
+- title: The Left Hand of Darkness
+  author: Ursula K. Le Guin
+  type: book
+  link: https://en.wikipedia.org/wiki/The_Left_Hand_of_Darkness
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - sci-fi
+  - gender
+  - anthropology
+  comments: ''
+  date_added: '2026-04-10'
+- title: Never Let Me Go
+  author: Kazuo Ishiguro
+  type: book
+  link: https://en.wikipedia.org/wiki/Never_Let_Me_Go_(novel)
+  rating: 4
+  starred: false
+  visible: true
+  status: finished
+  tags:
+  - sci-fi
+  - literary-fiction
+  comments: Super sad and emotional book.
+  date_added: '2026-04-10'
+- title: A Prayer for the Crown-Shy
+  author: Becky Chambers
+  type: book
+  link: https://en.wikipedia.org/wiki/A_Prayer_for_the_Crown-Shy
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - sci-fi
+  - solarpunk
+  comments: ''
+  date_added: '2026-04-10'
+- title: Snow Crash
+  author: Neal Stephenson
+  type: book
+  link: https://en.wikipedia.org/wiki/Snow_Crash
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - sci-fi
+  - cyberpunk
+  comments: ''
+  date_added: '2026-04-10'
+- title: Terra Ignota
+  author: Ada Palmer
+  type: book
+  link: https://en.wikipedia.org/wiki/Terra_Ignota
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - sci-fi
+  - utopia
+  - philosophy
+  comments: Series starting with Too Like the Lightning.
+  date_added: '2026-04-10'
+- title: The Fountainhead
+  author: Ayn Rand
+  type: book
+  link: https://en.wikipedia.org/wiki/The_Fountainhead
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - philosophy
+  - individualism
+  comments: ''
+  date_added: '2026-04-10'
+- title: The Honor Code
+  author: Kwame Anthony Appiah
+  type: book
+  link: https://en.wikipedia.org/wiki/The_Honor_Code
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - philosophy
+  - ethics
+  comments: ''
+  date_added: '2026-04-10'
