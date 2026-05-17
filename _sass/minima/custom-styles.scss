@@ -133,6 +133,26 @@ img.centered {
   margin-right: auto;
 }
 
+.substack-subscribe {
+  margin: 2.5em auto 1em;
+  padding: 1.25em 1.25em 0.75em;
+  max-width: 520px;
+  text-align: center;
+  border-top: 1px solid rgba(128, 128, 128, 0.25);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.substack-subscribe-note {
+  margin: 0 0 0.75em;
+  font-size: 0.95em;
+  font-style: italic;
+}
+
+.substack-subscribe iframe {
+  display: block;
+  margin: 0 auto;
+}
+
 .admon {
  background-color: $admon-background-color;
  padding: 20px; 

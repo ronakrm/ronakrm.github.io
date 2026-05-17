@@ -26,16 +26,26 @@ permalink: /
 
 <br/>
 
-I'm currently working on <a href="https://coordinal.org/">accelerating and automating AI alignment and safety research</a>.
+My dissertation research focused on methods for efficiently identifying important subsets of features, parameters, and samples in modern ML settings.
+I've worked on some assorted alignment research projects, and more recently a startup for research automation.
 
-My dissertation research focused on methods for efficiently identifying important subsets of features, parameters, and samples
-in modern ML settings. Current and future interests for me revolve around
-applying some of these ideas to interpretability and safety, and more broadly
-exploring issues around alignment. I'm currently working on a couple
-of projects in the guaranteed-safe and provably-safe AI space, stay tuned!
+I occasionally write some <a href="/blog/">blog posts</a>, technical and otherwise. Future ones will also be on <a href="https://ronakrm.substack.com">my substack</a>, if you prefer that.
 
-I occasionally write some <a href="/blog/">blog posts</a>, technical and otherwise.
+<div class="row">
+    <div class="col col-md-8 ml-md-auto mr-md-auto">
+        <h1>Latest Posts</h1>
+        {%- assign num_posts = 1 -%}
+        {%- for post in site.posts limit: num_posts -%}
+            <h3 style="margin-bottom: 5px;">
+                <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <p class="post-meta" style="margin-bottom: 10px;">{{ post.date | date: "%b %-d, %Y" }}</p>
+            <p>{{ post.excerpt | strip_html }}</p>
+        {%- endfor -%}
+    </div>
+</div>
 
+<!--
 <div class="row">
     <div class="col col-md-8 ml-md-auto mr-md-auto">
         <h2>Recent News</h2>
@@ -48,3 +58,4 @@ I occasionally write some <a href="/blog/">blog posts</a>, technical and otherwi
         </div>
     </div>
 </div>
+-->

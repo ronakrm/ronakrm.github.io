@@ -36,6 +36,8 @@ layout: base
     {{ content }}
   </div>
 
+  {%- include substack-subscribe.html -%}
+
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}

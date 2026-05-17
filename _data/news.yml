@@ -1,9 +1,10 @@
 #- Migrating to Github Pages site with Jekyll + Bootstrap! Largely taken from https://varunagrawal.github.io/
 #- Testing news/updates
-- I'm cofounding a new AI startup, <a href="https://coordinal.org">Coordinal Research</a>, working on accelerating and automating alignment research.
-- We presented our joint work on <a href="https://arxiv.org/abs/2502.05714">A Benchmark for Formally Verified Code Generation</a> at the LLM4Code workshop at ICSE 2025.
-- I participated in the <a href="https://www.catalyze-impact.org/">Catalyze Impact Incubator</a> in London.
-- I participated in the <a href="https://matsprogram.org"> ML and Alignment Scholars Program</a> in Berkeley this summer, and am continuing work on projects in guaranteed-safe AI.
+- I built a startup, <a href="https://coordinal.org">Coordinal Research</a>, and have recently "started it down". You can read the postmortem <a href="https://ronakrm.github.io/coordinal-postmortem">here</a>. Stay tuned for what's next!
+# - I'm cofounding a new AI startup, <a href="https://coordinal.org">Coordinal Research</a>, working on accelerating and automating alignment research.
+# - We presented our joint work on <a href="https://arxiv.org/abs/2502.05714">A Benchmark for Formally Verified Code Generation</a> at the LLM4Code workshop at ICSE 2025.
+# - I participated in the <a href="https://www.catalyze-impact.org/">Catalyze Impact Incubator</a> in London.
+# - I participated in the <a href="https://matsprogram.org"> ML and Alignment Scholars Program</a> in Berkeley this summer, and am continuing work on projects in guaranteed-safe AI.
 # - I started work at <a href="https://orcadb.ai"> Orca</a>, a new startup working on memory augmentation for traditional and language ML models.
 # - I travelled to Rhodes for ICASSP 2023 to present our work on <a href="https://ieeexplore.ieee.org/abstract/document/10096350">Robust Blind Deconvolution via Mirror Descent</a>.
 # - I presented our work on <a href="https://openreview.net/forum?id=R98ZfMt-jE">Discrete Optimal Transport</a> (top 25%!) in Kigali, Rwanda at ICLR 2023.
