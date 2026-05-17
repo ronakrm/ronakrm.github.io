@@ -3,7 +3,7 @@ layout: post
 title: "Coordinal: A Postmortem."
 excerpt: "Most startups fail, this one did too. An account of the startup, the startdown, and lessons learned."
 tags: coordinal, automation, research, org, math
-date: 2026-05-18
+date: 2026-05-16
 katex: False
 ---
 
