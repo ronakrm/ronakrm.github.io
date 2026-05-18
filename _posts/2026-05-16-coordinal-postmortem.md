@@ -13,7 +13,7 @@ __cart;horse__: Most startups fail, this one did too. Tried too much with too li
 
 The bet was that AI-accelerated research is coming whether we like it or not, and having this differentially happen for safety work faster is good. The bet didn't pay off — at least not in the form I tried to make it.
 
-The main content is the condensed version. The [full chronology](#appendix-a-the-startup), the [final push](#appendix-b-the-startdown), and the [technical artifacts I shipped](#appendix-c-the-salvage) are appendices for anyone who wants them. See also [our Manifund page](https://manifund.org/projects/coordinal-research-accelerating-the-research-of-safely-deploying-ai-systems) for the original pitch/ask.
+The main content is the condensed version. The [full chronology](#a-the-startup), the [final push](#b-the-startdown), and the [technical artifacts I shipped](#c-the-salvage) are appendices for anyone who wants them. See also [our Manifund page](https://manifund.org/projects/coordinal-research-accelerating-the-research-of-safely-deploying-ai-systems) for the original pitch/ask.
 
 # The arc, in brief.
 
@@ -21,7 +21,7 @@ The main content is the condensed version. The [full chronology](#appendix-a-the
 
 **The startdown.** Q1 2026: a final push on two things. (1) Ship the user-facing app at [coordinal.org/app](https://coordinal.org/app/). (2) Demonstrate SOTA on [RE-Bench](https://metr.org/). The RE-Bench work went well — full-suite normalized average from 0.547 to 1.624 over a month, ~$30k of compute, 6/7 tasks reliably producing real non-reward-hacked results with Sonnet 4. The app demo didn't — a friend couldn't figure out the interface, which clarified I was much further from a shareable product than I'd thought. Burned out, I decided to stop unless funded. Coefficient Giving eventually declined the $1M budget I'd sent.
 
-**The salvage.** A working full-stack platform on AWS, an agent orchestration system with real observability, an RE-Bench eval pipeline, and a tour through the entire legal/admin layer of incorporating and unwinding a small tech org. [Detailed writeup in the appendix.](#appendix-c-the-salvage) Could have been worse.
+**The salvage.** A working full-stack platform on AWS, an agent orchestration system with real observability, an RE-Bench eval pipeline, and a tour through the entire legal/admin layer of incorporating and unwinding a small tech org. [Detailed writeup in the appendix.](#c-the-salvage) Could have been worse.
 
 # Lessons.
 
@@ -46,7 +46,9 @@ I think I'm bearish on starting organizations right now given the funding landsc
 
 ---
 
-## Appendix A: The Startup.
+# Appendix.
+
+## A: The Startup.
 
 I had just finished [MATS](https://www.matsprogram.org/) 6.0 in the Fall of 2024, was mildly working on [some follow-up work](https://www.lesswrong.com/posts/kjL9req2p79nSNe5H/interpretable-by-design-constraint-sets-with-disjoint-limit), and decided to quit my MLE job that wasn't really aligned with directly addressing the technical problems. There had of course been talk about needing more startups and founders, and [Catalyze](https://catalyze-impact.org/) was starting so I applied. As part of the application, I built a weighted factor model. It was rough, but pointed me in a direction I hadn't really considered, and realized was severely neglected and tractable (in my eyes): building out capacity for research automation differentially pointed at safety sooner rather than later. Catalyze was great to slowly figure out what it would look like to build an org. There was an emphasis on cofounder matching, I got to meet awesome people, learn from them, and start working with someone. We ended up splitting towards the end of January, and that's when Jacques and I began working together.
 
@@ -68,7 +70,7 @@ I was fully set on only building the vision in my head at this point, and did no
 
 Towards the end of January I started recognizing the same feeling I had had in October, and decided to part ways with Leo. Again this sucked, Leo's awesome, but it just wasn't clicking. I was also becoming highly uncertain of what was important, the original theory of change, and if I wanted to continue working on the startup. This was slightly easier admin wise, but still somewhat costly in time and money (IP agreement language, fair compensation, etc.).
 
-## Appendix B: The Startdown.
+## B: The Startdown.
 
 At this point I decided to make a final push on two pieces. I had been extremely distracted from what I felt was the core output that I wanted: to demonstrate automated safety research was possible. So I put my full effort into 1) building out the full end-to-end app that anyone could use, and 2) running my backend scaffold and system on [RE-Bench](https://metr.org/) to demonstrate SOTA performance.
 
@@ -82,7 +84,7 @@ I was burned out at this point and realized it was time to stop. This wasn't wor
 
 Over the next few weeks I started doing some soul-searching; the models were just getting better and any alpha I was bringing was getting more and more swallowed by Claude Code and related tools plus better models. I was pretty burned out and was not very interested in continuing working alone, so I just started looking for other existing orgs that I felt excited about, whose mission I could help/accelerate. Discussions with CG continued, they were interested in a budget for an org that would work on building out automated research replication capacity. I sent them an ambitious budget for $1M for a year, that roughly broke down to salaries for 3 engineers/researchers, ~2 FTE equiv. contractors, 0.5 FTE COO, and then $250k compute for building out [PaperBench](https://inspect.aisi.org.uk/evals/#/eval/paperbench)-style CI/CD workflows and infrastructure. They eventually said no (April), citing not enough research experience; I was tired enough and had already mentally moved on so let it be.
 
-## Appendix C: The Salvage.
+## C: The Salvage.
 
 Holy shit I learned a lot. It's not all bad! Look at all of these things I've built, new skills I have, topics and ideas I can speak confidently about, ways of thinking that will contribute strongly to any future work:
 
