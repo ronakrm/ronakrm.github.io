@@ -4,7 +4,7 @@ title: Research
 permalink: /research/
 ---
 ## Conference and Journal Publications
-Google Scholar: [Ronak Mehta](https://scholar.google.com/citations?user=7hv6xqkAAAAJ)
+Google Scholar: [Ronak Mehta](https://scholar.google.com/citations?user=zFRqln4AAAAJ&hl=en)
 
 If you're interested in a particular paper, that's not easily available,
  feel free to reach out to me for a copy.
