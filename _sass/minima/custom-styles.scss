@@ -319,23 +319,36 @@ img.centered {
 .shelf-status-finished { background: #2d6a4f; color: #fff; }
 .shelf-status-in-progress { background: #b08218; color: #fff; }
 .shelf-status-up-next { background: #2874a6; color: #fff; }
+.shelf-status-backlog { background: #5d6d7e; color: #fff; }
 .shelf-status-dropped { background: #943126; color: #fff; }
 
 // Starred cards — single column, compact
 .shelf-starred,
-.shelf-queue {
+.shelf-queue,
+.shelf-backlog {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
   margin-bottom: 0.75em;
 }
 
-.shelf-queue-hidden {
+// Collapse state lives on the container; the filter uses its own class so the
+// two never fight over the same inline `display`.
+.shelf-collapsible.is-collapsed:not(.is-filtering) .shelf-collapse-hidden {
   display: none;
+}
+
+.shelf-filtered-out {
+  display: none !important;
 }
 
 .shelf-show-more {
   margin-bottom: 1.5em;
+}
+
+.shelf-empty {
+  font-style: italic;
+  opacity: 0.7;
 }
 
 .shelf-card {
@@ -349,6 +362,10 @@ img.centered {
 
   &.queue {
     border-left: 3px solid #2874a6;
+  }
+
+  &.backlog {
+    border-left: 3px solid #5d6d7e;
   }
 }
 

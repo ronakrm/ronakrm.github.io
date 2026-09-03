@@ -1,0 +1,27 @@
+{%- comment -%}
+Shelf card.
+  item    — an entry from _data/shelf.yml
+  variant — starred | queue | backlog (drives the accent border)
+  status  — truthy to render the status badge in the title line
+  hidden  — truthy to start collapsed inside a .shelf-collapsible group
+{%- endcomment -%}
+<div class="shelf-card {{ include.variant }}{% if include.hidden %} shelf-collapse-hidden{% endif %}"
+     data-type="{{ include.item.type }}"
+     data-status="{{ include.item.status }}"
+     data-rating="{{ include.item.rating }}"
+     data-date="{{ include.item.date_added }}"
+     data-title="{{ include.item.title | downcase }}"
+     data-search="{{ include.item.title | downcase }} {{ include.item.author | downcase }} {{ include.item.tags | join: ' ' | downcase }} {{ include.item.comments | downcase }}">
+  <div class="shelf-card-body">
+    <div class="shelf-card-main">
+      <div class="shelf-card-title">{% if include.item.link %}<a href="{{ include.item.link }}">{{ include.item.title }}</a>{% else %}{{ include.item.title }}{% endif %} <span class="shelf-type-badge">{{ include.item.type }}</span>{% if include.status %} <span class="shelf-status-badge shelf-status-{{ include.item.status }}">{{ include.item.status }}</span>{% endif %}</div>
+      {% if include.item.author and include.item.author != "" %}<div class="shelf-card-author">{{ include.item.author }}</div>{% endif %}
+      {% if include.item.rating or include.item.comments != "" %}<div class="shelf-card-detail">{% if include.item.rating %}<span class="shelf-card-rating">{% for i in (1..5) %}{% if i <= include.item.rating %}&#9733;{% else %}&#9734;{% endif %}{% endfor %}</span> {% endif %}{% if include.item.comments != "" %}<span class="shelf-card-comments">{{ include.item.comments }}</span>{% endif %}</div>{% endif %}
+    </div>
+    <div class="shelf-card-aside">
+      {% if include.item.tags and include.item.tags.size > 0 %}
+      <div class="shelf-card-tags">{% for tag in include.item.tags %}<span class="shelf-tag">{{ tag }}</span>{% endfor %}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>

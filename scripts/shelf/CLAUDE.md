@@ -57,7 +57,7 @@ uv run scripts/shelf/cli.py validate
 | rating | int | no | null | 1-5 |
 | starred | bool | no | false | Shows in Recommended section |
 | visible | bool | no | true | false = hidden from public site, stays in YAML |
-| status | enum | no | finished | finished, in-progress, up-next, dropped |
+| status | enum | no | finished | finished, in-progress, up-next, backlog, dropped |
 | tags | list[str] | no | [] | CLI accepts comma-separated |
 | comments | str | no | "" | Short personal note |
 | date_added | date | no | today | Auto-set on add |

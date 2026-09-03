@@ -41,30 +41,12 @@ Recent things I've been reading, plus the stuff I'd recommend as support vectors
 <!-- Recommended -->
 {% assign starred_items = site.data.shelf | where: "starred", true | where: "visible", true %}
 {% if starred_items.size > 0 %}
+<section class="shelf-section">
 <h2 class="shelf-section-heading">Recommended</h2>
 <div class="shelf-starred">
-  {% for item in starred_items %}
-  <div class="shelf-card starred"
-       data-type="{{ item.type }}"
-       data-status="{{ item.status }}"
-       data-rating="{{ item.rating }}"
-       data-date="{{ item.date_added }}"
-       data-search="{{ item.title | downcase }} {{ item.author | downcase }} {{ item.tags | join: ' ' | downcase }}">
-    <div class="shelf-card-body">
-      <div class="shelf-card-main">
-        <div class="shelf-card-title">{% if item.link %}<a href="{{ item.link }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %} <span class="shelf-type-badge">{{ item.type }}</span></div>
-        {% if item.author and item.author != "" %}<div class="shelf-card-author">{{ item.author }}</div>{% endif %}
-        <div class="shelf-card-detail">{% if item.rating %}<span class="shelf-card-rating">{% for i in (1..5) %}{% if i <= item.rating %}&#9733;{% else %}&#9734;{% endif %}{% endfor %}</span> {% endif %}{% if item.comments and item.comments != "" %}<span class="shelf-card-comments">{{ item.comments }}</span>{% endif %}</div>
-      </div>
-      <div class="shelf-card-aside">
-        {% if item.tags and item.tags.size > 0 %}
-        <div class="shelf-card-tags">{% for tag in item.tags %}<span class="shelf-tag">{{ tag }}</span>{% endfor %}</div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-  {% endfor %}
+  {% for item in starred_items %}{% include shelf-card.html item=item variant="starred" %}{% endfor %}
 </div>
+</section>
 {% endif %}
 
 <!-- In the Queue (in-progress + up-next) -->
@@ -72,37 +54,40 @@ Recent things I've been reading, plus the stuff I'd recommend as support vectors
 {% assign up_next = site.data.shelf | where: "visible", true | where: "status", "up-next" %}
 {% assign queue_items = in_progress | concat: up_next %}
 {% if queue_items.size > 0 %}
+<section class="shelf-section">
 <h2 class="shelf-section-heading">In the Queue</h2>
-<div class="shelf-queue" id="shelf-queue">
-  {% for item in queue_items %}
-  <div class="shelf-card queue{% if forloop.index > 5 %} shelf-queue-hidden{% endif %}"
-       data-type="{{ item.type }}"
-       data-status="{{ item.status }}"
-       data-rating="{{ item.rating }}"
-       data-date="{{ item.date_added }}"
-       data-search="{{ item.title | downcase }} {{ item.author | downcase }} {{ item.tags | join: ' ' | downcase }}">
-    <div class="shelf-card-body">
-      <div class="shelf-card-main">
-        <div class="shelf-card-title">{% if item.link %}<a href="{{ item.link }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %} <span class="shelf-type-badge">{{ item.type }}</span> <span class="shelf-status-badge shelf-status-{{ item.status }}">{{ item.status }}</span></div>
-        {% if item.author and item.author != "" %}<div class="shelf-card-author">{{ item.author }}</div>{% endif %}
-        {% if item.comments and item.comments != "" %}<div class="shelf-card-detail"><span class="shelf-card-comments">{{ item.comments }}</span></div>{% endif %}
-      </div>
-      <div class="shelf-card-aside">
-        {% if item.tags and item.tags.size > 0 %}
-        <div class="shelf-card-tags">{% for tag in item.tags %}<span class="shelf-tag">{{ tag }}</span>{% endfor %}</div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-  {% endfor %}
+<div class="shelf-collapsible shelf-queue is-collapsed" id="shelf-queue" data-limit="5">
+  {% for item in queue_items %}{% if forloop.index > 5 %}{% assign hide = true %}{% else %}{% assign hide = false %}{% endif %}{% include shelf-card.html item=item variant="queue" status=true hidden=hide %}{% endfor %}
 </div>
 {% if queue_items.size > 5 %}
-<button class="shelf-btn shelf-show-more" id="shelf-queue-toggle">Show all ({{ queue_items.size }})</button>
+<button class="shelf-btn shelf-show-more" data-target="shelf-queue" data-count="{{ queue_items.size }}">Show all ({{ queue_items.size }})</button>
 {% endif %}
+</section>
 {% endif %}
 
+<!-- Backlog -->
+{% assign backlog_items = site.data.shelf | where: "visible", true | where: "status", "backlog" %}
+{% if backlog_items.size > 0 %}
+<section class="shelf-section">
+<h2 class="shelf-section-heading">Backlog</h2>
+<div class="shelf-collapsible shelf-backlog is-collapsed" id="shelf-backlog" data-limit="5">
+  {% for item in backlog_items %}{% if forloop.index > 5 %}{% assign hide = true %}{% else %}{% assign hide = false %}{% endif %}{% include shelf-card.html item=item variant="backlog" hidden=hide %}{% endfor %}
+</div>
+{% if backlog_items.size > 5 %}
+<button class="shelf-btn shelf-show-more" data-target="shelf-backlog" data-count="{{ backlog_items.size }}">Show all ({{ backlog_items.size }})</button>
+{% endif %}
+</section>
+{% endif %}
+
+<noscript>
+<style>
+.shelf-collapsible.is-collapsed .shelf-collapse-hidden { display: block; }
+.shelf-show-more { display: none; }
+</style>
+</noscript>
+
 <!-- Full Table -->
-<details class="shelf-everything">
+<details class="shelf-everything" id="shelf-everything">
 <summary><h2 class="shelf-section-heading">Everything</h2></summary>
 <div class="shelf-table-wrap">
 <table class="shelf-table">
@@ -124,6 +109,7 @@ Recent things I've been reading, plus the stuff I'd recommend as support vectors
         data-status="{{ item.status }}"
         data-rating="{{ item.rating }}"
         data-date="{{ item.date_added }}"
+        data-title="{{ item.title | downcase }}"
         data-search="{{ item.title | downcase }} {{ item.author | downcase }} {{ item.tags | join: ' ' | downcase }} {{ item.comments | downcase }}">
       <td>{% if item.link %}<a href="{{ item.link }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</td>
       <td>{{ item.author }}</td>
@@ -143,6 +129,8 @@ Recent things I've been reading, plus the stuff I'd recommend as support vectors
 </div>
 </details>
 
+<p class="shelf-empty" id="shelf-empty" hidden>Nothing matches those filters.</p>
+
 <!-- Entertainment -->
 <!--
 <h2 class="shelf-section-heading">Entertainment</h2>
@@ -152,19 +140,59 @@ Some shows, films, and games I've enjoyed or have thoughts about. Less structure
 
 <script>
 (function() {
-  // Queue show more/less toggle
-  var queueToggle = document.getElementById('shelf-queue-toggle');
-  if (queueToggle) {
-    queueToggle.addEventListener('click', function() {
-      var hidden = document.querySelectorAll('.shelf-queue-hidden');
-      var expanded = queueToggle.getAttribute('data-expanded') === 'true';
-      hidden.forEach(function(el) { el.style.display = expanded ? 'none' : ''; });
-      queueToggle.setAttribute('data-expanded', expanded ? 'false' : 'true');
-      queueToggle.textContent = expanded ? queueToggle.textContent.replace('Show less', 'Show all') : queueToggle.textContent.replace('Show all', 'Show less');
+  var HIDDEN = 'shelf-collapse-hidden';
+  var FILTERED = 'shelf-filtered-out';
+
+  var groups = Array.prototype.map.call(
+    document.querySelectorAll('.shelf-collapsible'),
+    function(el) {
+      return {
+        el: el,
+        limit: parseInt(el.getAttribute('data-limit'), 10) || 5,
+        cards: Array.prototype.slice.call(el.querySelectorAll('.shelf-card')),
+        btn: document.querySelector('.shelf-show-more[data-target="' + el.id + '"]')
+      };
+    }
+  );
+
+  // ---- Collapsible sections ----------------------------------------------
+  // Collapse state lives on the container class, never on inline styles, so
+  // it can't fight with the filter/search hiding below.
+
+  groups.forEach(function(g) {
+    if (!g.btn) return;
+    g.btn.addEventListener('click', function() {
+      g.el.classList.toggle('is-collapsed');
+      syncButton(g);
+    });
+    syncButton(g);
+  });
+
+  function syncButton(g) {
+    if (!g.btn) return;
+    var collapsed = g.el.classList.contains('is-collapsed');
+    g.btn.textContent = collapsed
+      ? 'Show all (' + g.btn.getAttribute('data-count') + ')'
+      : 'Show less';
+  }
+
+  // Which cards fall past the fold depends on the current sort order, so
+  // recompute it rather than trusting the build-time assignment.
+  function applyCollapse() {
+    groups.forEach(function(g) {
+      var shown = 0;
+      g.cards.forEach(function(card) {
+        if (card.classList.contains(FILTERED)) {
+          card.classList.remove(HIDDEN);
+          return;
+        }
+        shown++;
+        card.classList.toggle(HIDDEN, shown > g.limit);
+      });
     });
   }
 
-  // Filter buttons (multi-select: click toggles, "All" resets)
+  // ---- Filter buttons (multi-select: click toggles, "All" resets) ---------
   document.querySelectorAll('.shelf-btn-group').forEach(function(group) {
     group.addEventListener('click', function(e) {
       if (!e.target.classList.contains('shelf-btn')) return;
@@ -185,10 +213,7 @@ Some shows, films, and games I've enjoyed or have thoughts about. Less structure
     });
   });
 
-  // Search
   document.getElementById('shelf-search').addEventListener('input', applyFilters);
-
-  // Sort
   document.getElementById('shelf-sort').addEventListener('change', applySort);
 
   function getActiveFilters() {
@@ -199,32 +224,48 @@ Some shows, films, and games I've enjoyed or have thoughts about. Less structure
       var values = active.map(function(b) { return b.getAttribute('data-value'); });
       filters[key] = values.indexOf('all') !== -1 ? null : values;
     });
-    filters.search = document.getElementById('shelf-search').value.toLowerCase();
+    filters.search = document.getElementById('shelf-search').value.trim().toLowerCase();
     return filters;
   }
 
   function applyFilters() {
     var filters = getActiveFilters();
-    var items = document.querySelectorAll('[data-type]');
-    items.forEach(function(el) {
+    var active = !!(filters.type || filters.search);
+
+    document.querySelectorAll('[data-search]').forEach(function(el) {
       var show = true;
       if (filters.type && filters.type.indexOf(el.getAttribute('data-type')) === -1) show = false;
       if (filters.search && el.getAttribute('data-search').indexOf(filters.search) === -1) show = false;
-      el.style.display = show ? '' : 'none';
+      el.classList.toggle(FILTERED, !show);
     });
+
+    // While filtering, show every match rather than the first N — otherwise a
+    // hit buried past the fold looks like no hit at all.
+    groups.forEach(function(g) {
+      g.el.classList.toggle('is-filtering', active);
+      if (g.btn) g.btn.hidden = active;
+    });
+    applyCollapse();
+
+    // Drop section headings that no longer have anything under them.
+    var anyVisible = false;
+    document.querySelectorAll('.shelf-section').forEach(function(section) {
+      var has = section.querySelector('.shelf-card:not(.' + FILTERED + ')') !== null;
+      section.hidden = !has;
+      anyVisible = anyVisible || has;
+    });
+
+    var everything = document.getElementById('shelf-everything');
+    var rowsLeft = document.querySelector('.shelf-table-row:not(.' + FILTERED + ')') !== null;
+    everything.hidden = !rowsLeft;
+    if (active && rowsLeft) everything.open = true;
+
+    document.getElementById('shelf-empty').hidden = anyVisible || rowsLeft;
   }
 
-  function applySort() {
-    var val = document.getElementById('shelf-sort').value;
-    var parts = val.split('-');
-    var key = parts.slice(0, -1).join('-');
-    var dir = parts[parts.length - 1];
-
-    var tbody = document.querySelector('.shelf-table tbody');
-    if (!tbody) return;
-    var rows = Array.from(tbody.querySelectorAll('tr'));
-
-    rows.sort(function(a, b) {
+  // ---- Sort ---------------------------------------------------------------
+  function sorter(key, dir) {
+    return function(a, b) {
       var aVal, bVal;
       if (key === 'rating') {
         aVal = parseFloat(a.getAttribute('data-rating')) || 0;
@@ -232,16 +273,36 @@ Some shows, films, and games I've enjoyed or have thoughts about. Less structure
       } else if (key === 'date_added') {
         aVal = a.getAttribute('data-date') || '';
         bVal = b.getAttribute('data-date') || '';
-      } else if (key === 'title') {
-        aVal = a.getAttribute('data-search').split(' ')[0] || '';
-        bVal = b.getAttribute('data-search').split(' ')[0] || '';
+      } else {
+        aVal = a.getAttribute('data-title') || '';
+        bVal = b.getAttribute('data-title') || '';
       }
       if (aVal < bVal) return dir === 'asc' ? -1 : 1;
       if (aVal > bVal) return dir === 'asc' ? 1 : -1;
       return 0;
-    });
-
-    rows.forEach(function(row) { tbody.appendChild(row); });
+    };
   }
+
+  function applySort() {
+    var val = document.getElementById('shelf-sort').value;
+    var parts = val.split('-');
+    var key = parts.slice(0, -1).join('-');
+    var cmp = sorter(key, parts[parts.length - 1]);
+
+    var tbody = document.querySelector('.shelf-table tbody');
+    if (tbody) {
+      var rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.sort(cmp);
+      rows.forEach(function(row) { tbody.appendChild(row); });
+    }
+
+    groups.forEach(function(g) {
+      g.cards.sort(cmp);
+      g.cards.forEach(function(card) { g.el.appendChild(card); });
+    });
+    applyCollapse();
+  }
+
+  applyCollapse();
 })();
 </script>

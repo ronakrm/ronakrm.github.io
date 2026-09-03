@@ -37,7 +37,7 @@ from pydantic import BaseModel, Field, field_validator
 SHELF_PATH = Path(__file__).resolve().parents[2] / "_data" / "shelf.yml"
 
 ItemType = Literal["book", "post", "paper", "podcast"]
-ItemStatus = Literal["finished", "in-progress", "up-next", "dropped"]
+ItemStatus = Literal["finished", "in-progress", "up-next", "backlog", "dropped"]
 
 
 class ShelfItem(BaseModel):
@@ -364,7 +364,7 @@ def build_parser():
     # list
     p = sub.add_parser("list", aliases=["ls"], help="List items")
     p.add_argument("--type", choices=["book", "post", "paper", "podcast"])
-    p.add_argument("--status", choices=["finished", "in-progress", "up-next", "dropped"])
+    p.add_argument("--status", choices=["finished", "in-progress", "up-next", "backlog", "dropped"])
     p.add_argument("--starred", action="store_true")
     p.add_argument("--json", action="store_true")
 
@@ -382,7 +382,7 @@ def build_parser():
     p.add_argument("--rating", type=int, choices=[1, 2, 3, 4, 5])
     p.add_argument("--starred", action="store_true")
     p.add_argument("--hidden", action="store_true", help="Set visible=false")
-    p.add_argument("--status", default="finished", choices=["finished", "in-progress", "up-next", "dropped"])
+    p.add_argument("--status", default="finished", choices=["finished", "in-progress", "up-next", "backlog", "dropped"])
     p.add_argument("--tags", help="Comma-separated tags")
     p.add_argument("--comments", default="")
 
@@ -396,7 +396,7 @@ def build_parser():
     p.add_argument("--rating", type=int, choices=[1, 2, 3, 4, 5])
     p.add_argument("--starred", choices=["true", "false"])
     p.add_argument("--visible", choices=["true", "false"])
-    p.add_argument("--status", choices=["finished", "in-progress", "up-next", "dropped"])
+    p.add_argument("--status", choices=["finished", "in-progress", "up-next", "backlog", "dropped"])
     p.add_argument("--tags", help="Comma-separated (replaces existing)")
     p.add_argument("--comments")
 

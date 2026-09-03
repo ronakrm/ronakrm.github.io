@@ -91,7 +91,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - rationality
   - coordination
@@ -117,7 +117,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - politics
   - utopia
@@ -130,7 +130,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags: []
   comments: ''
   date_added: '2026-04-10'
@@ -141,7 +141,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - stoicism
   - philosophy
@@ -154,7 +154,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - sci-fi
   - transhumanism
@@ -167,7 +167,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - philosophy
   - utopia
@@ -180,7 +180,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - urbanism
   - economics
@@ -193,7 +193,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - sci-fi
   - transhumanism
@@ -221,7 +221,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags: []
   comments: ''
   date_added: '2026-04-10'
@@ -232,7 +232,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - sci-fi
   - solarpunk
@@ -245,7 +245,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - sci-fi
   - gender
@@ -272,7 +272,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - sci-fi
   - solarpunk
@@ -285,7 +285,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - sci-fi
   - cyberpunk
@@ -298,7 +298,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - sci-fi
   - utopia
@@ -312,7 +312,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - philosophy
   - individualism
@@ -325,7 +325,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - philosophy
   - ethics
@@ -338,7 +338,7 @@
   rating:
   starred: false
   visible: true
-  status: up-next
+  status: backlog
   tags:
   - fantasy
   comments: ''
