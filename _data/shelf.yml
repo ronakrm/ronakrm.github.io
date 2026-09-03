@@ -14,8 +14,8 @@
   - sci-fi
   - politics
   - utopia
-  comments: Amazing book, a totally different perspective on how crazy our world can
-    look from even a slight outside perspective!
+  comments: Big rec, totally different perspective on how crazy our world can
+    look from even a slight outside perspective.
   date_added: '2026-04-09'
 - title: Consider Phlebas
   author: Iain M. Banks
@@ -42,7 +42,7 @@
   tags:
   - sci-fi
   - culture-series
-  comments: As people say, the one to read for post-scarcity utopia descriptions ASAP.
+  comments: Very fun, and as people say, the one to read for post-scarcity utopia world-building.
   date_added: '2026-04-09'
 - title: Use of Weapons
   author: Iain M. Banks
@@ -55,8 +55,7 @@
   tags:
   - sci-fi
   - culture-series
-  comments: Ambitious nonlinear storytelling, mostly great, a good mystery or slow
-    build.
+  comments: Very ambitious nonlinear storytelling, tough but good read for the slow build and mystery.
   date_added: '2026-04-09'
 - title: Excession
   author: Iain M. Banks
@@ -75,15 +74,15 @@
   author: Aaron Bastani
   type: book
   link: https://en.wikipedia.org/wiki/Fully_Automated_Luxury_Communism
-  rating:
+  rating: 3
   starred: false
   visible: true
-  status: in-progress
+  status: finished
   tags:
   - politics
   - economics
   - utopia
-  comments: ''
+  comments: 'A bit dated now, but a great place to start if you want a book on this. Otherwise blogs are probably the way to go.'
   date_added: '2026-04-09'
 - title: Meditations on Moloch
   author: Scott Alexander
@@ -97,19 +96,6 @@
   - rationality
   - coordination
   - society
-  comments: ''
-  date_added: '2026-04-10'
-- title: Borges and AI
-  author: Matt Farr
-  type: post
-  link:
-  rating:
-  starred: false
-  visible: true
-  status: up-next
-  tags:
-  - philosophy
-  - ai
   comments: ''
   date_added: '2026-04-10'
 - title: Hyperion
@@ -345,3 +331,15 @@
   - ethics
   comments: ''
   date_added: '2026-04-10'
+- title: The Name of the Wind
+  author: Patrick Rothfuss
+  type: book
+  link: https://en.wikipedia.org/wiki/The_Name_of_the_Wind
+  rating:
+  starred: false
+  visible: true
+  status: up-next
+  tags:
+  - fantasy
+  comments: ''
+  date_added: '2026-09-02'
