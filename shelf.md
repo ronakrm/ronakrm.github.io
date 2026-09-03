@@ -4,7 +4,7 @@ title: Shelf
 permalink: /shelf/
 ---
 
-Recent things I've been reading, plus the stuff I'd recommend as support vectors to my current thoughts!
+Recent things I've been reading, plus some stuff I'd recommend as representative of my favorite cool/unique ideas!
 
 <!-- Filter controls -->
 <div id="shelf-controls">
