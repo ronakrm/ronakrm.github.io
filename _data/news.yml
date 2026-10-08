@@ -1,6 +1,6 @@
 #- Migrating to Github Pages site with Jekyll + Bootstrap! Largely taken from https://varunagrawal.github.io/
 #- Testing news/updates
-- I built a startup, <a href="https://coordinal.org">Coordinal Research</a>, and have recently "started it down". You can read the postmortem <a href="https://ronakrm.github.io/coordinal-postmortem">here</a>. Stay tuned for what's next!
+- I built a startup, <a href="https://coordinal.org">Coordinal Research</a>, and have recently "started it down". You can read the postmortem <a href="/coordinal-postmortem/">here</a>. Stay tuned for what's next!
 # - I'm cofounding a new AI startup, <a href="https://coordinal.org">Coordinal Research</a>, working on accelerating and automating alignment research.
 # - We presented our joint work on <a href="https://arxiv.org/abs/2502.05714">A Benchmark for Formally Verified Code Generation</a> at the LLM4Code workshop at ICSE 2025.
 # - I participated in the <a href="https://www.catalyze-impact.org/">Catalyze Impact Incubator</a> in London.
