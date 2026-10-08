@@ -9,6 +9,9 @@ description: Ronak Mehta
 
 # Build settings
 
+url: "https://ronakrm.com"
+baseurl: ""
+
 #theme: minima
 permalink: /:title/
 
