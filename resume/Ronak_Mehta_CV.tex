@@ -16,6 +16,11 @@
 
 \setlist{noitemsep}
 
+% Variant switch: build the policy/governance version with
+%   pdflatex -jobname=Ronak_Mehta_CV_policy "\def\policymode{}\input{Ronak_Mehta_CV}"
+\newif\ifpolicy
+\ifdefined\policymode \policytrue \fi
+
 %opening
 \title{}
 \author{}
@@ -32,7 +37,7 @@
 	\vspace{0pt}
 	\raggedleft
 	\url{https://ronakrm.com} \\
-	\href{https://scholar.google.com/citations?user=zFRqln4AAAAJ&hl=en}{\faIcon{graduation-cap} Google Scholar}\quad \href{https://www.linkedin.com/in/ronak-mehta-64627491/}{\faIcon{linkedin} LinkedIn} \\
+	\href{https://scholar.google.com/citations?user=zFRqln4AAAAJ&hl=en}{\faIcon{graduation-cap} Scholar}\quad \href{https://github.com/ronakrm}{\faIcon{github} GitHub}\quad \href{https://www.linkedin.com/in/ronak-mehta-64627491/}{\faIcon{linkedin} LinkedIn} \\
 	ronakrm@gmail.com
 \end{minipage}
 
@@ -48,34 +53,48 @@
 %\hrule
 %\vspace{5pt}
 
+\vspace{6pt}
+\noindent ML/CS PhD: research engineer/scientist building AI safety research automation. \newline
+\textbf{Technical Background:} AI-enabled full-stack engineering, research automation, research and product ownership. \newline
+\textbf{Research Background:} Interpretability by Design, Statistical Machine Learning, Optimal Transport, Differential Geometry, Convex and Nonconvex Optimization. \newline
+\ifpolicy
+\textbf{Working Toward:} Technical AI Governance, Alignment Research Automation, Impossibility Proofs % TODO: policy version
+\else
+\textbf{Working Toward:} Proofs of AI safety, technical and non-technical AI governance.
+\fi
+
 \vspace{10pt}
 {\LARGE Experience.}
 %\vspace{3pt}
 \hrule
 \vspace{10pt}
 
-\noindent{{\bf Coordinal Research. \href{https://coordinal.org}{coordinal.org}} \hfill \textit{San Francisco, CA}} \newline
-{\bf \ Founder} \hfill \textit{Present}
+\noindent{\bf Forethought Research}, AI Uplift and Automation Consultant \hfill \textit{Apr 2026 - Oct 2026}
+\begin{itemize}[label={$\bullet$}]
+	\item Solo engineer for Forethought's internal uplift and automation tooling, owning the full stack: product design, TypeScript/Python services and frontends, GCP IaC, CI/CD; built with AI-first development and integration.
+	\item Built a collaborative research-writing platform with Claude as a first-class editor.
+	\item Shipped an internal Google Docs add-on for AI review ``hats'' to the Google Workspace Marketplace.
+	\item Built an org-wide search index over Drive, Slack, Notion, and meeting transcripts, exposed via MCP.
+\end{itemize}
+
+\noindent{\bf Coordinal Research} (\href{https://coordinal.org}{coordinal.org}), Founder \hfill \textit{Jan 2025 - Mar 2026}
 \begin{itemize}[label={$\bullet$}]
 	\item Architected production AI safety research automation framework: multi-agent orchestration with hierarchical delegation, three-tier real-time validation (local checks, policy engines, AI-judge code review), and time-travel debugging via immutable workspace snapshots.
-	\item Built evaluation infrastructure integrating SWE-bench and RE-Bench with configurable agent scaffolding; deployed on AWS with warm EC2 instance pools, AWS Batch and IaC infrastructure for rapid benchmark iteration.
+	\item Built eval infrastructure on Inspect integrating SWE-bench and RE-Bench with configurable agent scaffolding; deployed via warm AWS EC2 instance pools, Batch and Pulumi IaC for rapid benchmark iteration.
+	\item Hill-climbed the scaffold on RE-Bench, raising full-suite average normalized score from 0.55 to 1.62 over a month of runs, with 6/7 tasks verified free of technical issues and reward hacking.
 	\item Developed Python tooling for agent orchestration, telemetry (OpenTelemetry/Logfire), and CI/CD across specialized Docker and job requirements (GPU software stacks, \LaTeX, Lean4 automated theorem proving)
-	\item Managed full organizational lifecycle: incubator/accelerator programs (Catalyze Impact, 50/50), C Corp incorporation, legal, and cloud infrastructure operations.
-\end{itemize} 
+	\item Raised \$125K seed (SAFE); ran workshops for MATS scholars; managed incubator/accelerator programs (Catalyze Impact, 50/50), incorporation, legal, and cloud operations.
+\end{itemize}
 
-\noindent{{\bf Machine Learning and Theory Scholars Program} \hfill \textit{Berkeley, CA}} \newline
-{\bf \ Research Scholar} \hfill \textit{June 2024 - December 2024}
+\noindent{\bf MATS}, Research Scholar, cohorts 6.0 and 6.1 \hfill \textit{Jun 2024 - Dec 2024}
 \begin{itemize}[label={$\bullet$}]
-	\item Worked on theoretical and practical solutions for identifying and accounting for worst-case model behaviors.
-	\item Built out mechanisms for finetuning efficient bounds on model performance based on model internals.
-	\item Applied classical optimization schemes such as Lipschitz optimization and mirror descent to find jailbreaks and identify regions in the input sequence space that may exhibit outlier behaviors.
+	\item Worked on theoretical and practical methods for identifying and bounding worst-case model behavior. Finetuned efficient performance bounds from model internals, and applied Lipschitz optimization and mirror descent approaches for jailbreaking and outlier regions of the input sequence space.
 \end{itemize} 
 
-\noindent{{\bf Orca DB, Inc.} \hfill \textit{Boston, MA}} \newline
-{\bf \ Member of Technical Staff} \hfill \textit{September 2023 - September 2024}
+\noindent{\bf Orca DB, Inc.}, Member of Technical Staff \hfill \textit{Sep 2023 - Sep 2024}
 \begin{itemize}[label={$\bullet$}]
 	\item Founding scientist and engineer building out core ML business solutions and models enabling direct control and interpretability via memory inspection and editing.
-	\item Worked on memory augmentation for machine learning models ranging from large language models to simpler classifiers and regression models for non-generative use cases.
+	\item Worked on memory augmentation in PyTorch for machine learning models ranging from large language models to simpler classifiers and regression models for non-generative use cases.
 \end{itemize}
 
 \iffalse
@@ -171,26 +190,41 @@
 \fi
 
 \vspace{5pt}
+{\LARGE Selected Independent Writing.}
+\vspace{3pt}
+\hrule
+\vspace{10pt}
+
+\noindent {\bf Coordinal: A Postmortem.} \href{https://ronakrm.com/coordinal-postmortem/}{ronakrm.com} $\cdot$ \href{https://ronakrm.substack.com/p/coordinal-a-postmortem}{Substack} \hfill \textit{2026}
+
+\noindent {\bf Interpretable by Design: Constraint Sets with Disjoint Limit Points.} \href{https://ronakrm.com/interp-design/}{ronakrm.com} $\cdot$ \href{https://www.lesswrong.com/posts/kjL9req2p79nSNe5H/interpretable-by-design-constraint-sets-with-disjoint-limit}{LessWrong} \hfill \textit{2025}
+
+\noindent {\bf Interpretability As A Science.} \href{https://ronakrm.com/interpretability-science/}{ronakrm.com} \hfill \textit{2024}
+
+\ifpolicy
+\vspace{10pt}
+{\LARGE Volunteer \& Advocacy.}
+\vspace{3pt}
+\hrule
+\vspace{10pt}
+
+\noindent {\bf Organization} (TODO), Role \hfill \textit{Dates}
+\begin{itemize}[label={$\bullet$}]
+	\item TODO: what you organized, scale, outcome.
+\end{itemize}
+\fi
+
+\vspace{10pt}
 {\LARGE Education.}
 \vspace{3pt}
 \hrule
 \vspace{10pt}
 
-\noindent	{{\bf\large Computer Sciences, PhD} \hfill \textit{2016 - 2022}}
+\noindent {\bf PhD, Computer Sciences}, Minor in Statistics, University of Wisconsin-Madison \hfill \textit{2016 - 2022} \newline
+\ \indent \textbf{Thesis:} Identifying Feature, Parameter, and Sample Subsets in Machine Learning and Image Analysis \newline
+\ \indent \textbf{Selected Publications:} ICLR 2023 (top 25\%), CVPR 2022, ICCV 2019 (x3), UAI 2019, 2021 (see \href{https://scholar.google.com/citations?user=zFRqln4AAAAJ&hl=en}{Google Scholar})
 
-University of Wisconsin-Madison
-
-%Machine Learning and Computer Vision Research
-
-\textbf{Thesis:} Identifying Feature, Parameter, and Sample Subsets in Machine Learning and Image Analysis
-
-Minor in Statistics
-
-\textbf{Selected Publications:} ICLR 2023 (top 25\%), CVPR 2022, ICCV 2019 (x3), UAI 2019, 2021 (see \href{https://scholar.google.com/citations?user=zFRqln4AAAAJ&hl=en}{Google Scholar})
-
-\noindent	{{\bf\large Computer Sciences, MS} \hfill \textit{2014 - 2016}}
-
-{University of Wisconsin-Madison} 
+\noindent {\bf MS, Computer Sciences}, University of Wisconsin-Madison \hfill \textit{2014 - 2016}
 
 %	\vspace{-5pt}
 %	\begin{itemize}[label={$\bullet$}]
@@ -206,9 +240,7 @@ Minor in Statistics
 	%\textbf{Selected Coursework:} Statistical Machine Learning, Computational Statistics, Nonconvex Optimization
 	%	\end{itemize}
 
-\noindent {{\bf\large Computer Engineering, B.S.E.} \hfill \textit{2010 - 2014} }
-
-{ University of Michigan-Ann Arbor }
+\noindent {\bf BSE, Computer Engineering}, University of Michigan-Ann Arbor \hfill \textit{2010 - 2014}
 
 
 \iffalse
@@ -370,6 +402,7 @@ Minor in Statistics
 \noindent (ad-hoc reviewer) Neural Information Processing Systems (NIPS) \hfill 2017
 \fi
 
+\iffalse
 \vspace{10pt}
 {\LARGE Skills.}
 \vspace{5pt}
@@ -378,11 +411,12 @@ Minor in Statistics
 
 \noindent \textbf{Research Areas:} Interpretability by Design, Guaranteed-Safe AI, Statistical Machine Learning, Optimal Transport, Differential Geometry,  Convex/Non-convex Optimization
 
-\noindent \textbf{AI/ML Systems:} LLM Agent Orchestration, Evaluation Frameworks (Inspect AI), LLM APIs, Agent Frameworks (DSPy, Pydantic-AI, Agents SDK), Coding Agents (Claude Code, Codex)
+\noindent \textbf{AI/ML:} Scaled/Trusted Agent Orchestration, Evals (Inspect AI), Agent Frameworks (DSPy, Pydantic-AI), Coding Agents (Claude Code, Codex)
 
-\noindent \textbf{Infrastructure:} Docker, IaC (Pulumi), Cloud management and job orchestration, CI/CD for full-stack AWS research automation (EC2, S3, ECR, AWS Batch, AWS VPC, CloudFront/Route53, IAM/SSM, OpenTelemetry/CloudWatch)
+\noindent \textbf{Infrastructure:} Docker, IaC (Pulumi), Cloud management and job orchestration, CI/CD for full-stack AWS and GCS automation (EC2/Batch/S3/ECR/CloudFront, GCS/CloudSQL/GCR/GCE, IAM/OTel/Logging everywhere)
 
-\noindent \textbf{Languages \& Web:} Python (PyTorch, Transformers, sklearn, NumPy/SciPy, Pandas), TypeScript (React, Vite, Next.js, Tailwind), R (lme4, ggplot), C++, Julia
+\noindent \textbf{Languages/Web:} Python (Jax, PyTorch, Transformers, sklearn, NumPy/SciPy/Pandas), TypeScript (React/Next.js/Tailwind)
+\fi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
